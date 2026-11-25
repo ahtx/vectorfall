@@ -1,0 +1,187 @@
+/* VECTORFALL shell — application mode and desktop mode (tiled, after Oberon). Loaded last.
+   The work area (main) is a size container named "vf": app layouts respond to the space they actually get, so the
+   system track and a bottom dock never squeeze an app into a layout meant for a wider screen.
+     --vh     the usable viewport height (100vh minus a bottom dock)
+     --track  the system track's width (0 in application mode, or when the app has the full width) */
+:root { --vh: 100vh; --track: 0px; --dockh: 0px; }
+main { container: vf / inline-size; margin-right: var(--track); height: calc(var(--vh) - var(--top)); transition: margin-right .18s var(--ease); }
+body.dragging-x, body.dragging-x * { cursor: ew-resize !important; user-select: none !important; }
+body.dragging-y, body.dragging-y * { cursor: ns-resize !important; user-select: none !important; }
+body.dragging-x main { transition: none; }
+
+/* ---------------------------------------------------------------- rail extras: command bar + layout */
+.rail-x { margin-top: auto; display: flex; flex-direction: column; align-items: center; gap: 2px; padding-bottom: 6px; }
+.rail-x + .foot { margin-top: 4px; }
+.rail .rx { position: relative; width: 44px; height: 36px; border: 0; border-radius: 10px; background: none; color: var(--dim); display: grid; place-items: center; }
+.rail .rx svg { width: 19px; height: 19px; }
+.rail .rx:hover { color: var(--ink); background: rgba(255, 255, 255, .04); }
+.rail .rx .tip { position: absolute; left: 56px; white-space: nowrap; background: #1b1b20; border: 1px solid var(--line-2); padding: 5px 10px; border-radius: 8px;
+  font: 600 12px var(--font); color: var(--ink); opacity: 0; pointer-events: none; transform: translateX(-6px); transition: .15s var(--ease); z-index: 2; }
+.rail .rx:hover .tip { opacity: 1; transform: none; }
+
+/* running apps (opened this session, state kept) and apps with a job on the card */
+.rail a.app::after { content: ""; position: absolute; right: 3px; top: 50%; width: 4px; height: 4px; margin-top: -2px; border-radius: 50%; background: transparent; }
+.rail a.app.run::after { background: #6a6b73; }
+.rail a.app.on::after { background: transparent; }
+.rail a.app .jr { position: absolute; left: 12px; right: 12px; bottom: 5px; height: 3px; border-radius: 2px; background: rgba(255, 255, 255, .1); overflow: hidden; }
+.rail a.app .jr b { display: block; height: 100%; background: var(--giallo); box-shadow: 0 0 6px var(--giallo); transition: width .5s var(--ease); }
+
+/* ---------------------------------------------------------------- the dock at the bottom */
+body[data-dock="bottom"] { --rail: 0px; --dockh: 74px; --vh: calc(100vh - var(--dockh)); }
+body[data-dock="bottom"] .rail { top: auto; bottom: 8px; left: 50%; transform: translateX(-50%); width: auto; height: 58px; flex-direction: row; padding: 0 10px; gap: 2px;
+  border: 1px solid var(--line-2); border-radius: 18px; background: rgba(13, 13, 16, .9); backdrop-filter: blur(14px);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .55), inset 0 1px 0 rgba(255, 255, 255, .04); max-width: calc(100vw - 16px); }
+body[data-dock="bottom"] .rail .mark { width: 40px; height: 40px; margin: 0 6px 0 0; }
+body[data-dock="bottom"] .rail .mark img { width: 34px; height: 34px; }
+body[data-dock="bottom"] #rail-apps { display: flex; align-items: center; gap: 2px; }
+/* dock items only (#rail-apps > ...): the app links inside a group flyout keep their own list layout */
+body[data-dock="bottom"] #rail-apps > a.app, body[data-dock="bottom"] #rail-apps > .rg > .rgh { width: 46px; height: 46px; border-radius: 12px; }
+body[data-dock="bottom"] #rail-apps > a.app svg, body[data-dock="bottom"] #rail-apps > .rg > .rgh svg { width: 22px; height: 22px; }
+body[data-dock="bottom"] #rail-apps > a.app.on::before, body[data-dock="bottom"] #rail-apps > .rg.active > .rgh::before { left: 14px; right: 14px; top: auto; bottom: -5px; width: auto; height: 3px; }
+body[data-dock="bottom"] #rail-apps > a.app::after { right: auto; left: 50%; top: auto; bottom: 2px; margin: 0 0 0 -2px; }
+body[data-dock="bottom"] #rail-apps > a.app .jr { left: 10px; right: 10px; bottom: 4px; }
+body[data-dock="bottom"] #rail-apps > a.app .tip, body[data-dock="bottom"] .rail .rx .tip { left: 50%; bottom: 56px; transform: translate(-50%, 6px); }
+body[data-dock="bottom"] #rail-apps > a.app:hover .tip, body[data-dock="bottom"] .rail .rx:hover .tip { transform: translate(-50%, 0); }
+body[data-dock="bottom"] .rail .sep { width: 1px; height: 26px; margin: 0 6px; }
+body[data-dock="bottom"] .rail-x { margin: 0 0 0 6px; padding: 0 0 0 8px; flex-direction: row; border-left: 1px solid var(--line-2); }
+body[data-dock="bottom"] .rail .rx { width: 38px; height: 40px; }
+body[data-dock="bottom"] .rail .foot { display: none; }
+body[data-dock="bottom"] .toast { bottom: calc(var(--dockh) + 10px); }
+
+/* ---------------------------------------------------------------- the system track (desktop mode) */
+.systrack { position: fixed; z-index: 40; right: 0; top: var(--top); bottom: var(--dockh); width: var(--track); display: flex; flex-direction: column; gap: var(--gap);
+  padding: var(--gap) var(--gap) var(--gap) 0; }
+.systrack[hidden] { display: none; }
+.st-edge { position: absolute; left: -6px; top: 0; bottom: 0; width: 10px; cursor: ew-resize; z-index: 2; }
+.st-edge::after { content: ""; position: absolute; left: 4px; top: 50%; height: 44px; margin-top: -22px; width: 2px; border-radius: 2px; background: var(--line-2); opacity: 0; transition: opacity .15s; }
+.st-edge:hover::after { opacity: 1; background: var(--rosso-hi); }
+.st-empty { margin: auto; text-align: center; padding: 20px; }
+.sv { display: flex; flex-direction: column; min-height: 34px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--pr); overflow: hidden; }
+.sv.folded { flex: none !important; }
+.sv.folded .sv-b { display: none; }
+/* the Oberon title bar: the viewer's name, then its commands */
+.sv-h { flex: none; height: 32px; display: flex; align-items: center; gap: 6px; padding: 0 6px 0 10px; border-bottom: 1px solid var(--line); cursor: ns-resize; user-select: none;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .035), rgba(255, 255, 255, 0)); min-width: 0; }
+.sv:first-child .sv-h, .st-edge + .sv .sv-h { cursor: default; }
+.sv-h b { font: 700 11px var(--disp); letter-spacing: .18em; text-transform: uppercase; color: var(--ink-2); display: flex; align-items: center; gap: 7px; flex: none; }
+.sv-h b::before { content: ""; width: 3px; height: 11px; border-radius: 1px; background: var(--rosso); }
+.sv-h .meta { font: 500 10.5px var(--mono); color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.sv-h .sp { flex: 1; }
+.sv-h .vc { flex: none; border: 0; background: none; padding: 3px 5px; border-radius: 4px; font: 500 11px var(--font); color: var(--muted); cursor: pointer; }
+.sv-h .vc:hover { color: #fff; background: var(--rosso-soft); }
+.sv-h .lnk { border: 0; background: none; color: var(--muted); padding: 0 2px; cursor: pointer; }
+.sv-b { flex: 1 1 auto; min-height: 0; overflow: auto; }
+
+/* Log */
+.lg { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 8px; padding: 3px 10px; font: 11.5px/1.45 var(--mono); color: var(--ink-2); border-bottom: 1px solid rgba(255, 255, 255, .03); }
+.lg time { color: var(--dim); font-size: 10.5px; padding-top: 1px; }
+.lg .m { min-width: 0; overflow-wrap: anywhere; }
+.lg .r { color: var(--muted); font-size: 10.5px; padding-top: 1px; white-space: nowrap; }
+.lg .k { display: inline-block; font: 600 9.5px var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); padding: 0 4px; border-radius: 3px; background: rgba(255, 255, 255, .05); margin-right: 2px; }
+.lg.gpu { color: var(--muted); }
+.lg.job .k { color: var(--coolant); background: var(--coolant-soft); }
+.lg.run .k { color: var(--giallo); background: rgba(255, 211, 0, .12); }
+.lg.run .r { color: var(--giallo); }
+.lg.err { color: #ff8a80; } .lg.err .k { color: var(--bad); }
+.lg.cmd { color: #fff; }
+.lg.sys { color: var(--good); }
+.lg.link { cursor: pointer; } .lg.link:hover { background: rgba(255, 255, 255, .03); }
+.sv-b > .hint { padding: 12px; }
+
+/* Tool: commands as text */
+.tool { margin: 0; padding: 10px 12px; font: 12px/1.65 var(--mono); color: var(--muted); white-space: pre-wrap; overflow-wrap: anywhere; }
+.tool .cmd { color: var(--ink); text-decoration: none; border-bottom: 1px dotted rgba(255, 255, 255, .25); }
+.tool .cmd:hover { color: #fff; background: var(--rosso-soft); border-bottom-color: var(--rosso-hi); }
+.tool .cmd-x { color: var(--dim); text-decoration: line-through dotted; }
+.tool-ed { display: block; width: 100%; height: 100%; min-height: 120px; resize: none; border: 0; outline: 0; padding: 10px 12px; background: #0b0b0e; color: var(--ink);
+  font: 12px/1.65 var(--mono); }
+
+/* Machine */
+.mv-spark { position: relative; height: 54px; margin: 8px 10px 4px; border-radius: 6px; background: #08080a; box-shadow: inset 0 0 0 1px var(--line); overflow: hidden; }
+.mv-spark canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.mv-spark > span { position: absolute; left: 7px; top: 4px; font: 600 10px var(--mono); display: flex; gap: 8px; }
+.mv-kv { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 3px 10px; padding: 4px 10px 10px; font-size: 11.5px; }
+.mv-kv span { color: var(--muted); }
+.mv-kv b { font: 500 11.5px var(--mono); color: var(--ink-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sv-b .list .li { padding: 6px 10px; }
+
+/* ---------------------------------------------------------------- notifications */
+.vf-notes { position: fixed; z-index: 210; right: calc(var(--track) + 14px); bottom: calc(var(--dockh) + 14px); display: flex; flex-direction: column; gap: 8px; width: 340px; pointer-events: none; }
+.vf-note { pointer-events: auto; display: flex; align-items: center; gap: 10px; padding: 10px 10px 10px 14px; border-radius: 10px; background: var(--panel-2);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, .55), 0 0 0 1px var(--line-2); animation: rise .25s var(--ease); transition: opacity .25s, transform .25s; }
+.vf-note.good { box-shadow: 0 16px 40px rgba(0, 0, 0, .55), 0 0 0 1px rgba(47, 211, 138, .4); }
+.vf-note.bad { box-shadow: 0 16px 40px rgba(0, 0, 0, .55), 0 0 0 1px rgba(255, 59, 48, .5); }
+.vf-note.out { opacity: 0; transform: translateY(6px); }
+.vf-note .tx { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.vf-note b { font: 600 12.5px var(--font); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.vf-note span { font-size: 11.5px; color: var(--muted); }
+.vf-note .x { border: 0; background: none; color: var(--muted); font-size: 16px; width: 24px; height: 24px; }
+
+/* ---------------------------------------------------------------- command bar */
+.vf-cmdbar { position: fixed; inset: 0; z-index: 300; background: rgba(4, 4, 6, .5); backdrop-filter: blur(2px); display: flex; justify-content: center; align-items: flex-start; padding: 12vh 16px 16px; }
+.vf-cmdbar .cb { width: min(680px, 100%); max-height: 70vh; display: flex; flex-direction: column; border-radius: 12px; background: var(--panel-2); overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, .7), 0 0 0 1px var(--line-2); }
+.cb-in { display: flex; align-items: center; gap: 10px; padding: 0 14px; height: 52px; border-bottom: 1px solid var(--line); }
+.cb-in svg { width: 18px; height: 18px; color: var(--rosso-hi); flex: none; }
+.cb-in input { flex: 1; min-width: 0; height: 100%; border: 0; outline: 0; background: none; font: 500 15px var(--mono); color: #fff; }
+.vf-cmdbar kbd { font: 600 10px var(--mono); padding: 2px 5px; border-radius: 4px; background: rgba(255, 255, 255, .07); color: var(--muted); box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .4); margin-right: 3px; }
+.cb-list { flex: 1; min-height: 0; overflow: auto; padding: 4px; }
+.cb-list .hint { padding: 14px; }
+.cb-i { display: grid; grid-template-columns: 62px minmax(0, auto) minmax(0, 1fr); gap: 10px; align-items: center; padding: 7px 10px; border-radius: 7px; cursor: pointer; }
+.cb-i.on { background: var(--rosso-soft); }
+.cb-i .k { font: 600 9.5px var(--mono); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.cb-i .k.command, .cb-i .k.run { color: var(--rosso-hi); } .cb-i .k.table { color: var(--coolant); } .cb-i .k.problem { color: var(--giallo); }
+.cb-i .n { font: 500 13px var(--mono); color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cb-i .k.app + .n, .cb-i .k.problem + .n, .cb-i .k.table + .n { font-family: var(--font); font-weight: 600; }
+.cb-i .n i { font-style: normal; color: var(--muted); font-weight: 400; }
+.cb-i .d { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cb-f { display: flex; gap: 14px; padding: 8px 14px; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); }
+.cb-f .sp { flex: 1; }
+
+@media (max-width: 860px) {
+  body[data-dock] { --rail: 0px; --dockh: 66px; --vh: calc(100vh - 66px); }
+  main { height: auto; }
+  body[data-dock] .rail { top: auto; bottom: 0; left: 0; right: 0; transform: none; width: auto; height: 62px; flex-direction: row; padding: 0 6px; overflow-x: auto; border-radius: 0; border: 0; border-top: 1px solid var(--line); }
+  body[data-dock] .rail .mark, body[data-dock] .rail .foot, body[data-dock] .rail .sep { display: none; }
+  body[data-dock] #rail-apps { display: flex; align-items: center; }
+  body[data-dock] .rail-x { margin: 0; flex-direction: row; }
+  #rail-apps > a.app .tip, .rail .rx .tip, .rail .rgh .tip { display: none; }
+  /* the rail scrolls sideways here, which would clip a flyout: place flyouts against the window instead */
+  body[data-dock] .rail { box-shadow: none; max-width: none; backdrop-filter: none; background: #0d0d10; }
+  body[data-dock] .rail .rgf { position: fixed; }
+}
+.cb-i .k.model { color: var(--coolant); }
+.cb-i .k.model + .n { font-family: var(--mono); }
+
+/* themed pulldown rail (grouped apps; built in app.js) */
+.rail .rg { position: relative; }
+.rail .rgh { position: relative; width: 56px; height: 52px; border: 0; border-radius: 14px; background: none; color: var(--muted); display: grid; place-items: center; cursor: pointer; transition: color .15s, background .15s; }
+.rail .rgh svg { width: 24px; height: 24px; }
+.rail .rgh:hover { color: var(--ink); background: rgba(255, 255, 255, .04); }
+.rail .rg.open .rgh { color: var(--ink); background: rgba(255, 255, 255, .06); }
+.rail .rg.active .rgh { color: #fff; }
+.rail .rg.active .rgh::before { content: ""; position: absolute; left: -10px; top: 12px; bottom: 12px; width: 3px; border-radius: 3px; background: var(--rosso-hi); box-shadow: 0 0 12px var(--rosso-hi); }
+.rail .rgh .tip { position: absolute; left: 64px; white-space: nowrap; background: #1b1b20; border: 1px solid var(--line-2); padding: 5px 10px; border-radius: 8px; font: 600 12px var(--font); color: var(--ink); opacity: 0; pointer-events: none; transform: translateX(-6px); transition: .15s var(--ease); }
+.rail .rg:not(.open) .rgh:hover .tip { opacity: 1; transform: none; }
+.rail .rgf { position: absolute; left: 64px; top: 0; min-width: 190px; max-width: calc(100vw - 16px); max-height: calc(var(--vh, 100vh) - 16px); overflow-y: auto; background: #141418; border: 1px solid var(--line-2); border-radius: 12px; padding: 8px; display: none; flex-direction: column; gap: 2px; z-index: 90; box-shadow: 0 18px 44px rgba(0, 0, 0, .55); }
+.rail .rg.open .rgf { display: flex; }
+.rail .rgf-t { font: 600 10px var(--disp); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); padding: 4px 8px 6px; }
+.rail .rgf a.app { width: 100%; height: auto; display: flex; align-items: center; gap: 10px; justify-content: flex-start; padding: 8px 10px; border-radius: 9px; }
+.rail .rgf a.app svg { width: 18px; height: 18px; }
+.rail .rgf a.app.on { background: linear-gradient(90deg, rgba(212, 0, 0, .28), rgba(212, 0, 0, .06)); color: #fff; }
+.rail .rgf a.app.on::before { display: none; }
+.rail .rgf a.app .tip { position: static; opacity: 1; transform: none; background: none; border: 0; padding: 0; font: 600 13px var(--font); pointer-events: auto; overflow: hidden; text-overflow: ellipsis; }
+.rail .rgf a.app svg { flex: none; }
+body[data-dock="bottom"] .rail .rgf { left: 50%; top: auto; bottom: 64px; transform: translateX(-50%); }
+body[data-dock="bottom"] .rail .rgh .tip { left: 50%; bottom: 60px; transform: translate(-50%, 6px); }
+/* (flyout placement on every width is done in app.js placeFlyout) */
+/* the Log's filter bar (search, kind, app, order, kept history) */
+#sv-log-b { display: flex; flex-direction: column; overflow: hidden; }
+#sv-log-b .lg-rows { flex: 1 1 auto; min-height: 0; overflow-y: auto; overflow-x: hidden; }
+.lg-bar { flex: none; display: flex; flex-wrap: wrap; gap: 4px; align-items: center; padding: 4px 6px; border-bottom: 1px solid var(--line); background: rgba(0, 0, 0, .25); }
+.lg-bar .lg-q { flex: 1 1 100%; min-width: 0; background: var(--panel-2); border: 1px solid var(--line-2); border-radius: 5px; padding: 2px 6px; font: 11.5px var(--mono); color: var(--ink); }
+.lg-bar select { flex: 1 1 0; min-width: 0; max-width: 120px; background: var(--panel-2); border: 1px solid var(--line-2); border-radius: 5px; padding: 1px 2px; font: 11px var(--font); color: var(--ink-2); }
+.lg-bar .vc { flex: none; border: 0; background: none; padding: 3px 5px; border-radius: 4px; font: 500 11px var(--font); color: var(--muted); cursor: pointer; white-space: nowrap; }
+.lg-bar .vc:hover, .lg-bar .vc.on { color: #fff; background: var(--rosso-soft); }
+.lg-info { padding: 3px 10px; font-size: 11px; }
+.lg.kept { opacity: .8; }

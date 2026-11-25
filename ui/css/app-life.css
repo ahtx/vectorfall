@@ -1,0 +1,22 @@
+/* Patterns — app-specific styles on top of system.css */
+.lf .li .sub { font-family: var(--mono); font-size: 10.5px; }
+.lf-stage { display: grid; place-items: center; user-select: none; }
+.lf-stage img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.lf-stage.paint img { image-rendering: pixelated; cursor: crosshair; touch-action: none; }
+.lf-msg { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+  padding: 24px; text-align: center; color: var(--muted); font-size: 13px; }
+.lf-msg b { color: var(--ink); font-size: 15px; }
+.lf-msg > svg { width: 30px; height: 30px; }
+.lf-msg.err > svg { color: var(--rosso-hi); }
+.lf-msg.err span { max-width: 520px; line-height: 1.5; }
+.lf-msg.busy span { animation: lfpulse 1.2s ease-in-out infinite; font-family: var(--mono); font-size: 12px; }
+@keyframes lfpulse { 50% { opacity: .35; } }
+#lf-state.live { color: var(--good); }
+.lf-desc { margin-bottom: 12px; line-height: 1.5; }
+.lf .col > .pane.grow > .pane-b { display: flex; flex-direction: column; gap: 10px; }
+.lf-kv { flex: none; }
+.lf-trace { flex: 1 1 auto; min-height: 120px; display: flex; flex-direction: column; }
+.lf-trace .sec-t { margin: 4px 0 6px; }
+.lf-trace .chartbox { flex: 1 1 auto; }
+.lf .sel, .lf .in { width: auto; min-width: 0; }
+.lf .fld .sel { width: 100%; }

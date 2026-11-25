@@ -1,0 +1,113 @@
+/* Lineage: the card against the TOP500 and the Crays. Workspace = left column (card, Crays) | Hall + timeline. */
+.lin { --side: 340px; }
+.lin #lin-time .pane-b { display: flex; flex-direction: column; }
+
+/* ---- your card */
+.lin-plate { padding: 2px 0 10px; border-bottom: 1px solid var(--line); margin-bottom: 10px; }
+.lin-plate .nm { font: 800 26px/1.05 var(--disp); letter-spacing: .02em; text-transform: uppercase; color: var(--ink);
+  background: var(--chrome); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.lin-plate .sp { font: 500 11px var(--mono); color: var(--muted); margin-top: 4px; }
+.lin-nums { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.lin-num { padding: 8px 10px; border-radius: var(--cr); background: var(--panel-2); box-shadow: inset 0 0 0 1px var(--line); min-width: 0; }
+.lin-num .k { display: block; font: 700 10px var(--disp); letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+.lin-num b { display: block; font: 600 19px var(--mono); color: var(--ink); margin: 3px 0 2px; white-space: nowrap; }
+.lin-num:first-child b { color: #ff6a5a; }
+.lin-num .s { display: block; font: 500 10px var(--mono); color: var(--dim); }
+.lin-run { display: flex; gap: 8px; align-items: center; margin-top: 10px; }
+.lin-run .sel { width: auto; flex: 1 1 auto; min-width: 0; }
+.lin-prog { display: flex; align-items: center; gap: 8px; margin-top: 8px; font: 500 11px var(--mono); color: var(--muted); }
+.lin-prog .hgb { flex: 1 1 auto; height: 4px; }
+.lin-prog.off { display: none; }
+.lin-verdict { margin-top: 10px; font-size: 12.5px; line-height: 1.5; color: var(--ink-2); }
+.lin-verdict p { margin: 0 0 6px; }
+.lin-verdict b { color: var(--ink); }
+.lin-verdict .dim { color: var(--muted); font-size: 11.5px; }
+
+/* ---- How many Crays? */
+.lin-cr { display: flex; flex-direction: column; height: 100%; min-height: 0; }
+.lin-cr .tb { padding: 8px 12px 0; }
+.lin-cr .seg button { font-size: 11.5px; }
+.lin-crn { padding: 8px 12px 4px; }
+.lin-crn .big { font: 800 34px/1 var(--disp); color: #ff2a1a; text-shadow: 0 0 18px rgba(255, 42, 26, .35); }
+.lin-crn .big small { font: 700 15px var(--disp); color: var(--ink-2); letter-spacing: .06em; text-transform: uppercase; text-shadow: none; }
+.lin-crn .s { font: 500 10.5px var(--mono); color: var(--muted); margin-top: 4px; }
+#lin-crcv { flex: 1 1 auto; min-height: 90px; width: 100%; display: block; }
+.lin-crx { padding: 8px 12px 10px; border-top: 1px solid var(--line); }
+.lin-crx .kv { font-size: 11.5px; }
+.lin-crx .kv b { font-family: var(--mono); font-weight: 600; }
+.lin-crx .dim { font-size: 10.5px; color: var(--dim); margin-top: 6px; line-height: 1.4; }
+
+/* ---- the Hall */
+.lin-hall { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(260px, 1fr); height: 100%; min-height: 0; }
+.lin-stage { position: relative; min-height: 0; background: radial-gradient(120% 90% at 30% 20%, #17171b 0%, #0b0b0d 60%); overflow: hidden; }
+.lin-stage .lin-gl { position: absolute; inset: 0; display: block; cursor: grab; touch-action: none; }
+.lin-stage .lin-gl:active { cursor: grabbing; }
+.lin-fallback { position: absolute; inset: 0; display: none; place-items: center; padding: 24px; }
+.lin-fallback.on { display: grid; }
+.lin-fallback img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.lin-fallback .lin-sil { width: min(86%, 520px); }
+.lin-sil .floor { fill: rgba(255, 255, 255, .03); }
+.lin-sil .body { fill: #24242a; stroke: rgba(255, 42, 26, .55); stroke-width: .8; }
+.lin-sil .body .ln, .lin-sil .body .top { fill: none; stroke: rgba(255, 255, 255, .12); }
+.lin-sil .body .bench { fill: #1d1d22; }
+.lin-sil text { font: 600 8px var(--disp); letter-spacing: .2em; text-transform: uppercase; fill: var(--dim); }
+.lin-cap { position: absolute; left: 16px; bottom: 14px; pointer-events: none; text-shadow: 0 2px 12px #000; }
+.lin-cap .y { font: 600 12px var(--mono); color: #ff6a5a; }
+.lin-cap .n { font: 800 30px/1 var(--disp); text-transform: uppercase; letter-spacing: .03em; color: var(--ink); }
+.lin-cap .r { font: 500 12px var(--mono); color: var(--ink-2); margin-top: 3px; }
+.lin-hint { position: absolute; right: 12px; top: 10px; font: 500 10px var(--mono); color: var(--dim); pointer-events: none; }
+.lin-info { border-left: 1px solid var(--line); display: flex; flex-direction: column; min-height: 0; }
+.lin-info .lin-tabs { margin: 10px 12px 0; align-self: flex-start; }
+.lin-ib { flex: 1 1 auto; overflow: auto; padding: 10px 14px 14px; }
+.lin-h .nm { font: 800 22px/1.05 var(--disp); text-transform: uppercase; letter-spacing: .03em; color: var(--ink); }
+.lin-h .sy { font: 500 11px var(--mono); color: var(--muted); margin: 3px 0 10px; }
+.lin-vs { padding: 8px 10px; margin-bottom: 10px; border-radius: var(--cr); background: var(--rosso-soft); box-shadow: inset 0 0 0 1px var(--rosso-line); font-size: 12.5px; color: var(--ink-2); }
+.lin-vs b { color: #fff; }
+.lin-ib .kv { grid-template-columns: auto minmax(0, 1fr); font-size: 12px; margin-bottom: 12px; }
+.lin-ib .kv b { font-weight: 600; text-align: left; }
+.lin-story p { margin: 0 0 8px; font-size: 13px; line-height: 1.55; color: var(--ink-2); }
+.lin-src { margin-top: 10px; font-size: 11px; }
+.lin-src a { display: block; color: var(--coolant); text-decoration: none; margin: 2px 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lin-src a:hover { text-decoration: underline; }
+.lin-src .dim { color: var(--dim); margin-top: 6px; }
+.lin-unc { margin-top: 6px; color: var(--warn); cursor: help; }
+
+/* ---- the timeline: chart + strip of machines */
+.lin-chart { position: relative; height: 170px; flex: none; }
+#lin-cv { width: 100%; height: 100%; display: block; cursor: crosshair; }
+.lin-tip { position: absolute; top: 18px; display: none; padding: 6px 9px; border-radius: 6px; background: rgba(10, 10, 12, .94);
+  box-shadow: inset 0 0 0 1px var(--line-2); font: 500 11px/1.45 var(--mono); color: var(--ink-2); pointer-events: none; max-width: 230px; }
+.lin-tip b { color: #fff; }
+.lin-strip { display: flex; gap: 8px; overflow-x: auto; padding: 8px 10px 10px; border-top: 1px solid var(--line); flex: none; scrollbar-width: thin; }
+.lin-tile { flex: none; width: 132px; padding: 0; border: 0; border-radius: 6px; background: var(--panel-2); box-shadow: inset 0 0 0 1px var(--line);
+  color: var(--ink-2); text-align: left; cursor: pointer; overflow: hidden; font: inherit; }
+.lin-tile:hover { box-shadow: inset 0 0 0 1px var(--line-2); }
+.lin-tile.on { box-shadow: inset 0 0 0 1px var(--rosso-line), 0 0 14px rgba(212, 0, 0, .3); }
+.lin-tile .im { height: 74px; background: #0b0b0d; display: grid; place-items: center; overflow: hidden; position: relative; }
+.lin-tile .im img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.lin-tile .im .lin-sil { width: 100%; height: 100%; }
+.lin-tile .im .lin-sil text { display: none; }
+.lin-tile .t { padding: 5px 7px 0; font: 700 11px var(--disp); letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lin-tile .t .y { color: #ff6a5a; font-family: var(--mono); font-weight: 600; letter-spacing: 0; }
+.lin-tile .r { padding: 1px 7px 6px; font: 500 10px var(--mono); color: var(--muted); }
+.lin-tile.you { cursor: default; box-shadow: inset 0 0 0 1px #ff2a1a, 0 0 18px rgba(255, 42, 26, .35); background: linear-gradient(180deg, #2a0c0b, #160707); }
+.lin-tile.you .im { background: radial-gradient(circle at 50% 55%, rgba(255, 42, 26, .35), #0b0b0d 70%); }
+.lin-tile.you .im b { position: relative; font: 800 15px var(--disp); text-transform: uppercase; color: #fff; text-align: center; padding: 0 6px; letter-spacing: .04em; }
+.lin-tile.you .glow { position: absolute; width: 16px; height: 16px; border-radius: 50%; background: #fff; box-shadow: 0 0 18px 8px rgba(255, 60, 40, .8); top: 10px; right: 10px; animation: pulse 1.6s ease-in-out infinite; }
+.lin-tile.you .t { color: #ff8a7a; }
+
+/* ---- narrower work areas: stack the Hall, then everything */
+@container vf (max-width: 1240px) {
+  .lin { --side: 300px; }
+  .lin > .col:first-child { overflow: auto; }
+  .lin #lin-cray { min-height: 400px; }
+  .lin-num b { font-size: 15px; }
+  .lin-hall { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(260px, 1.3fr) minmax(0, 1fr); }
+  .lin-info { border-left: 0; border-top: 1px solid var(--line); }
+}
+@container vf (max-width: 900px) {
+  .ws.lin { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; height: auto; }
+  .lin #lin-hall { min-height: 760px; }
+  .lin #lin-cray { min-height: 420px; }
+  .lin-plate .nm { font-size: 22px; }
+}

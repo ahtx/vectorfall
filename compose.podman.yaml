@@ -1,0 +1,31 @@
+# VectorFall with Podman (podman-compose 1.1 or later, or `podman compose`). Podman gets the card through CDI:
+#
+#   sudo nvidia-ctk cdi generate --output=/etc/cdi/nvidia.yaml     # once, and again after a driver change
+#   nvidia-ctk cdi list                                            # shows nvidia.com/gpu=<index> and =<UUID>
+#   cp .env.example .env                                           # set VF_GPU to one of those names
+#   podman-compose -f compose.podman.yaml up -d
+#
+# install.sh and vfctl do the same with `podman run`.
+name: vectorfall
+services:
+  vectorfall:
+    image: ${VF_IMAGE:-ghcr.io/ahtx/vectorfall:0.1.0}
+    build: .
+    container_name: ${VF_NAME:-vectorfall}
+    restart: unless-stopped
+    devices:
+      - nvidia.com/gpu=${VF_GPU:-0}
+    security_opt:
+      - label=disable
+    environment:
+      NVIDIA_DRIVER_CAPABILITIES: compute,utility
+      VF_TLS_HOSTS: ${VF_TLS_HOSTS:-localhost,127.0.0.1}
+      VF_TRUSTED_NETS: ${VF_TRUSTED_NETS:-}
+      VF_GPU_LEASE_URL: ${VF_GPU_LEASE_URL:-}
+      VF_SEC_CONTACT: ${VF_SEC_CONTACT:-}
+      VF_GPU_LEASE_TOKEN_FILE: /srv/data/gpu-lease-token
+    volumes:
+      - ${VF_DATA:-./data}:/srv/data
+    ports:
+      - "${VF_BIND:-127.0.0.1}:${VF_PORT:-8092}:8092"
+      - "${VF_BIND:-127.0.0.1}:${VF_TLS_PORT:-8493}:8493"

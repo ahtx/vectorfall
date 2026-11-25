@@ -1,0 +1,22 @@
+/* "Your problem" dialog of the Reservoir and Particle labs (ui/js/tplpanel.js) */
+.tp-ovl { position: fixed; inset: 0; z-index: 50; background: rgba(0, 0, 0, .55); display: flex; align-items: center; justify-content: center; padding: 24px; }
+.tp-box { width: min(1180px, 100%); height: min(820px, 100%); display: flex; flex-direction: column; background: var(--panel); box-shadow: 0 20px 60px rgba(0, 0, 0, .6); }
+.tp-body { flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: 280px minmax(0, 1fr); }
+.tp-list { overflow: auto; border-right: 1px solid var(--line); }
+.tp-list .li .sub { white-space: normal; line-height: 1.35; font-size: 11.5px; }
+.tp-main { overflow: auto; padding: 12px 16px; display: flex; flex-direction: column; gap: 10px; }
+.tp-maps { font-size: 12.5px; line-height: 1.45; color: var(--ink-2); background: var(--coolant-soft); border: 1px solid rgba(63, 169, 245, .25); border-radius: 8px; padding: 8px 10px; }
+.tp-inh { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; font-size: 12px; }
+.tp-in textarea { width: 100%; font-size: 12px; resize: vertical; }
+.tp-chk { font-size: 12px; margin-top: 4px; }
+.tp-ok { display: flex; align-items: center; gap: 6px; } .tp-ok svg { width: 14px; height: 14px; }
+.tp-ok span { color: var(--muted); }
+.tp-msg { font-size: 12px; color: var(--ink-2); padding: 2px 0 0 20px; } .tp-msg.err { color: var(--bad); padding-left: 0; }
+.tp-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.tp-num { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
+.tp-num input[type=number] { width: 70px; }
+.tp-exp { font-size: 12.5px; color: var(--ink-2); } .tp-exp summary { cursor: pointer; color: var(--muted); font-weight: 600; font-size: 12px; }
+.tp-exp ul { margin: 4px 0 0; padding-left: 18px; }
+.tp-verdict { padding: 10px 12px; border-radius: 10px; }
+.fx-yours { flex: none; }
+@container vf (max-width: 760px) { .tp-body { grid-template-columns: minmax(0, 1fr); } .tp-list { max-height: 160px; border-right: 0; border-bottom: 1px solid var(--line); } }

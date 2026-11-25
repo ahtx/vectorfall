@@ -1,0 +1,36 @@
+Turkey Builds A Hyperwar Capable Military
+Amir Husain, Forbes, 2022-06-30
+
+Turkey’s defense budget is just a little over $20 billion a year, but what they have achieved with this small budget is eye-opening. Consider that Turkey countered a Kurdish insurgency, supported Qatar in its standoff with KSA and UAE, engaged in support of the GNA in Libya while being involved in significant operations in Syria. Besides all this, Turkish intervention won Azerbaijan the Nagorno-Karabakh war against Armenia. And now, Turkey is extending considerable support to Ukraine in its standoff with Russia. The sheer range of engagements Turkey has simultaneously sustained is impressive, and the results produced deserve attention. Much of this has been possible due to innovative weapon systems, tactics and strategies evolved by the Turkish armed forces, and these are worth serious study.
+
+One key lesson to draw from recent Turkish military developments is cost effective power projection through the heavy use of autonomy. The $20+ billion Turkish defense budget sustains the second largest NATO armed force and also makes room for smart investments to fuel an indigenous defense industry that is presently pursuing over 700 separate defense projects. These projects give a glimpse of future warfare and they span the spectrum across Privacy - Terms domains, defensive and offensive capabilities and include hardware and software.
+
+A few examples:
+
+Kargu Drones: Fully autonomous anti-personnel and anti-armor quadcopter drones. With a 5 km range and 30 minute endurance, Kargu drones can be deployed and used by a single operator. These have been battle tested in Libya, and perhaps Nagorno-Karabakh.
+
+TB2: Baykar’s TB2 is now the world’s most exported drone ahead of any individual Chinese or U.S. MALE drone. It has been extensively battle tested against Armenian forces and in Syria where it has successfully taken on Russian AD (Air Defense) systems in concert with Turkish EW (Electronic Warfare) systems like Koral. Equipped with Aselsan’s CATS EO/IR vision system and armed with Turkish manufactured MAM-C, MAM-L and LUMTAS precision munitions, TB2 is credited with hundreds of AD, armor and artillery kills.
+
+Anka-S & Aksungur: Anka is Turkish Aerospace’s larger and more capable drone system compared to TB-2. Aksungur is a new drone capable of ASW (Anti Submarine Warfare) missions.
+
+Akinci: A new Baykar drone which set an endurance record by flying at 38,000 feet for nearly 26 hours. The drone is capable of carrying a large payload of 3,000 lbs and will deploy Turkish developed Bozdogan and Gokdogan BVRAAM (Beyond Visual Range Air to Air Missile) and WVRAAMs (Within Visual Range Air to Air Missile).
+
+MIUS Nexgen Drone: Baykar’s Mach 1 capable multi-role drone is slated to fly in 2023. Capable of air to air and air to ground missions, MIUS will be deployed on the Anadolu LHD to enable a significant expeditionary combat capability. Estimates suggest that up to 50 Baykar TB-3 and MIUS drones will be carried by Anadolu.
+
+Roketsan Alka Laser: A counter UAS directed energy weapon, Alka was deployed in Libya and destroyed a Chinese WL2 drone in 2019. The 50 Kw laser/EM weapon has a destructive range of 1 km, with the ability to disable drone swarms as far as 4 km away.
+
+Aselsan Koral EW System: A land based electronic attack system with an operating range of 200km and the ability to jam and otherwise degrade a range of radars.
+
+Armed USVs ULAQ, RD09 and USV-11: Multiple Turkish USVs capable of deploying in ASW, AAW, ASuW and other roles. Armaments are all mostly local Turkish systems such as L-UMTAS and Turkish SAMs. Capable of high speeds and swarm enabled.
+
+Drone Carrier LHD Anadolu: Slated to be commissioned in 2022, the 27,000 ton Anadolu is an LHD built in Turkey with the ability to carry 50 AA and A2G mission capable drones. The ship will also act as a command center and will be protected by autonomous USVs.
+
+Sapan Hypersonic EM Gun: Turkish TUBITAK research council is developing Sapan, an electromagnetic rail gun capable of propelling projectiles to hypersonic speeds.
+
+In addition to this impressive array of diverse systems there are a range of additional projects including the Altay tank, the Gokbey attack helicopter, unmanned gunship helicopter efforts, the SOM (Standoff Missile) family of cruise missiles, the modern Milgem corvette, Hisar SAM (Surface to Air Missile) system, Aselsan EIRS S-band early warning radar, an indigenous AESA radar and even the TAI TFX 5th Gen fighter project.
+
+Taken together with infrastructure projects such as an underdevelopment space port, Turkish weapon systems investments indicate a high-leverage, low budget, integrated approach to next generation warfare. EW augments drones, which clear the path for UGVs (Unmanned Ground Vehicles), which reduce the burden on an MBT (Main Battle Tank) like Altay… which is further supported by GBL (Ground Based Laser) defenses against drones and long range hypersonic, EM artillery. Meanwhile, command and control links are redundant and work through satellite, relayed through drones and are routed to fixed and mobile command centers, like those on the Anadolu. Existing legacy platforms like F-16s are next in line to be upgraded with local AESA (Active Electronically Scanned Array) radars, locally developed BVRAAMs and augmented with MIUS-like high speed, air-to-air capable autonomous drones.
+
+The picture that emerges from studying Turkish military developments is one that DoD could do well to replicate in part; cost effective upgrades, next generation investments, brave platform shifts like drone carrier ships and an unapologetic pursuit of autonomy across all domains.
+
+In short, an impressive Hyperwar machine, at a reasonable price.

@@ -1,0 +1,2342 @@
+{
+ "generated": "2026-11-23",
+ "notes": "TOP500 data scraped from top500.org list pages (/lists/top500/list/YYYY/MM/?page=1..5) and top-10 pages, cross-checked with the TOP500 performance-development series (/statistics/perfdev/), which is used for n1_rmax and n500 (more digits). All values are GFLOP/s. List pages show values rounded to 2 decimals in the page's unit, so n10/n100/rank_curve carry that rounding. Quirks: the full 11/1995 list returns 404 on top500.org (only the top 10 are available; n100 null; n500 from perf-dev); the 11/2018 list page labels values GFlop/s but shows TFlop/s (converted). Machine records use the Rmax/Rpeak/cores/power of the list where the machine had its best #1 Rmax (best_list). TOP500 system pages today often show later upgraded configurations, so they were not used for #1 values. year = installation year for early systems, otherwise the year it first reached #1 (see uncertain notes). Pre-1993 figures come from Dongarra's 'Performance of Various Computers Using Standard Linear Equations Software' (netlib, edition of 15 June 2014): Table 1 n=100 and TPP n=1000 (MFLOP/s), Table 3 Rmax highly parallel (GFLOP/s). Strassen-based Table 3 results were excluded. The latest TOP500 list found is November 2026 (68th edition); #1 is LineShine since June 2026. Power is null where TOP500 or a primary source does not give it. Costs are null unless a source gave one. Pre-1993 machines use the larger of Dongarra's TPP (n=1000) and highly parallel Rmax figures, because HPL lets n grow; each record says which.",
+ "lists": [
+  {
+   "date": "1993-06",
+   "n1": "cm-5",
+   "n1_system": "CM-5/1024",
+   "n1_rmax_gflops": 59.7,
+   "n1_rpeak_gflops": 131.0,
+   "n1_cores": 1024,
+   "n1_power_kw": null,
+   "n10_rmax_gflops": 13.7,
+   "n100_rmax_gflops": 2.14,
+   "n500_rmax_gflops": 0.42,
+   "sources": [
+    "https://www.top500.org/lists/top500/1993/06/",
+    "https://www.top500.org/lists/top500/list/1993/06/?page=1",
+    "https://www.top500.org/lists/top500/list/1993/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "1993-11",
+   "n1": "nwt",
+   "n1_system": "Numerical Wind Tunnel",
+   "n1_rmax_gflops": 124.0,
+   "n1_rpeak_gflops": 235.79,
+   "n1_cores": 140,
+   "n1_power_kw": null,
+   "n10_rmax_gflops": 15.1,
+   "n100_rmax_gflops": 2.6,
+   "n500_rmax_gflops": 0.47,
+   "sources": [
+    "https://www.top500.org/lists/top500/1993/11/",
+    "https://www.top500.org/lists/top500/list/1993/11/?page=1",
+    "https://www.top500.org/lists/top500/list/1993/11/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "1994-06",
+   "n1": "paragon-xps140",
+   "n1_system": "XP/S140",
+   "n1_rmax_gflops": 143.4,
+   "n1_rpeak_gflops": 184.0,
+   "n1_cores": 3680,
+   "n1_power_kw": null,
+   "n10_rmax_gflops": 27.5,
+   "n100_rmax_gflops": 5.2,
+   "n500_rmax_gflops": 0.84,
+   "sources": [
+    "https://www.top500.org/lists/top500/1994/06/",
+    "https://www.top500.org/lists/top500/list/1994/06/?page=1",
+    "https://www.top500.org/lists/top500/list/1994/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "1994-11",
+   "n1": "nwt",
+   "n1_system": "Numerical Wind Tunnel",
+   "n1_rmax_gflops": 170.0,
+   "n1_rpeak_gflops": 235.79,
+   "n1_cores": 140,
+   "n1_power_kw": null,
+   "n10_rmax_gflops": 27.5,
+   "n100_rmax_gflops": 6.85,
+   "n500_rmax_gflops": 1.16,
+   "sources": [
+    "https://www.top500.org/lists/top500/1994/11/",
+    "https://www.top500.org/lists/top500/list/1994/11/?page=1",
+    "https://www.top500.org/lists/top500/list/1994/11/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "1995-06",
+   "n1": "nwt",
+   "n1_system": "Numerical Wind Tunnel",
+   "n1_rmax_gflops": 170.0,
+   "n1_rpeak_gflops": 235.79,
+   "n1_cores": 140,
+   "n1_power_kw": null,
+   "n10_rmax_gflops": 50.8,
+   "n100_rmax_gflops": 9.65,
+   "n500_rmax_gflops": 1.96,
+   "sources": [
+    "https://www.top500.org/lists/top500/1995/06/",
+    "https://www.top500.org/lists/top500/list/1995/06/?page=1",
+    "https://www.top500.org/lists/top500/list/1995/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "1995-11",
+   "n1": "nwt",
+   "n1_system": "Numerical Wind Tunnel",
+   "n1_rmax_gflops": 170.0,
+   "n1_rpeak_gflops": 235.79,
+   "n1_cores": 140,
+   "n1_power_kw": null,
+   "n10_rmax_gflops": 59.7,
+   "n100_rmax_gflops": null,
+   "n500_rmax_gflops": 2.49,
+   "sources": [
+    "https://www.top500.org/lists/top500/1995/11/",
+    "https://www.top500.org/statistics/perfdev/"
+   ],
+   "note": "top500.org full list pages for 11/1995 return 404; #500 taken from the TOP500 performance-development data; #100 not available."
+  },
+  {
+   "date": "1996-06",
+   "n1": "sr2201",
+   "n1_system": "SR2201/1024",
+   "n1_rmax_gflops": 220.4,
+   "n1_rpeak_gflops": 307.2,
+   "n1_cores": 1024,
+   "n1_power_kw": null,
+   "n10_rmax_gflops": 66.53,
+   "n100_rmax_gflops": 13.7,
+   "n500_rmax_gflops": 3.31,
+   "sources": [
+    "https://www.top500.org/lists/top500/1996/06/",
+    "https://www.top500.org/lists/top500/list/1996/06/?page=1",
+    "https://www.top500.org/lists/top500/list/1996/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "1996-11",
+   "n1": "cp-pacs",
+   "n1_system": "CP-PACS/2048",
+   "n1_rmax_gflops": 368.2,
+   "n1_rpeak_gflops": 614.4,
+   "n1_cores": 2048,
+   "n1_power_kw": null,
+   "n10_rmax_gflops": 94.3,
+   "n100_rmax_gflops": 15.35,
+   "n500_rmax_gflops": 4.62,
+   "sources": [
+    "https://www.top500.org/lists/top500/1996/11/",
+    "https://www.top500.org/lists/top500/list/1996/11/?page=1",
+    "https://www.top500.org/lists/top500/list/1996/11/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "1997-06",
+   "n1": "asci-red",
+   "n1_system": "ASCI Red",
+   "n1_rmax_gflops": 1068.0,
+   "n1_rpeak_gflops": 1453.0,
+   "n1_cores": 7264,
+   "n1_power_kw": null,
+   "n10_rmax_gflops": 176.0,
+   "n100_rmax_gflops": 25.3,
+   "n500_rmax_gflops": 7.67,
+   "sources": [
+    "https://www.top500.org/lists/top500/1997/06/",
+    "https://www.top500.org/lists/top500/list/1997/06/?page=1",
+    "https://www.top500.org/lists/top500/list/1997/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "1997-11",
+   "n1": "asci-red",
+   "n1_system": "ASCI Red",
+   "n1_rmax_gflops": 1338.0,
+   "n1_rpeak_gflops": 1830.4,
+   "n1_cores": 9152,
+   "n1_power_kw": null,
+   "n10_rmax_gflops": 196.0,
+   "n100_rmax_gflops": 29.36,
+   "n500_rmax_gflops": 9.51,
+   "sources": [
+    "https://www.top500.org/lists/top500/1997/11/",
+    "https://www.top500.org/lists/top500/list/1997/11/?page=1",
+    "https://www.top500.org/lists/top500/list/1997/11/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "1998-06",
+   "n1": "asci-red",
+   "n1_system": "ASCI Red",
+   "n1_rmax_gflops": 1338.0,
+   "n1_rpeak_gflops": 1830.4,
+   "n1_cores": 9152,
+   "n1_power_kw": null,
+   "n10_rmax_gflops": 321.0,
+   "n100_rmax_gflops": 40.25,
+   "n500_rmax_gflops": 13.39,
+   "sources": [
+    "https://www.top500.org/lists/top500/1998/06/",
+    "https://www.top500.org/lists/top500/list/1998/06/?page=1",
+    "https://www.top500.org/lists/top500/list/1998/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "1998-11",
+   "n1": "asci-red",
+   "n1_system": "ASCI Red",
+   "n1_rmax_gflops": 1338.0,
+   "n1_rpeak_gflops": 1830.4,
+   "n1_cores": 9152,
+   "n1_power_kw": null,
+   "n10_rmax_gflops": 448.6,
+   "n100_rmax_gflops": 51.44,
+   "n500_rmax_gflops": 17.12,
+   "sources": [
+    "https://www.top500.org/lists/top500/1998/11/",
+    "https://www.top500.org/lists/top500/list/1998/11/?page=1",
+    "https://www.top500.org/lists/top500/list/1998/11/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "1999-06",
+   "n1": "asci-red",
+   "n1_system": "ASCI Red",
+   "n1_rmax_gflops": 2121.0,
+   "n1_rpeak_gflops": 3154.0,
+   "n1_cores": 9472,
+   "n1_power_kw": null,
+   "n10_rmax_gflops": 509.0,
+   "n100_rmax_gflops": 62.25,
+   "n500_rmax_gflops": 24.7,
+   "sources": [
+    "https://www.top500.org/lists/top500/1999/06/",
+    "https://www.top500.org/lists/top500/list/1999/06/?page=1",
+    "https://www.top500.org/lists/top500/list/1999/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "1999-11",
+   "n1": "asci-red",
+   "n1_system": "ASCI Red",
+   "n1_rmax_gflops": 2379.0,
+   "n1_rpeak_gflops": 3207.0,
+   "n1_cores": 9632,
+   "n1_power_kw": null,
+   "n10_rmax_gflops": 558.1,
+   "n100_rmax_gflops": 101.4,
+   "n500_rmax_gflops": 33.09,
+   "sources": [
+    "https://www.top500.org/lists/top500/1999/11/",
+    "https://www.top500.org/lists/top500/list/1999/11/?page=1",
+    "https://www.top500.org/lists/top500/list/1999/11/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2000-06",
+   "n1": "asci-red",
+   "n1_system": "ASCI Red",
+   "n1_rmax_gflops": 2379.0,
+   "n1_rpeak_gflops": 3207.0,
+   "n1_cores": 9632,
+   "n1_power_kw": null,
+   "n10_rmax_gflops": 815.0,
+   "n100_rmax_gflops": 123.0,
+   "n500_rmax_gflops": 43.82,
+   "sources": [
+    "https://www.top500.org/lists/top500/2000/06/",
+    "https://www.top500.org/lists/top500/list/2000/06/?page=1",
+    "https://www.top500.org/lists/top500/list/2000/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2000-11",
+   "n1": "asci-white",
+   "n1_system": "ASCI White, SP Power3 375 MHz",
+   "n1_rmax_gflops": 4938.0,
+   "n1_rpeak_gflops": 12288.0,
+   "n1_cores": 8192,
+   "n1_power_kw": null,
+   "n10_rmax_gflops": 892.0,
+   "n100_rmax_gflops": 181.0,
+   "n500_rmax_gflops": 55.3,
+   "sources": [
+    "https://www.top500.org/lists/top500/2000/11/",
+    "https://www.top500.org/lists/top500/list/2000/11/?page=1",
+    "https://www.top500.org/lists/top500/list/2000/11/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2001-06",
+   "n1": "asci-white",
+   "n1_system": "ASCI White, SP Power3 375 MHz",
+   "n1_rmax_gflops": 7226.0,
+   "n1_rpeak_gflops": 12288.0,
+   "n1_cores": 8192,
+   "n1_power_kw": null,
+   "n10_rmax_gflops": 1179.0,
+   "n100_rmax_gflops": 241.4,
+   "n500_rmax_gflops": 67.78,
+   "sources": [
+    "https://www.top500.org/lists/top500/2001/06/",
+    "https://www.top500.org/lists/top500/list/2001/06/?page=1",
+    "https://www.top500.org/lists/top500/list/2001/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2001-11",
+   "n1": "asci-white",
+   "n1_system": "ASCI White, SP Power3 375 MHz",
+   "n1_rmax_gflops": 7226.0,
+   "n1_rpeak_gflops": 12288.0,
+   "n1_cores": 8192,
+   "n1_power_kw": null,
+   "n10_rmax_gflops": 1293.0,
+   "n100_rmax_gflops": 300.2,
+   "n500_rmax_gflops": 94.3,
+   "sources": [
+    "https://www.top500.org/lists/top500/2001/11/",
+    "https://www.top500.org/lists/top500/list/2001/11/?page=1",
+    "https://www.top500.org/lists/top500/list/2001/11/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2002-06",
+   "n1": "earth-simulator",
+   "n1_system": "Earth-Simulator",
+   "n1_rmax_gflops": 35860.0,
+   "n1_rpeak_gflops": 40960.0,
+   "n1_cores": 5120,
+   "n1_power_kw": 3200.0,
+   "n10_rmax_gflops": 2050.0,
+   "n100_rmax_gflops": 447.0,
+   "n500_rmax_gflops": 134.3,
+   "sources": [
+    "https://www.top500.org/lists/top500/2002/06/",
+    "https://www.top500.org/lists/top500/list/2002/06/?page=1",
+    "https://www.top500.org/lists/top500/list/2002/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2002-11",
+   "n1": "earth-simulator",
+   "n1_system": "Earth-Simulator",
+   "n1_rmax_gflops": 35860.0,
+   "n1_rpeak_gflops": 40960.0,
+   "n1_cores": 5120,
+   "n1_power_kw": 3200.0,
+   "n10_rmax_gflops": 3164.0,
+   "n100_rmax_gflops": 555.3,
+   "n500_rmax_gflops": 195.8,
+   "sources": [
+    "https://www.top500.org/lists/top500/2002/11/",
+    "https://www.top500.org/lists/top500/list/2002/11/?page=1",
+    "https://www.top500.org/lists/top500/list/2002/11/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2003-06",
+   "n1": "earth-simulator",
+   "n1_system": "Earth-Simulator",
+   "n1_rmax_gflops": 35860.0,
+   "n1_rpeak_gflops": 40960.0,
+   "n1_cores": 5120,
+   "n1_power_kw": 3200.0,
+   "n10_rmax_gflops": 3980.0,
+   "n100_rmax_gflops": 704.8,
+   "n500_rmax_gflops": 241.4,
+   "sources": [
+    "https://www.top500.org/lists/top500/2003/06/",
+    "https://www.top500.org/lists/top500/list/2003/06/?page=1",
+    "https://www.top500.org/lists/top500/list/2003/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2003-11",
+   "n1": "earth-simulator",
+   "n1_system": "Earth-Simulator",
+   "n1_rmax_gflops": 35860.0,
+   "n1_rpeak_gflops": 40960.0,
+   "n1_cores": 5120,
+   "n1_power_kw": 3200.0,
+   "n10_rmax_gflops": 6586.0,
+   "n100_rmax_gflops": 1142.0,
+   "n500_rmax_gflops": 378.6,
+   "sources": [
+    "https://www.top500.org/lists/top500/2003/11/",
+    "https://www.top500.org/lists/top500/list/2003/11/?page=1",
+    "https://www.top500.org/lists/top500/list/2003/11/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2004-06",
+   "n1": "earth-simulator",
+   "n1_system": "Earth-Simulator",
+   "n1_rmax_gflops": 35860.0,
+   "n1_rpeak_gflops": 40960.0,
+   "n1_cores": 5120,
+   "n1_power_kw": 3200.0,
+   "n10_rmax_gflops": 8061.0,
+   "n100_rmax_gflops": 1922.56,
+   "n500_rmax_gflops": 606.9,
+   "sources": [
+    "https://www.top500.org/lists/top500/2004/06/",
+    "https://www.top500.org/lists/top500/list/2004/06/?page=1",
+    "https://www.top500.org/lists/top500/list/2004/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2004-11",
+   "n1": "bluegene-l",
+   "n1_system": "BlueGene/L beta-System - BlueGene/L DD2 beta-System (0.7 GHz PowerPC 440)",
+   "n1_rmax_gflops": 70720.0,
+   "n1_rpeak_gflops": 91750.0,
+   "n1_cores": 32768,
+   "n1_power_kw": null,
+   "n10_rmax_gflops": 9819.0,
+   "n100_rmax_gflops": 2026.0,
+   "n500_rmax_gflops": 840.02,
+   "sources": [
+    "https://www.top500.org/lists/top500/2004/11/",
+    "https://www.top500.org/lists/top500/list/2004/11/?page=1",
+    "https://www.top500.org/lists/top500/list/2004/11/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2005-06",
+   "n1": "bluegene-l",
+   "n1_system": "BlueGene/L - eServer Blue Gene Solution",
+   "n1_rmax_gflops": 136800.0,
+   "n1_rpeak_gflops": 183500.0,
+   "n1_cores": 65536,
+   "n1_power_kw": 716.0,
+   "n10_rmax_gflops": 15250.0,
+   "n100_rmax_gflops": 3720.0,
+   "n500_rmax_gflops": 1166.0,
+   "sources": [
+    "https://www.top500.org/lists/top500/2005/06/",
+    "https://www.top500.org/lists/top500/list/2005/06/?page=1",
+    "https://www.top500.org/lists/top500/list/2005/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2005-11",
+   "n1": "bluegene-l",
+   "n1_system": "BlueGene/L - eServer Blue Gene Solution",
+   "n1_rmax_gflops": 280600.0,
+   "n1_rpeak_gflops": 367000.0,
+   "n1_cores": 131072,
+   "n1_power_kw": 1433.0,
+   "n10_rmax_gflops": 20530.0,
+   "n100_rmax_gflops": 3950.0,
+   "n500_rmax_gflops": 1645.7,
+   "sources": [
+    "https://www.top500.org/lists/top500/2005/11/",
+    "https://www.top500.org/lists/top500/list/2005/11/?page=1",
+    "https://www.top500.org/lists/top500/list/2005/11/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2006-06",
+   "n1": "bluegene-l",
+   "n1_system": "BlueGene/L - eServer Blue Gene Solution",
+   "n1_rmax_gflops": 280600.0,
+   "n1_rpeak_gflops": 367000.0,
+   "n1_cores": 131072,
+   "n1_power_kw": 1433.0,
+   "n10_rmax_gflops": 35860.0,
+   "n100_rmax_gflops": 4710.0,
+   "n500_rmax_gflops": 2026.0,
+   "sources": [
+    "https://www.top500.org/lists/top500/2006/06/",
+    "https://www.top500.org/lists/top500/list/2006/06/?page=1",
+    "https://www.top500.org/lists/top500/list/2006/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2006-11",
+   "n1": "bluegene-l",
+   "n1_system": "BlueGene/L - eServer Blue Gene Solution",
+   "n1_rmax_gflops": 280600.0,
+   "n1_rpeak_gflops": 367000.0,
+   "n1_cores": 131072,
+   "n1_power_kw": 1433.0,
+   "n10_rmax_gflops": 43480.0,
+   "n100_rmax_gflops": 6620.0,
+   "n500_rmax_gflops": 2736.9,
+   "sources": [
+    "https://www.top500.org/lists/top500/2006/11/",
+    "https://www.top500.org/lists/top500/list/2006/11/?page=1",
+    "https://www.top500.org/lists/top500/list/2006/11/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2007-06",
+   "n1": "bluegene-l",
+   "n1_system": "BlueGene/L - eServer Blue Gene Solution",
+   "n1_rmax_gflops": 280600.0,
+   "n1_rpeak_gflops": 367000.0,
+   "n1_cores": 131072,
+   "n1_power_kw": 1433.0,
+   "n10_rmax_gflops": 56520.0,
+   "n100_rmax_gflops": 9290.0,
+   "n500_rmax_gflops": 4031.0,
+   "sources": [
+    "https://www.top500.org/lists/top500/2007/06/",
+    "https://www.top500.org/lists/top500/list/2007/06/?page=1",
+    "https://www.top500.org/lists/top500/list/2007/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2007-11",
+   "n1": "bluegene-l",
+   "n1_system": "BlueGene/L - eServer Blue Gene Solution",
+   "n1_rmax_gflops": 478200.0,
+   "n1_rpeak_gflops": 596380.0,
+   "n1_cores": 212992,
+   "n1_power_kw": 2329.0,
+   "n10_rmax_gflops": 82160.0,
+   "n100_rmax_gflops": 12980.0,
+   "n500_rmax_gflops": 5937.33,
+   "sources": [
+    "https://www.top500.org/lists/top500/2007/11/",
+    "https://www.top500.org/lists/top500/list/2007/11/?page=1",
+    "https://www.top500.org/lists/top500/list/2007/11/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2008-06",
+   "n1": "roadrunner",
+   "n1_system": "Roadrunner - BladeCenter QS22/LS21 Cluster, PowerXCell 8i 3.2 Ghz / Opteron DC 1.8 GHz, Voltaire Infiniband",
+   "n1_rmax_gflops": 1026000.0,
+   "n1_rpeak_gflops": 1375780.0,
+   "n1_cores": 122400,
+   "n1_power_kw": 2345.0,
+   "n10_rmax_gflops": 112500.0,
+   "n100_rmax_gflops": 18930.0,
+   "n500_rmax_gflops": 8996.78,
+   "sources": [
+    "https://www.top500.org/lists/top500/2008/06/",
+    "https://www.top500.org/lists/top500/list/2008/06/?page=1",
+    "https://www.top500.org/lists/top500/list/2008/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2008-11",
+   "n1": "roadrunner",
+   "n1_system": "Roadrunner - BladeCenter QS22/LS21 Cluster, PowerXCell 8i 3.2 Ghz / Opteron DC 1.8 GHz, Voltaire Infiniband",
+   "n1_rmax_gflops": 1105000.0,
+   "n1_rpeak_gflops": 1456700.0,
+   "n1_cores": 129600,
+   "n1_power_kw": 2483.0,
+   "n10_rmax_gflops": 204200.0,
+   "n100_rmax_gflops": 27370.0,
+   "n500_rmax_gflops": 12593.5,
+   "sources": [
+    "https://www.top500.org/lists/top500/2008/11/",
+    "https://www.top500.org/lists/top500/list/2008/11/?page=1",
+    "https://www.top500.org/lists/top500/list/2008/11/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2009-06",
+   "n1": "roadrunner",
+   "n1_system": "Roadrunner - BladeCenter QS22/LS21 Cluster, PowerXCell 8i 3.2 Ghz / Opteron DC 1.8 GHz, Voltaire Infiniband",
+   "n1_rmax_gflops": 1105000.0,
+   "n1_rpeak_gflops": 1456700.0,
+   "n1_cores": 129600,
+   "n1_power_kw": 2483.0,
+   "n10_rmax_gflops": 274800.0,
+   "n100_rmax_gflops": 39700.0,
+   "n500_rmax_gflops": 17110.0,
+   "sources": [
+    "https://www.top500.org/lists/top500/2009/06/",
+    "https://www.top500.org/lists/top500/list/2009/06/?page=1",
+    "https://www.top500.org/lists/top500/list/2009/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2009-11",
+   "n1": "jaguar",
+   "n1_system": "Jaguar - Cray XT5-HE Opteron 6-core 2.6 GHz",
+   "n1_rmax_gflops": 1759000.0,
+   "n1_rpeak_gflops": 2331000.0,
+   "n1_cores": 224162,
+   "n1_power_kw": 6950.0,
+   "n10_rmax_gflops": 423900.0,
+   "n100_rmax_gflops": 47730.0,
+   "n500_rmax_gflops": 20070.0,
+   "sources": [
+    "https://www.top500.org/lists/top500/2009/11/",
+    "https://www.top500.org/lists/top500/list/2009/11/?page=1",
+    "https://www.top500.org/lists/top500/list/2009/11/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2010-06",
+   "n1": "jaguar",
+   "n1_system": "Jaguar - Cray XT5-HE Opteron 6-core 2.6 GHz",
+   "n1_rmax_gflops": 1759000.0,
+   "n1_rpeak_gflops": 2331000.0,
+   "n1_cores": 224162,
+   "n1_power_kw": 6950.0,
+   "n10_rmax_gflops": 433500.0,
+   "n100_rmax_gflops": 52840.0,
+   "n500_rmax_gflops": 24670.0,
+   "sources": [
+    "https://www.top500.org/lists/top500/2010/06/",
+    "https://www.top500.org/lists/top500/list/2010/06/?page=1",
+    "https://www.top500.org/lists/top500/list/2010/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2010-11",
+   "n1": "tianhe-1a",
+   "n1_system": "Tianhe-1A - NUDT TH MPP, X5670 2.93Ghz 6C, NVIDIA GPU, FT-1000 8C",
+   "n1_rmax_gflops": 2566000.0,
+   "n1_rpeak_gflops": 4701000.0,
+   "n1_cores": 186368,
+   "n1_power_kw": 4040.0,
+   "n10_rmax_gflops": 816600.0,
+   "n100_rmax_gflops": 76510.0,
+   "n500_rmax_gflops": 31124.36,
+   "sources": [
+    "https://www.top500.org/lists/top500/2010/11/",
+    "https://www.top500.org/lists/top500/list/2010/11/?page=1",
+    "https://www.top500.org/lists/top500/list/2010/11/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2011-06",
+   "n1": "k-computer",
+   "n1_system": "K computer, SPARC64 VIIIfx 2.0GHz, Tofu interconnect",
+   "n1_rmax_gflops": 8162000.0,
+   "n1_rpeak_gflops": 8773630.0,
+   "n1_cores": 548352,
+   "n1_power_kw": 9899.0,
+   "n10_rmax_gflops": 1042000.0,
+   "n100_rmax_gflops": 88920.0,
+   "n500_rmax_gflops": 40187.29,
+   "sources": [
+    "https://www.top500.org/lists/top500/2011/06/",
+    "https://www.top500.org/lists/top500/list/2011/06/?page=1",
+    "https://www.top500.org/lists/top500/list/2011/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2011-11",
+   "n1": "k-computer",
+   "n1_system": "K computer, SPARC64 VIIIfx 2.0GHz, Tofu interconnect",
+   "n1_rmax_gflops": 10510000.0,
+   "n1_rpeak_gflops": 11280380.0,
+   "n1_cores": 705024,
+   "n1_power_kw": 12660.0,
+   "n10_rmax_gflops": 1042000.0,
+   "n100_rmax_gflops": 115900.0,
+   "n500_rmax_gflops": 50941.4,
+   "sources": [
+    "https://www.top500.org/lists/top500/2011/11/",
+    "https://www.top500.org/lists/top500/list/2011/11/?page=1",
+    "https://www.top500.org/lists/top500/list/2011/11/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2012-06",
+   "n1": "sequoia",
+   "n1_system": "Sequoia - BlueGene/Q, Power BQC 16C 1.60 GHz, Custom",
+   "n1_rmax_gflops": 16324751.0,
+   "n1_rpeak_gflops": 20132660.0,
+   "n1_cores": 1572864,
+   "n1_power_kw": 7890.0,
+   "n10_rmax_gflops": 1271000.0,
+   "n100_rmax_gflops": 172690.0,
+   "n500_rmax_gflops": 60824.4,
+   "sources": [
+    "https://www.top500.org/lists/top500/2012/06/",
+    "https://www.top500.org/lists/top500/list/2012/06/?page=1",
+    "https://www.top500.org/lists/top500/list/2012/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2012-11",
+   "n1": "titan",
+   "n1_system": "Titan - Cray XK7, Opteron 6274 16C 2.200GHz, Cray Gemini interconnect, NVIDIA K20x",
+   "n1_rmax_gflops": 17590000.0,
+   "n1_rpeak_gflops": 27112550.0,
+   "n1_cores": 560640,
+   "n1_power_kw": 8209.0,
+   "n10_rmax_gflops": 1515000.0,
+   "n100_rmax_gflops": 243900.0,
+   "n500_rmax_gflops": 76411.0,
+   "sources": [
+    "https://www.top500.org/lists/top500/2012/11/",
+    "https://www.top500.org/lists/top500/list/2012/11/?page=1",
+    "https://www.top500.org/lists/top500/list/2012/11/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2013-06",
+   "n1": "tianhe-2",
+   "n1_system": "Tianhe-2A - TH-IVB-FEP Cluster, Intel Xeon E5-2692 12C 2.200GHz, TH Express-2, Intel Xeon Phi 31S1P",
+   "n1_rmax_gflops": 33862700.0,
+   "n1_rpeak_gflops": 54902400.0,
+   "n1_cores": 3120000,
+   "n1_power_kw": 17808.0,
+   "n10_rmax_gflops": 2897000.0,
+   "n100_rmax_gflops": 295500.0,
+   "n500_rmax_gflops": 96646.0,
+   "sources": [
+    "https://www.top500.org/lists/top500/2013/06/",
+    "https://www.top500.org/lists/top500/list/2013/06/?page=1",
+    "https://www.top500.org/lists/top500/list/2013/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2013-11",
+   "n1": "tianhe-2",
+   "n1_system": "Tianhe-2A - TH-IVB-FEP Cluster, Intel Xeon E5-2692 12C 2.200GHz, TH Express-2, Intel Xeon Phi 31S1P",
+   "n1_rmax_gflops": 33862700.0,
+   "n1_rpeak_gflops": 54902400.0,
+   "n1_cores": 3120000,
+   "n1_power_kw": 17808.0,
+   "n10_rmax_gflops": 4293310.0,
+   "n100_rmax_gflops": 334380.0,
+   "n500_rmax_gflops": 117992.0,
+   "sources": [
+    "https://www.top500.org/lists/top500/2013/11/",
+    "https://www.top500.org/lists/top500/list/2013/11/?page=1",
+    "https://www.top500.org/lists/top500/list/2013/11/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2014-06",
+   "n1": "tianhe-2",
+   "n1_system": "Tianhe-2A - TH-IVB-FEP Cluster, Intel Xeon E5-2692 12C 2.200GHz, TH Express-2, Intel Xeon Phi 31S1P",
+   "n1_rmax_gflops": 33862700.0,
+   "n1_rpeak_gflops": 54902400.0,
+   "n1_cores": 3120000,
+   "n1_power_kw": 17808.0,
+   "n10_rmax_gflops": 4293310.0,
+   "n100_rmax_gflops": 389510.0,
+   "n500_rmax_gflops": 134248.88,
+   "sources": [
+    "https://www.top500.org/lists/top500/2014/06/",
+    "https://www.top500.org/lists/top500/list/2014/06/?page=1",
+    "https://www.top500.org/lists/top500/list/2014/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2014-11",
+   "n1": "tianhe-2",
+   "n1_system": "Tianhe-2A - TH-IVB-FEP Cluster, Intel Xeon E5-2692 12C 2.200GHz, TH Express-2, Intel Xeon Phi 31S1P",
+   "n1_rmax_gflops": 33862700.0,
+   "n1_rpeak_gflops": 54902400.0,
+   "n1_cores": 3120000,
+   "n1_power_kw": 17808.0,
+   "n10_rmax_gflops": 4293310.0,
+   "n100_rmax_gflops": 489420.0,
+   "n500_rmax_gflops": 153357.9,
+   "sources": [
+    "https://www.top500.org/lists/top500/2014/11/",
+    "https://www.top500.org/lists/top500/list/2014/11/?page=1",
+    "https://www.top500.org/lists/top500/list/2014/11/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2015-06",
+   "n1": "tianhe-2",
+   "n1_system": "Tianhe-2A - TH-IVB-FEP Cluster, Intel Xeon E5-2692 12C 2.200GHz, TH Express-2, Intel Xeon Phi 31S1P",
+   "n1_rmax_gflops": 33862700.0,
+   "n1_rpeak_gflops": 54902400.0,
+   "n1_cores": 3120000,
+   "n1_power_kw": 17808.0,
+   "n10_rmax_gflops": 5008860.0,
+   "n100_rmax_gflops": 715550.0,
+   "n500_rmax_gflops": 164790.72,
+   "sources": [
+    "https://www.top500.org/lists/top500/2015/06/",
+    "https://www.top500.org/lists/top500/list/2015/06/?page=1",
+    "https://www.top500.org/lists/top500/list/2015/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2015-11",
+   "n1": "tianhe-2",
+   "n1_system": "Tianhe-2A - TH-IVB-FEP Cluster, Intel Xeon E5-2692 12C 2.200GHz, TH Express-2, Intel Xeon Phi 31S1P",
+   "n1_rmax_gflops": 33862700.0,
+   "n1_rpeak_gflops": 54902400.0,
+   "n1_cores": 3120000,
+   "n1_power_kw": 17808.0,
+   "n10_rmax_gflops": 5168110.0,
+   "n100_rmax_gflops": 829800.0,
+   "n500_rmax_gflops": 206400.0,
+   "sources": [
+    "https://www.top500.org/lists/top500/2015/11/",
+    "https://www.top500.org/lists/top500/list/2015/11/?page=1",
+    "https://www.top500.org/lists/top500/list/2015/11/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2016-06",
+   "n1": "taihulight",
+   "n1_system": "Sunway TaihuLight - Sunway MPP, Sunway SW26010 260C 1.45GHz, Sunway",
+   "n1_rmax_gflops": 93014593.88,
+   "n1_rpeak_gflops": 125435900.0,
+   "n1_cores": 10649600,
+   "n1_power_kw": 15371.0,
+   "n10_rmax_gflops": 5536990.0,
+   "n100_rmax_gflops": 978600.0,
+   "n500_rmax_gflops": 286239.7,
+   "sources": [
+    "https://www.top500.org/lists/top500/2016/06/",
+    "https://www.top500.org/lists/top500/list/2016/06/?page=1",
+    "https://www.top500.org/lists/top500/list/2016/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2016-11",
+   "n1": "taihulight",
+   "n1_system": "Sunway TaihuLight - Sunway MPP, Sunway SW26010 260C 1.45GHz, Sunway",
+   "n1_rmax_gflops": 93014593.88,
+   "n1_rpeak_gflops": 125435900.0,
+   "n1_cores": 10649600,
+   "n1_power_kw": 15371.0,
+   "n10_rmax_gflops": 8100900.0,
+   "n100_rmax_gflops": 1073330.0,
+   "n500_rmax_gflops": 350400.0,
+   "sources": [
+    "https://www.top500.org/lists/top500/2016/11/",
+    "https://www.top500.org/lists/top500/list/2016/11/?page=1",
+    "https://www.top500.org/lists/top500/list/2016/11/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2017-06",
+   "n1": "taihulight",
+   "n1_system": "Sunway TaihuLight - Sunway MPP, Sunway SW26010 260C 1.45GHz, Sunway",
+   "n1_rmax_gflops": 93014593.88,
+   "n1_rpeak_gflops": 125435900.0,
+   "n1_cores": 10649600,
+   "n1_power_kw": 15371.0,
+   "n10_rmax_gflops": 8100900.0,
+   "n100_rmax_gflops": 1214200.0,
+   "n500_rmax_gflops": 433300.0,
+   "sources": [
+    "https://www.top500.org/lists/top500/2017/06/",
+    "https://www.top500.org/lists/top500/list/2017/06/?page=1",
+    "https://www.top500.org/lists/top500/list/2017/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2017-11",
+   "n1": "taihulight",
+   "n1_system": "Sunway TaihuLight - Sunway MPP, Sunway SW26010 260C 1.45GHz, Sunway",
+   "n1_rmax_gflops": 93014593.88,
+   "n1_rpeak_gflops": 125435900.0,
+   "n1_cores": 10649600,
+   "n1_power_kw": 15371.0,
+   "n10_rmax_gflops": 10510000.0,
+   "n100_rmax_gflops": 1285600.0,
+   "n500_rmax_gflops": 548672.0,
+   "sources": [
+    "https://www.top500.org/lists/top500/2017/11/",
+    "https://www.top500.org/lists/top500/list/2017/11/?page=1",
+    "https://www.top500.org/lists/top500/list/2017/11/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2018-06",
+   "n1": "summit",
+   "n1_system": "Summit - IBM Power System AC922, IBM POWER9 22C 3.07GHz, NVIDIA Volta GV100, Dual-rail Mellanox EDR Infiniband",
+   "n1_rmax_gflops": 122300000.0,
+   "n1_rpeak_gflops": 187659270.0,
+   "n1_cores": 2282544,
+   "n1_power_kw": 8806.0,
+   "n10_rmax_gflops": 14014700.0,
+   "n100_rmax_gflops": 1703280.0,
+   "n500_rmax_gflops": 715551.0,
+   "sources": [
+    "https://www.top500.org/lists/top500/2018/06/",
+    "https://www.top500.org/lists/top500/list/2018/06/?page=1",
+    "https://www.top500.org/lists/top500/list/2018/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2018-11",
+   "n1": "summit",
+   "n1_system": "Summit - IBM Power System AC922, IBM POWER9 22C 3.07GHz, NVIDIA Volta GV100, Dual-rail Mellanox EDR Infiniband",
+   "n1_rmax_gflops": 143500000.0,
+   "n1_rpeak_gflops": 200794880.0,
+   "n1_cores": 2397824,
+   "n1_power_kw": 9783.0,
+   "n10_rmax_gflops": 17173220.0,
+   "n100_rmax_gflops": 1966080.0,
+   "n500_rmax_gflops": 874800.0,
+   "sources": [
+    "https://www.top500.org/lists/top500/2018/11/",
+    "https://www.top500.org/lists/top500/list/2018/11/?page=1",
+    "https://www.top500.org/lists/top500/list/2018/11/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ],
+   "note": "top500.org list page for 11/2018 labels Rmax/Rpeak as GFlop/s but shows TFlop/s values; converted here (x1000)."
+  },
+  {
+   "date": "2019-06",
+   "n1": "summit",
+   "n1_system": "Summit - IBM Power System AC922, IBM POWER9 22C 3.07GHz, NVIDIA Volta GV100, Dual-rail Mellanox EDR Infiniband",
+   "n1_rmax_gflops": 148600000.0,
+   "n1_rpeak_gflops": 200790000.0,
+   "n1_cores": 2414592,
+   "n1_power_kw": 10096.0,
+   "n10_rmax_gflops": 18200000.0,
+   "n100_rmax_gflops": 2400000.0,
+   "n500_rmax_gflops": 1021000.0,
+   "sources": [
+    "https://www.top500.org/lists/top500/2019/06/",
+    "https://www.top500.org/lists/top500/list/2019/06/?page=1",
+    "https://www.top500.org/lists/top500/list/2019/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2019-11",
+   "n1": "summit",
+   "n1_system": "Summit - IBM Power System AC922, IBM POWER9 22C 3.07GHz, NVIDIA Volta GV100, Dual-rail Mellanox EDR Infiniband",
+   "n1_rmax_gflops": 148600000.0,
+   "n1_rpeak_gflops": 200790000.0,
+   "n1_cores": 2414592,
+   "n1_power_kw": 10096.0,
+   "n10_rmax_gflops": 18200000.0,
+   "n100_rmax_gflops": 2570000.0,
+   "n500_rmax_gflops": 1142000.0,
+   "sources": [
+    "https://www.top500.org/lists/top500/2019/11/",
+    "https://www.top500.org/lists/top500/list/2019/11/?page=1",
+    "https://www.top500.org/lists/top500/list/2019/11/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2020-06",
+   "n1": "fugaku",
+   "n1_system": "Supercomputer Fugaku - Supercomputer Fugaku, A64FX 48C 2.2GHz, Tofu interconnect D",
+   "n1_rmax_gflops": 415530000.0,
+   "n1_rpeak_gflops": 513850000.0,
+   "n1_cores": 7299072,
+   "n1_power_kw": 28335.0,
+   "n10_rmax_gflops": 21230000.0,
+   "n100_rmax_gflops": 2800000.0,
+   "n500_rmax_gflops": 1228000.0,
+   "sources": [
+    "https://www.top500.org/lists/top500/2020/06/",
+    "https://www.top500.org/lists/top500/list/2020/06/?page=1",
+    "https://www.top500.org/lists/top500/list/2020/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2020-11",
+   "n1": "fugaku",
+   "n1_system": "Supercomputer Fugaku - Supercomputer Fugaku, A64FX 48C 2.2GHz, Tofu interconnect D",
+   "n1_rmax_gflops": 442010000.0,
+   "n1_rpeak_gflops": 537210000.0,
+   "n1_cores": 7630848,
+   "n1_power_kw": 29899.0,
+   "n10_rmax_gflops": 22400000.0,
+   "n100_rmax_gflops": 3150000.0,
+   "n500_rmax_gflops": 1316840.0,
+   "sources": [
+    "https://www.top500.org/lists/top500/2020/11/",
+    "https://www.top500.org/lists/top500/list/2020/11/?page=1",
+    "https://www.top500.org/lists/top500/list/2020/11/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2021-06",
+   "n1": "fugaku",
+   "n1_system": "Supercomputer Fugaku - Supercomputer Fugaku, A64FX 48C 2.2GHz, Tofu interconnect D",
+   "n1_rmax_gflops": 442010000.0,
+   "n1_rpeak_gflops": 537210000.0,
+   "n1_cores": 7630848,
+   "n1_power_kw": 29899.0,
+   "n10_rmax_gflops": 23520000.0,
+   "n100_rmax_gflops": 4120000.0,
+   "n500_rmax_gflops": 1511000.0,
+   "sources": [
+    "https://www.top500.org/lists/top500/2021/06/",
+    "https://www.top500.org/lists/top500/list/2021/06/?page=1",
+    "https://www.top500.org/lists/top500/list/2021/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2021-11",
+   "n1": "fugaku",
+   "n1_system": "Supercomputer Fugaku - Supercomputer Fugaku, A64FX 48C 2.2GHz, Tofu interconnect D",
+   "n1_rmax_gflops": 442010000.0,
+   "n1_rpeak_gflops": 537210000.0,
+   "n1_cores": 7630848,
+   "n1_power_kw": 29899.0,
+   "n10_rmax_gflops": 30050000.0,
+   "n100_rmax_gflops": 4790000.0,
+   "n500_rmax_gflops": 1649110.0,
+   "sources": [
+    "https://www.top500.org/lists/top500/2021/11/",
+    "https://www.top500.org/lists/top500/list/2021/11/?page=1",
+    "https://www.top500.org/lists/top500/list/2021/11/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2022-06",
+   "n1": "frontier",
+   "n1_system": "Frontier - HPE Cray EX235a, AMD Optimized 3rd Generation EPYC 64C 2GHz, AMD Instinct MI250X, Slingshot-11",
+   "n1_rmax_gflops": 1102000000.0,
+   "n1_rpeak_gflops": 1685650000.0,
+   "n1_cores": 8730112,
+   "n1_power_kw": 21100.0,
+   "n10_rmax_gflops": 46100000.0,
+   "n100_rmax_gflops": 5390000.0,
+   "n500_rmax_gflops": 1649110.0,
+   "sources": [
+    "https://www.top500.org/lists/top500/2022/06/",
+    "https://www.top500.org/lists/top500/list/2022/06/?page=1",
+    "https://www.top500.org/lists/top500/list/2022/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2022-11",
+   "n1": "frontier",
+   "n1_system": "Frontier - HPE Cray EX235a, AMD Optimized 3rd Generation EPYC 64C 2GHz, AMD Instinct MI250X, Slingshot-11",
+   "n1_rmax_gflops": 1102000000.0,
+   "n1_rpeak_gflops": 1685650000.0,
+   "n1_cores": 8730112,
+   "n1_power_kw": 21100.0,
+   "n10_rmax_gflops": 61440000.0,
+   "n100_rmax_gflops": 5780000.0,
+   "n500_rmax_gflops": 1729000.0,
+   "sources": [
+    "https://www.top500.org/lists/top500/2022/11/",
+    "https://www.top500.org/lists/top500/list/2022/11/?page=1",
+    "https://www.top500.org/lists/top500/list/2022/11/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2023-06",
+   "n1": "frontier",
+   "n1_system": "Frontier - HPE Cray EX235a, AMD Optimized 3rd Generation EPYC 64C 2GHz, AMD Instinct MI250X, Slingshot-11",
+   "n1_rmax_gflops": 1194000000.0,
+   "n1_rpeak_gflops": 1679820000.0,
+   "n1_cores": 8699904,
+   "n1_power_kw": 22703.0,
+   "n10_rmax_gflops": 61440000.0,
+   "n100_rmax_gflops": 6320000.0,
+   "n500_rmax_gflops": 1872000.0,
+   "sources": [
+    "https://www.top500.org/lists/top500/2023/06/",
+    "https://www.top500.org/lists/top500/list/2023/06/?page=1",
+    "https://www.top500.org/lists/top500/list/2023/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2023-11",
+   "n1": "frontier",
+   "n1_system": "Frontier - HPE Cray EX235a, AMD Optimized 3rd Generation EPYC 64C 2GHz, AMD Instinct MI250X, Slingshot-11",
+   "n1_rmax_gflops": 1194000000.0,
+   "n1_rpeak_gflops": 1679820000.0,
+   "n1_cores": 8699904,
+   "n1_power_kw": 22703.0,
+   "n10_rmax_gflops": 94640000.0,
+   "n100_rmax_gflops": 7840000.0,
+   "n500_rmax_gflops": 2014460.0,
+   "sources": [
+    "https://www.top500.org/lists/top500/2023/11/",
+    "https://www.top500.org/lists/top500/list/2023/11/?page=1",
+    "https://www.top500.org/lists/top500/list/2023/11/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2024-06",
+   "n1": "frontier",
+   "n1_system": "Frontier - HPE Cray EX235a, AMD Optimized 3rd Generation EPYC 64C 2GHz, AMD Instinct MI250X, Slingshot-11",
+   "n1_rmax_gflops": 1206000000.0,
+   "n1_rpeak_gflops": 1714810000.0,
+   "n1_cores": 8699904,
+   "n1_power_kw": 22786.0,
+   "n10_rmax_gflops": 121400000.0,
+   "n100_rmax_gflops": 9440000.0,
+   "n500_rmax_gflops": 2129920.0,
+   "sources": [
+    "https://www.top500.org/lists/top500/2024/06/",
+    "https://www.top500.org/lists/top500/list/2024/06/?page=1",
+    "https://www.top500.org/lists/top500/list/2024/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2024-11",
+   "n1": "el-capitan",
+   "n1_system": "El Capitan - HPE Cray EX255a, AMD 4th Gen EPYC 24C 1.8GHz, AMD Instinct MI300A, Slingshot-11, TOSS",
+   "n1_rmax_gflops": 1742000000.0,
+   "n1_rpeak_gflops": 2746380000.0,
+   "n1_cores": 11039616,
+   "n1_power_kw": 29581.0,
+   "n10_rmax_gflops": 208100000.0,
+   "n100_rmax_gflops": 12210000.0,
+   "n500_rmax_gflops": 2310230.0,
+   "sources": [
+    "https://www.top500.org/lists/top500/2024/11/",
+    "https://www.top500.org/lists/top500/list/2024/11/?page=1",
+    "https://www.top500.org/lists/top500/list/2024/11/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2025-06",
+   "n1": "el-capitan",
+   "n1_system": "El Capitan - HPE Cray EX255a, AMD 4th Gen EPYC 24C 1.8GHz, AMD Instinct MI300A, Slingshot-11, TOSS",
+   "n1_rmax_gflops": 1742000000.0,
+   "n1_rpeak_gflops": 2746380000.0,
+   "n1_cores": 11039616,
+   "n1_power_kw": 29581.0,
+   "n10_rmax_gflops": 241200000.0,
+   "n100_rmax_gflops": 16590000.0,
+   "n500_rmax_gflops": 2435000.0,
+   "sources": [
+    "https://www.top500.org/lists/top500/2025/06/",
+    "https://www.top500.org/lists/top500/list/2025/06/?page=1",
+    "https://www.top500.org/lists/top500/list/2025/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2025-11",
+   "n1": "el-capitan",
+   "n1_system": "El Capitan - HPE Cray EX255a, AMD 4th Gen EPYC 24C 1.8GHz, AMD Instinct MI300A, Slingshot-11, TOSS",
+   "n1_rmax_gflops": 1809000000.0,
+   "n1_rpeak_gflops": 2821100000.0,
+   "n1_cores": 11340000,
+   "n1_power_kw": 29685.0,
+   "n10_rmax_gflops": 241200000.0,
+   "n100_rmax_gflops": 18080000.0,
+   "n500_rmax_gflops": 2574020.0,
+   "sources": [
+    "https://www.top500.org/lists/top500/2025/11/",
+    "https://www.top500.org/lists/top500/list/2025/11/?page=1",
+    "https://www.top500.org/lists/top500/list/2025/11/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2026-06",
+   "n1": "lineshine",
+   "n1_system": "LineShine - LingKun, LX2 304C 1.55GHz, LingQi, Kylin OS",
+   "n1_rmax_gflops": 2198400000.0,
+   "n1_rpeak_gflops": 2735820000.0,
+   "n1_cores": 13789440,
+   "n1_power_kw": 42220.0,
+   "n10_rmax_gflops": 434900000.0,
+   "n100_rmax_gflops": 21850000.0,
+   "n500_rmax_gflops": 2661460.0,
+   "sources": [
+    "https://www.top500.org/lists/top500/2026/06/",
+    "https://www.top500.org/lists/top500/list/2026/06/?page=1",
+    "https://www.top500.org/lists/top500/list/2026/06/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  },
+  {
+   "date": "2026-11",
+   "n1": "lineshine",
+   "n1_system": "LineShine - LingKun, LX2 304C 1.55GHz, LingQi, Kylin OS",
+   "n1_rmax_gflops": 2198400000.0,
+   "n1_rpeak_gflops": 2735820000.0,
+   "n1_cores": 13789440,
+   "n1_power_kw": 42220.0,
+   "n10_rmax_gflops": 434900000.0,
+   "n100_rmax_gflops": 23240000.0,
+   "n500_rmax_gflops": 2867640.0,
+   "sources": [
+    "https://www.top500.org/lists/top500/2026/11/",
+    "https://www.top500.org/lists/top500/list/2026/11/?page=1",
+    "https://www.top500.org/lists/top500/list/2026/11/?page=5",
+    "https://www.top500.org/statistics/perfdev/"
+   ]
+  }
+ ],
+ "rank_curve": {
+  "1993-06": [
+   [
+    1,
+    59.7
+   ],
+   [
+    10,
+    13.7
+   ],
+   [
+    25,
+    7.7
+   ],
+   [
+    50,
+    4.0
+   ],
+   [
+    100,
+    2.14
+   ],
+   [
+    200,
+    1.41
+   ],
+   [
+    300,
+    0.84
+   ],
+   [
+    400,
+    0.6
+   ],
+   [
+    500,
+    0.42
+   ]
+  ],
+  "1993-11": [
+   [
+    1,
+    124.0
+   ],
+   [
+    10,
+    15.1
+   ],
+   [
+    25,
+    13.7
+   ],
+   [
+    50,
+    6.2
+   ],
+   [
+    100,
+    2.6
+   ],
+   [
+    200,
+    1.84
+   ],
+   [
+    300,
+    1.16
+   ],
+   [
+    400,
+    0.74
+   ],
+   [
+    500,
+    0.47
+   ]
+  ],
+  "1994-06": [
+   [
+    1,
+    143.4
+   ],
+   [
+    10,
+    27.5
+   ],
+   [
+    25,
+    15.1
+   ],
+   [
+    50,
+    11.6
+   ],
+   [
+    100,
+    5.2
+   ],
+   [
+    200,
+    2.14
+   ],
+   [
+    300,
+    1.75
+   ],
+   [
+    400,
+    1.16
+   ],
+   [
+    500,
+    0.84
+   ]
+  ],
+  "1996-11": [
+   [
+    1,
+    368.2
+   ],
+   [
+    10,
+    94.3
+   ],
+   [
+    25,
+    52.3
+   ],
+   [
+    50,
+    30.71
+   ],
+   [
+    100,
+    15.35
+   ],
+   [
+    200,
+    9.53
+   ],
+   [
+    300,
+    6.57
+   ],
+   [
+    400,
+    5.65
+   ],
+   [
+    500,
+    4.62
+   ]
+  ]
+ },
+ "machines": [
+  {
+   "id": "cray-1",
+   "kind": "pre1993",
+   "name": "Cray-1",
+   "system": "Cray-1 (LINPACK figures measured on Cray-1S, same 12.5 ns CPU)",
+   "vendor": "Cray Research",
+   "site": "Los Alamos Scientific Laboratory (serial 1, 1976 trial); NCAR (serial 3, 1977, first official customer)",
+   "country": "United States",
+   "year": 1976,
+   "lists_at_1": [],
+   "rmax_gflops": 0.11,
+   "rpeak_gflops": 0.16,
+   "linpack_kind": "LINPACK TPP n=1000 (Dongarra report, 15 June 2014 edition; Cray-1S, 12.5 ns)",
+   "processors": 1,
+   "power_kw": 115,
+   "cost": "US$8.86 million (NCAR, 1977: $7.9M system + about $1M disks)",
+   "linpack_detail": {
+    "linpack_n100_mflops": 27,
+    "linpack_n100_compiler": "cf77 2.1",
+    "linpack_n100_mflops_1983_run": 12,
+    "linpack_n100_1983_compiler": "CFT 1.12",
+    "tpp_n1000_mflops": 110,
+    "peak_mflops": 160,
+    "power_note": "Russell (CACM 1978): 'Power consumption approximately 115 kw input for maximum memory size'; NCAR also lists 115 kW. Freon-cooled with a Freon/water heat exchange. The figure is the machine's electrical input; it is not stated to include the external refrigeration/condensing units or motor-generator losses."
+   },
+   "story": "The first Cray-1 went to Los Alamos in 1976 for a six-month trial. NCAR became the first paying customer in 1977. At NCAR it did about 4.5 times the work of the CDC 7600 it joined. NCAR says it allowed big advances in modeling climate and severe storms, and it ran there for almost 12 years.",
+   "sources": [
+    "https://www.netlib.org/benchmark/performance.pdf",
+    "https://cisl.ucar.edu/supercomputer/c1",
+    "https://www.eecg.utoronto.ca/~moshovos/ACA05/read/cray1.pdf",
+    "https://en.wikipedia.org/wiki/Cray-1"
+   ],
+   "uncertain": [
+    "power_kw: whether the 115 kW includes cooling plant and motor-generator losses is not stated (it most likely excludes the external refrigeration)",
+    "linpack: Dongarra's table lists Cray-1S, not the original Cray-1/1A; the CPU (12.5 ns, 160 MFLOP/s peak) is the same",
+    "TPP 110 MFLOP/s: run date not given in the report",
+    "Los Alamos exact install/acceptance date (March vs April 1976) not verified from a primary LANL page"
+   ],
+   "cost_usd": 8860000,
+   "cost_year": 1977
+  },
+  {
+   "id": "cray-xmp",
+   "kind": "pre1993",
+   "name": "Cray X-MP",
+   "system": "Cray X-MP/416 (4 proc., 8.5 ns)",
+   "vendor": "Cray Research",
+   "site": "introduced 1982; NCAR X-MP/48 from 1986",
+   "country": "United States",
+   "year": 1982,
+   "lists_at_1": [],
+   "rmax_gflops": 0.822,
+   "rpeak_gflops": 0.94,
+   "linpack_kind": "LINPACK TPP n=1000 (Dongarra report, 15 June 2014 edition; X-MP/416, 4 proc., 8.5 ns)",
+   "processors": 4,
+   "power_kw": null,
+   "cost": "US$14.6 million for X-MP/48 + I/O subsystem, plus $3.5M SSD and $2M disks (NCAR, 1986)",
+   "linpack_detail": {
+    "linpack_n100_mflops": 178,
+    "tpp_n1000_mflops": 822,
+    "peak_mflops": 940
+   },
+   "story": "The X-MP put up to four Cray processors in one cabinet sharing memory. NCAR got an X-MP/48 in 1986 for its atmospheric research. In 1987 NCAR's Community Climate Model became the first of its models to use all four processors at once. It ran 3.7 times faster than on one processor.",
+   "sources": [
+    "https://www.netlib.org/benchmark/performance.pdf",
+    "https://cisl.ucar.edu/supercomputer/cx"
+   ],
+   "uncertain": [
+    "year: 1982 is the X-MP introduction (2-processor); the 4-processor X-MP/48 came in 1984; the measured X-MP/416 is a later 8.5 ns model",
+    "power_kw: no public figure found",
+    "price: the commonly quoted 'US$15 million' list price was not verified from a primary source; NCAR's 1986 contract figure is given"
+   ]
+  },
+  {
+   "id": "cray-2",
+   "kind": "pre1993",
+   "name": "Cray-2",
+   "system": "Cray-2/4-256 (4 proc., 4.1 ns)",
+   "vendor": "Cray Research",
+   "site": "National Magnetic Fusion Energy Computer Center, Lawrence Livermore (first delivery, 1985)",
+   "country": "United States",
+   "year": 1985,
+   "lists_at_1": [],
+   "rmax_gflops": 1.226,
+   "rpeak_gflops": 1.951,
+   "linpack_kind": "LINPACK TPP n=1000 (Dongarra report, 15 June 2014 edition)",
+   "processors": 4,
+   "power_kw": null,
+   "cost": "US$12-17 million each (Computer History Museum)",
+   "linpack_detail": {
+    "linpack_n100_mflops": 62,
+    "tpp_n1000_mflops": 1226,
+    "peak_mflops": 1951
+   },
+   "story": "The Cray-2 packed its circuit boards in a bath of Fluorinert liquid to carry away heat. The first one went to the U.S. magnetic fusion energy computer center at Livermore in 1985. It had more memory than any earlier Cray, so scientists could run much larger problems.",
+   "sources": [
+    "https://www.netlib.org/benchmark/performance.pdf",
+    "https://www.computerhistory.org/revolution/supercomputers/10/68",
+    "https://en.wikipedia.org/wiki/Cray-2"
+   ],
+   "uncertain": [
+    "power_kw: no primary figure found (150-200 kW appears only on an unofficial page)",
+    "site/date of first delivery taken from Wikipedia and a secondary history page, not a primary source",
+    "memory claim (256 Mword, more than all earlier Crays combined) from secondary sources"
+   ]
+  },
+  {
+   "id": "cray-y-mp",
+   "kind": "pre1993",
+   "name": "Cray Y-MP",
+   "system": "Cray Y-MP/832 (8 proc., 6 ns)",
+   "vendor": "Cray Research",
+   "site": "introduced 1988; NCAR Y-MP8/864 from 1990",
+   "country": "United States",
+   "year": 1988,
+   "lists_at_1": [],
+   "rmax_gflops": 2.144,
+   "rpeak_gflops": 2.667,
+   "linpack_kind": "LINPACK TPP n=1000 (Dongarra report, 15 June 2014 edition)",
+   "processors": 8,
+   "power_kw": 120,
+   "cost": null,
+   "linpack_detail": {
+    "linpack_n100_mflops": 275,
+    "tpp_n1000_mflops": 2144,
+    "peak_mflops": 2667,
+    "power_note": "120 kW is NCAR's listed electrical consumption for its Y-MP8/864 'Shavano' (1990-1997)."
+   },
+   "story": "The Y-MP had up to eight vector processors. NCAR ran a Y-MP8 named Shavano from 1990 to 1997 as its main computer. On an NCAR ocean model it set an industry record by sustaining more than 1 GFLOP/s.",
+   "sources": [
+    "https://www.netlib.org/benchmark/performance.pdf",
+    "https://cisl.ucar.edu/supercomputer/shavano"
+   ],
+   "uncertain": [
+    "cost: no public price found",
+    "first customer (NASA Ames, per secondary sources) not verified"
+   ]
+  },
+  {
+   "id": "nec-sx-3",
+   "kind": "pre1993",
+   "name": "NEC SX-3",
+   "system": "NEC SX-3/44 (4 proc., 2.9 ns)",
+   "vendor": "NEC",
+   "site": null,
+   "country": "Japan",
+   "year": 1990,
+   "lists_at_1": [],
+   "rmax_gflops": 20.0,
+   "rpeak_gflops": 22.0,
+   "linpack_kind": "Rmax, highly parallel LINPACK (Dongarra report, 15 June 2014 edition, Table 3); TPP n=1000 = 13.42 GFLOP/s",
+   "processors": 4,
+   "power_kw": null,
+   "cost": null,
+   "linpack_detail": {
+    "tpp_n1000_mflops": 13420,
+    "peak_mflops": 22000,
+    "rmax_highly_parallel_gflops": 20.0,
+    "nmax": 6144,
+    "later_model": "SX-3/44R (2.5 ns): TPP 15,120 MFLOP/s, Rmax 23.2 GFLOP/s, peak 25.6 GFLOP/s"
+   },
+   "story": "NEC announced the SX-3 vector supercomputer in 1989 and shipped it in 1990. Its top model linked four processors for a claimed 22 GFLOP/s peak. In Dongarra's LINPACK tables the 4-processor SX-3/44 reaches 13.4 GFLOP/s on the n=1000 test.",
+   "sources": [
+    "https://www.netlib.org/benchmark/performance.pdf",
+    "https://en.wikipedia.org/wiki/NEC_SX",
+    "https://paperspast.natlib.govt.nz/newspapers/CHP19890516.2.138.4"
+   ],
+   "uncertain": [
+    "year: 1990 ship date from Wikipedia and a 1989 trade report, not an NEC primary source",
+    "site, power, cost and application story not verified",
+    "whether it was the fastest machine by LINPACK in 1990 is not established"
+   ],
+   "tpp_gflops": 13.42
+  },
+  {
+   "id": "cray-c90",
+   "kind": "pre1993",
+   "name": "Cray C90",
+   "system": "Cray C90 (16 proc., 4.2 ns)",
+   "vendor": "Cray Research",
+   "site": null,
+   "country": "United States",
+   "year": 1991,
+   "lists_at_1": [],
+   "rmax_gflops": 13.7,
+   "rpeak_gflops": 15.238,
+   "linpack_kind": "Rmax, highly parallel LINPACK (Dongarra report, 15 June 2014 edition, Table 3); TPP n=1000 = 10.78 GFLOP/s",
+   "processors": 16,
+   "power_kw": 493.5,
+   "cost": null,
+   "linpack_detail": {
+    "linpack_n100_mflops": 479,
+    "tpp_n1000_mflops": 10780,
+    "peak_mflops": 15238,
+    "rmax_highly_parallel_gflops": 13.7,
+    "rmax_note": "Table 3 also lists 20.65 GFLOP/s for a 16-proc C90 using Strassen's algorithm (rate counted with 2n^3/3 flops, so above peak); not used.",
+    "power_note": "493.5 kW is NCAR's listed electrical consumption for its 16-processor C90 (in use 1997-1999), a site figure."
+   },
+   "story": "The C90 was Cray Research's top vector machine of the early 1990s, with up to 16 processors. NCAR ran a 16-processor C90 for atmospheric research from 1997 to 1999.",
+   "sources": [
+    "https://www.netlib.org/benchmark/performance.pdf",
+    "https://cisl.ucar.edu/supercomputer/antero2",
+    "https://en.wikipedia.org/wiki/Cray_C90"
+   ],
+   "uncertain": [
+    "cost: no public price found",
+    "power_kw: site figure from NCAR, may include peripherals",
+    "year 1991 from Wikipedia",
+    "story: no specific application result verified"
+   ],
+   "tpp_gflops": 10.78
+  },
+  {
+   "id": "touchstone-delta",
+   "kind": "pre1993",
+   "name": "Intel Touchstone Delta",
+   "system": "Intel Delta (512 proc., i860, 40 MHz)",
+   "vendor": "Intel",
+   "site": "Caltech (Concurrent Supercomputing Consortium)",
+   "country": "United States",
+   "year": 1991,
+   "lists_at_1": [],
+   "rmax_gflops": 13.9,
+   "rpeak_gflops": 20.0,
+   "linpack_kind": "Rmax highly parallel (Dongarra report Table 3, 15 June 2014 edition; Nmax 25,000)",
+   "processors": 512,
+   "power_kw": null,
+   "cost": null,
+   "linpack_detail": {
+    "rmax_gflops": 13.9,
+    "nmax": 25000,
+    "rpeak_gflops_report": 20.0,
+    "rpeak_gflops_top500": 20.48,
+    "tpp_n1000_mflops": 446
+   },
+   "story": "The Touchstone Delta was a research machine with 512 Intel i860 processors in a mesh. A consortium led by Caltech used it to process satellite images and to model molecules for AIDS research. It led to Intel's Paragon line.",
+   "sources": [
+    "https://www.netlib.org/benchmark/performance.pdf",
+    "https://www.computerhistory.org/revolution/supercomputers/10/74/288",
+    "https://www.top500.org/system/167140",
+    "https://www.top500.org/resources/top-systems/intel-xps-140-paragon-sandia-national-labs"
+   ],
+   "uncertain": [
+    "processors: a 1990 JPL release says 528 i860 units; Dongarra and TOP500 list 512 compute processors",
+    "power_kw, cost not found",
+    "applications from a JPL release and CHM via search summary"
+   ]
+  },
+  {
+   "id": "cm-5",
+   "kind": "top500",
+   "name": "CM-5",
+   "system": "CM-5/1024",
+   "vendor": "Thinking Machines Corporation",
+   "site": "Los Alamos National Laboratory",
+   "country": "United States",
+   "year": 1993,
+   "lists_at_1": [
+    "1993-06"
+   ],
+   "rmax_gflops": 59.7,
+   "rpeak_gflops": 131.0,
+   "linpack_kind": "HPL Rmax (TOP500)",
+   "processors": 1024,
+   "power_kw": null,
+   "cost": null,
+   "best_list": "1993-06",
+   "story": "Los Alamos used the CM-5 for large physics simulations. A Los Alamos molecular dynamics code (SPaSM) sustained about 50 GFLOP/s on the 1,024-node machine. The same work showed that simulations with more than 100 million particles had become possible. Such runs follow how materials deform and break atom by atom.",
+   "sources": [
+    "https://www.top500.org/lists/top500/1993/06/",
+    "https://www.top500.org/system/166997",
+    "https://www.top500.org/resources/top-systems/cm-5-los-alamos-national-lab",
+    "https://www.osti.gov/biblio/46248-gflops-molecular-dynamics-connection-machine",
+    "https://arxiv.org/abs/comp-gas/9303002"
+   ],
+   "uncertain": [
+    "story: 'how materials deform and break' is a general description of short-range MD use, not quoted from the sources"
+   ]
+  },
+  {
+   "id": "nwt",
+   "kind": "top500",
+   "name": "Numerical Wind Tunnel",
+   "system": "Numerical Wind Tunnel",
+   "vendor": "Fujitsu",
+   "site": "National Aerospace Laboratory of Japan",
+   "country": "Japan",
+   "year": 1993,
+   "lists_at_1": [
+    "1993-11",
+    "1994-11",
+    "1995-06",
+    "1995-11"
+   ],
+   "rmax_gflops": 170.0,
+   "rpeak_gflops": 235.79,
+   "linpack_kind": "HPL Rmax (TOP500)",
+   "processors": 140,
+   "power_kw": null,
+   "cost": null,
+   "best_list": "1994-11",
+   "story": "Japan's National Aerospace Laboratory and Fujitsu built the NWT to replace much wind-tunnel testing with computer simulation. Engineers used it to compute air flow over wings, wing-body shapes and full aircraft. It sustained close to 100 GFLOP/s on a wide range of fluid dynamics programs.",
+   "sources": [
+    "https://www.top500.org/lists/top500/1994/11/",
+    "https://www.top500.org/system/173279",
+    "https://www.top500.org/resources/top-systems/numerical-wind-tunnel-national-aerospace-laborator",
+    "https://museum.ipsj.or.jp/en/computer/super/0020.html",
+    "https://www.fujitsu.com/global/documents/about/resources/publications/fstj/archives/vol53-3/paper03.pdf"
+   ],
+   "uncertain": [
+    "processors: TOP500 list pages show 140 cores for every NWT entry, while TOP500's own #1 summary says the 170 GFLOP/s run used an upgraded 167-processor system",
+    "rmax: TOP500 #1 summary page says 124.2 GFLOP/s for 11/1993; list page and perf-dev data say 124.0 (used)",
+    "current TOP500 system page 173279 shows a later Rmax of 191.98 GFLOP/s (not a #1 figure)"
+   ]
+  },
+  {
+   "id": "paragon-xps140",
+   "kind": "top500",
+   "name": "Paragon XP/S 140",
+   "system": "XP/S140 (Intel Paragon)",
+   "vendor": "Intel",
+   "site": "Sandia National Laboratories",
+   "country": "United States",
+   "year": 1993,
+   "lists_at_1": [
+    "1994-06"
+   ],
+   "rmax_gflops": 143.4,
+   "rpeak_gflops": 184.0,
+   "linpack_kind": "HPL Rmax (TOP500)",
+   "processors": 3680,
+   "power_kw": null,
+   "cost": null,
+   "best_list": "1994-06",
+   "story": "Sandia's Paragon was the first massively parallel machine that was clearly the fastest in the world. In 1994 Sandia researchers simulated comet Shoemaker-Levy 9 hitting Jupiter on a Paragon. They predicted fireballs visible from Earth, and Hubble observations later matched the predicted plumes.",
+   "sources": [
+    "https://www.top500.org/lists/top500/1994/06/",
+    "https://www.top500.org/system/172538",
+    "https://www.top500.org/resources/top-systems/intel-xps-140-paragon-sandia-national-labs",
+    "https://www.unm.edu/~mbeb/Publications/Crawford%20et%20al.%20-%201994%20-%20The%20impact%20of%20comet%20Shoemaker-Levy%209%20on%20Jupiter.pdf",
+    "https://www.sandia.gov/media/facts23.htm",
+    "https://newsreleases.sandia.gov/?p=106250"
+   ],
+   "uncertain": [
+    "story: the 1994 comet runs used an 1,840-processor Intel Paragon at Sandia per Crawford et al.; whether this was a partition of the XP/S 140 is not verified"
+   ]
+  },
+  {
+   "id": "sr2201",
+   "kind": "top500",
+   "name": "Hitachi SR2201",
+   "system": "SR2201/1024",
+   "vendor": "Hitachi",
+   "site": "University of Tokyo",
+   "country": "Japan",
+   "year": 1996,
+   "lists_at_1": [
+    "1996-06"
+   ],
+   "rmax_gflops": 220.4,
+   "rpeak_gflops": 307.2,
+   "linpack_kind": "HPL Rmax (TOP500)",
+   "processors": 1024,
+   "power_kw": null,
+   "cost": null,
+   "best_list": "1996-06",
+   "story": "The SR2201 was a distributed-memory parallel computer with 1,024 processors at the University of Tokyo. Its HARP-1E processors used pseudo vector processing to stream data past the cache. This let a RISC-based machine run vector-style scientific codes efficiently.",
+   "sources": [
+    "https://www.top500.org/lists/top500/1996/06/",
+    "https://www.top500.org/system/170731",
+    "https://www.top500.org/resources/top-systems/hitachi-sr2201-university-of-tokyo"
+   ],
+   "uncertain": [
+    "rmax: TOP500 #1 summary page and current system page say 232.4 GFLOP/s; the June 1996 list page and perf-dev data say 220.4 (used)",
+    "story: specific scientific applications at the University of Tokyo not verified"
+   ]
+  },
+  {
+   "id": "cp-pacs",
+   "kind": "top500",
+   "name": "CP-PACS",
+   "system": "CP-PACS/2048",
+   "vendor": "Hitachi / University of Tsukuba",
+   "site": "Center for Computational Sciences, University of Tsukuba",
+   "country": "Japan",
+   "year": 1996,
+   "lists_at_1": [
+    "1996-11"
+   ],
+   "rmax_gflops": 368.2,
+   "rpeak_gflops": 614.4,
+   "linpack_kind": "HPL Rmax (TOP500)",
+   "processors": 2048,
+   "power_kw": null,
+   "cost": null,
+   "best_list": "1996-11",
+   "story": "Physicists and computer scientists at Tsukuba designed CP-PACS together for computational physics. Its main job was lattice QCD, the theory of quarks and gluons. It computed the masses of light hadrons and estimated light quark masses from first principles.",
+   "sources": [
+    "https://www.top500.org/lists/top500/1996/11/",
+    "https://www.top500.org/system/167078",
+    "https://www.top500.org/resources/top-systems/cp-pacs-university-of-tsukuba",
+    "https://arxiv.org/abs/hep-lat/0002024",
+    "https://arxiv.org/abs/hep-lat/9608148"
+   ],
+   "uncertain": []
+  },
+  {
+   "id": "asci-red",
+   "kind": "top500",
+   "name": "ASCI Red",
+   "system": "ASCI Red",
+   "vendor": "Intel",
+   "site": "Sandia National Laboratories",
+   "country": "United States",
+   "year": 1997,
+   "lists_at_1": [
+    "1997-06",
+    "1997-11",
+    "1998-06",
+    "1998-11",
+    "1999-06",
+    "1999-11",
+    "2000-06"
+   ],
+   "rmax_gflops": 2379.0,
+   "rpeak_gflops": 3207.0,
+   "linpack_kind": "HPL Rmax (TOP500)",
+   "processors": 9632,
+   "power_kw": null,
+   "cost": null,
+   "best_list": "1999-11",
+   "story": "ASCI Red was the first computer to pass 1 TFLOP/s on LINPACK. The U.S. stopped nuclear testing in 1992, so the weapons labs needed simulation instead. ASCI Red modeled the 3D physics of weapons and how stockpile parts age. It was upgraded twice and led seven TOP500 lists.",
+   "sources": [
+    "https://www.top500.org/lists/top500/1999/11/",
+    "https://www.top500.org/system/168750",
+    "https://www.top500.org/system/168753",
+    "https://www.top500.org/resources/top-systems/asci-red-sandia-national-laboratory",
+    "https://newsreleases.sandia.gov/?p=102794",
+    "https://www.sandia.gov/labnews/2024/10/31/sandias-heritage-in-advanced-simulation-and-computing/"
+   ],
+   "uncertain": []
+  },
+  {
+   "id": "asci-white",
+   "kind": "top500",
+   "name": "ASCI White",
+   "system": "ASCI White, SP Power3 375 MHz",
+   "vendor": "IBM",
+   "site": "Lawrence Livermore National Laboratory",
+   "country": "United States",
+   "year": 2000,
+   "lists_at_1": [
+    "2000-11",
+    "2001-06",
+    "2001-11"
+   ],
+   "rmax_gflops": 7226.0,
+   "rpeak_gflops": 12288.0,
+   "linpack_kind": "HPL Rmax (TOP500)",
+   "processors": 8192,
+   "power_kw": null,
+   "cost": null,
+   "best_list": "2001-06",
+   "story": "ASCI White served the U.S. stockpile stewardship program. In 2002 Livermore and Los Alamos ran the first full-system 3D simulations of a nuclear weapon explosion on it. The Livermore run used more than 1,024 processors and took 39 days.",
+   "sources": [
+    "https://www.top500.org/lists/top500/2001/06/",
+    "https://www.top500.org/system/172411",
+    "https://www.top500.org/resources/top-systems/asci-white-lawrence-livermore-national-laboratory",
+    "https://www.llnl.gov/article/28761/livermore-los-alamos-labs-complete-first-3-d-simulation-full-system-nuclear-weapon"
+   ],
+   "uncertain": []
+  },
+  {
+   "id": "earth-simulator",
+   "kind": "top500",
+   "name": "Earth Simulator",
+   "system": "Earth-Simulator",
+   "vendor": "NEC",
+   "site": "Earth Simulator Center (JAMSTEC), Yokohama",
+   "country": "Japan",
+   "year": 2002,
+   "lists_at_1": [
+    "2002-06",
+    "2002-11",
+    "2003-06",
+    "2003-11",
+    "2004-06"
+   ],
+   "rmax_gflops": 35860.0,
+   "rpeak_gflops": 40960.0,
+   "linpack_kind": "HPL Rmax (TOP500)",
+   "processors": 5120,
+   "power_kw": 3200.0,
+   "cost": "60 billion yen (project cost, per TOP500)",
+   "best_list": "2002-06",
+   "story": "Japan built the Earth Simulator to model global climate and solid-earth problems. It ran global atmosphere simulations with grid spacing near 10 km. Its LINPACK score was almost five times that of the previous #1, and it held the top spot for five lists.",
+   "sources": [
+    "https://www.top500.org/lists/top500/2002/06/",
+    "https://www.top500.org/system/167148",
+    "https://www.top500.org/resources/top-systems/the-earth-simulator-earth-simulator-center",
+    "https://www.jamstec.go.jp/es/en/output/publication/journal/jes_vol.1/pdf/JES1-2.pdf"
+   ],
+   "uncertain": [
+    "story: TOP500's summary says it ran coupled atmosphere-ocean simulations down to 10 km; only 10 km atmosphere (AFES) runs were confirmed from a JAMSTEC paper (via search summary)",
+    "power_kw: 3,200 kW appears in current TOP500 list data; power was not part of the original 2002 lists"
+   ]
+  },
+  {
+   "id": "bluegene-l",
+   "kind": "top500",
+   "name": "BlueGene/L",
+   "system": "BlueGene/L - eServer Blue Gene Solution",
+   "vendor": "IBM",
+   "site": "Lawrence Livermore National Laboratory (11/2004 entry: beta system at IBM Rochester)",
+   "country": "United States",
+   "year": 2004,
+   "lists_at_1": [
+    "2004-11",
+    "2005-06",
+    "2005-11",
+    "2006-06",
+    "2006-11",
+    "2007-06",
+    "2007-11"
+   ],
+   "rmax_gflops": 478200.0,
+   "rpeak_gflops": 596380.0,
+   "linpack_kind": "HPL Rmax (TOP500)",
+   "processors": 212992,
+   "power_kw": 2329.0,
+   "cost": null,
+   "best_list": "2007-11",
+   "story": "BlueGene/L used many slow, low-power processors instead of a few fast ones. It ran stockpile science at Livermore. In 2005 a team won the Gordon Bell Prize for atom-by-atom simulations of molten tantalum and uranium freezing under high pressure. The runs used up to 524 million atoms.",
+   "sources": [
+    "https://www.top500.org/lists/top500/2007/11/",
+    "https://www.top500.org/system/173632",
+    "https://www.top500.org/system/175171",
+    "https://www.top500.org/resources/top-systems/bluegenel-lawrence-livermore-national-laboratory",
+    "https://www.llnl.gov/news/breakthrough-3d-simulations-win-prestigious-2005-gordon-bell-prize"
+   ],
+   "uncertain": []
+  },
+  {
+   "id": "roadrunner",
+   "kind": "top500",
+   "name": "Roadrunner",
+   "system": "Roadrunner - BladeCenter QS22/LS21 Cluster, PowerXCell 8i / Opteron",
+   "vendor": "IBM",
+   "site": "Los Alamos National Laboratory",
+   "country": "United States",
+   "year": 2008,
+   "lists_at_1": [
+    "2008-06",
+    "2008-11",
+    "2009-06"
+   ],
+   "rmax_gflops": 1105000.0,
+   "rpeak_gflops": 1456700.0,
+   "linpack_kind": "HPL Rmax (TOP500)",
+   "processors": 129600,
+   "power_kw": 2483.0,
+   "cost": null,
+   "best_list": "2008-11",
+   "story": "Roadrunner was the first computer to pass 1 PFLOP/s on LINPACK. It paired AMD Opteron chips with IBM Cell processors, a relative of the PlayStation 3 chip. Its main job was nuclear weapons simulation, including how nuclear materials age. It also ran science from virus models to the distant universe, and it was retired in 2013.",
+   "sources": [
+    "https://www.top500.org/lists/top500/2008/11/",
+    "https://www.top500.org/system/176026",
+    "https://www.top500.org/system/176028",
+    "https://www.top500.org/resources/top-systems/roadrunner-los-alamos-national-laboratory",
+    "https://physicstoday.aip.org/news/worlds-first-petaflop-capable-supercomputer-is-retired",
+    "https://www.theregister.com/2013/04/01/los_alamos_decommissions_roadrunner/"
+   ],
+   "uncertain": []
+  },
+  {
+   "id": "jaguar",
+   "kind": "top500",
+   "name": "Jaguar",
+   "system": "Jaguar - Cray XT5-HE Opteron 6-core 2.6 GHz",
+   "vendor": "Cray",
+   "site": "Oak Ridge National Laboratory",
+   "country": "United States",
+   "year": 2009,
+   "lists_at_1": [
+    "2009-11",
+    "2010-06"
+   ],
+   "rmax_gflops": 1759000.0,
+   "rpeak_gflops": 2331000.0,
+   "linpack_kind": "HPL Rmax (TOP500)",
+   "processors": 224162,
+   "power_kw": 6950.0,
+   "cost": null,
+   "best_list": "2009-11",
+   "story": "Jaguar was an open-science machine at Oak Ridge. In 2009 nearly 30 research teams used it for climate, chemistry, materials, combustion and fusion work. One team ran century-long simulations of ocean and atmosphere circulation. A 2008 Gordon Bell Prize run on Jaguar simulated superconductors at 1.35 PFLOP/s.",
+   "sources": [
+    "https://www.top500.org/lists/top500/2009/11/",
+    "https://www.top500.org/resources/top-systems/jaguar-oak-ridge-national-laboratory",
+    "https://www.olcf.ornl.gov/wp-content/uploads/2010/03/OLCFAR2009.pdf",
+    "https://www.ornl.gov/news/oak-ridge-jaguar-supercomputer-worlds-fastest"
+   ],
+   "uncertain": [
+    "TOP500 system page 176544 now shows Jaguar's later upgraded configuration (Opteron 6274); per-list #1 values used instead",
+    "story details taken from ORNL/OLCF documents via search summaries, not read in full"
+   ]
+  },
+  {
+   "id": "tianhe-1a",
+   "kind": "top500",
+   "name": "Tianhe-1A",
+   "system": "Tianhe-1A - NUDT TH MPP, X5670 2.93GHz 6C, NVIDIA GPU",
+   "vendor": "NUDT",
+   "site": "National Supercomputing Center in Tianjin",
+   "country": "China",
+   "year": 2010,
+   "lists_at_1": [
+    "2010-11"
+   ],
+   "rmax_gflops": 2566000.0,
+   "rpeak_gflops": 4701000.0,
+   "linpack_kind": "HPL Rmax (TOP500)",
+   "processors": 186368,
+   "power_kw": 4040.0,
+   "cost": null,
+   "best_list": "2010-11",
+   "story": "Tianhe-1A was the first Chinese system to top the TOP500. It combined 14,336 Intel Xeon processors with 7,168 NVIDIA Tesla GPUs. It was used for petroleum exploration and for simulating large aircraft designs.",
+   "sources": [
+    "https://www.top500.org/lists/top500/2010/11/",
+    "https://www.top500.org/system/176929",
+    "https://www.top500.org/resources/top-systems/tianhe-1a-national-supercomputing-center-in-tianji"
+   ],
+   "uncertain": []
+  },
+  {
+   "id": "k-computer",
+   "kind": "top500",
+   "name": "K computer",
+   "system": "K computer, SPARC64 VIIIfx 2.0GHz, Tofu interconnect",
+   "vendor": "Fujitsu",
+   "site": "RIKEN Advanced Institute for Computational Science, Kobe",
+   "country": "Japan",
+   "year": 2011,
+   "lists_at_1": [
+    "2011-06",
+    "2011-11"
+   ],
+   "rmax_gflops": 10510000.0,
+   "rpeak_gflops": 11280380.0,
+   "linpack_kind": "HPL Rmax (TOP500)",
+   "processors": 705024,
+   "power_kw": 12660.0,
+   "cost": null,
+   "best_list": "2011-11",
+   "story": "The K computer was the first system to pass 10 PFLOP/s on LINPACK. It opened to academic and industry users in 2012. That year a team won the Gordon Bell Prize on K for a trillion-particle simulation of dark matter. It was also one of the most energy-efficient systems of its time.",
+   "sources": [
+    "https://www.top500.org/lists/top500/2011/11/",
+    "https://www.top500.org/system/177232",
+    "https://www.top500.org/resources/top-systems/k-computer-riken-advanced-institute-for-computatio",
+    "https://aics.riken.jp/en/topics/121116-3.html",
+    "https://www.riken.jp/en/news_pubs/news/2012/20120927/index.html"
+   ],
+   "uncertain": []
+  },
+  {
+   "id": "sequoia",
+   "kind": "top500",
+   "name": "Sequoia",
+   "system": "Sequoia - BlueGene/Q, Power BQC 16C 1.60 GHz, Custom",
+   "vendor": "IBM",
+   "site": "Lawrence Livermore National Laboratory",
+   "country": "United States",
+   "year": 2012,
+   "lists_at_1": [
+    "2012-06"
+   ],
+   "rmax_gflops": 16324751.0,
+   "rpeak_gflops": 20132660.0,
+   "linpack_kind": "HPL Rmax (TOP500)",
+   "processors": 1572864,
+   "power_kw": 7890.0,
+   "cost": null,
+   "best_list": "2012-06",
+   "story": "Sequoia was the first system with more than one million cores. It was water cooled and served the NNSA stockpile stewardship program. Relative to peak speed it was about 90 times more power efficient than the earlier ASC Purple machine.",
+   "sources": [
+    "https://www.top500.org/lists/top500/2012/06/",
+    "https://www.top500.org/system/177556",
+    "https://www.top500.org/resources/top-systems/sequoia-lawrence-livermore-national-laboratory"
+   ],
+   "uncertain": [
+    "year: TOP500 system page lists installation year 2011; first #1 was 06/2012 (2012 used)",
+    "TOP500 system page 177556 shows a later Rmax of 17,173.22 TFLOP/s; the #1 value 16,324.75 TFLOP/s (06/2012) is used"
+   ]
+  },
+  {
+   "id": "titan",
+   "kind": "top500",
+   "name": "Titan",
+   "system": "Titan - Cray XK7, Opteron 6274 16C 2.2GHz, NVIDIA K20x",
+   "vendor": "Cray",
+   "site": "Oak Ridge National Laboratory",
+   "country": "United States",
+   "year": 2012,
+   "lists_at_1": [
+    "2012-11"
+   ],
+   "rmax_gflops": 17590000.0,
+   "rpeak_gflops": 27112550.0,
+   "linpack_kind": "HPL Rmax (TOP500)",
+   "processors": 560640,
+   "power_kw": 8209.0,
+   "cost": null,
+   "best_list": "2012-11",
+   "story": "Titan paired one NVIDIA K20 GPU with each 16-core AMD CPU in 18,688 nodes. Its early projects simulated magnetic materials, combustion inside an engine, neutron flow in a nuclear reactor and long-term climate change. It helped show that GPUs could power large science machines.",
+   "sources": [
+    "https://www.top500.org/lists/top500/2012/11/",
+    "https://www.top500.org/system/177975",
+    "https://www.top500.org/resources/top-systems/titan-oak-ridge-national-laboratory"
+   ],
+   "uncertain": []
+  },
+  {
+   "id": "tianhe-2",
+   "kind": "top500",
+   "name": "Tianhe-2",
+   "system": "Tianhe-2 (MilkyWay-2) - TH-IVB-FEP Cluster, Intel Xeon E5-2692 12C 2.2GHz, Intel Xeon Phi 31S1P",
+   "vendor": "NUDT",
+   "site": "National Supercomputer Center in Guangzhou",
+   "country": "China",
+   "year": 2013,
+   "lists_at_1": [
+    "2013-06",
+    "2013-11",
+    "2014-06",
+    "2014-11",
+    "2015-06",
+    "2015-11"
+   ],
+   "rmax_gflops": 33862700.0,
+   "rpeak_gflops": 54902400.0,
+   "linpack_kind": "HPL Rmax (TOP500)",
+   "processors": 3120000,
+   "power_kw": 17808.0,
+   "cost": null,
+   "best_list": "2013-06",
+   "story": "Tianhe-2 led six straight TOP500 lists. Each of its 16,000 nodes had two Intel Xeon chips and three Xeon Phi coprocessors. Chinese reports say it was used for energy, bioscience, pollution control and high-speed rail design.",
+   "sources": [
+    "https://www.top500.org/lists/top500/2013/06/",
+    "https://www.top500.org/system/177999",
+    "https://www.top500.org/resources/top-systems/tianhe-2-milkyway-2-national-university-of-defense",
+    "https://english.cas.cn/news/ric/201406/t20140626_123305.shtml"
+   ],
+   "uncertain": [
+    "name: current TOP500 database lists this system as 'Tianhe-2A' after its 2018 upgrade; system page 177999 shows the upgraded 61.44 PFLOP/s configuration, not the #1 values used here"
+   ]
+  },
+  {
+   "id": "taihulight",
+   "kind": "top500",
+   "name": "Sunway TaihuLight",
+   "system": "Sunway TaihuLight - Sunway MPP, Sunway SW26010 260C 1.45GHz",
+   "vendor": "NRCPC",
+   "site": "National Supercomputing Center in Wuxi",
+   "country": "China",
+   "year": 2016,
+   "lists_at_1": [
+    "2016-06",
+    "2016-11",
+    "2017-06",
+    "2017-11"
+   ],
+   "rmax_gflops": 93014593.88,
+   "rpeak_gflops": 125435900.0,
+   "linpack_kind": "HPL Rmax (TOP500)",
+   "processors": 10649600,
+   "power_kw": 15371.0,
+   "cost": null,
+   "best_list": "2016-06",
+   "story": "TaihuLight used Chinese-designed SW26010 processors with 260 cores each. It won the Gordon Bell Prize two years in a row. The 2016 prize was for an atmosphere model, and the 2017 prize was for simulating the 1976 Tangshan earthquake.",
+   "sources": [
+    "https://www.top500.org/lists/top500/2016/06/",
+    "https://www.top500.org/system/178764",
+    "https://www.top500.org/resources/top-systems/sunway-taihulight-national-supercomputing-center-i",
+    "https://www.acm.org/media-center/2017/november/gordon-bell-prize-2017"
+   ],
+   "uncertain": []
+  },
+  {
+   "id": "summit",
+   "kind": "top500",
+   "name": "Summit",
+   "system": "Summit - IBM Power System AC922, IBM POWER9 22C 3.07GHz, NVIDIA Volta GV100",
+   "vendor": "IBM",
+   "site": "Oak Ridge National Laboratory",
+   "country": "United States",
+   "year": 2018,
+   "lists_at_1": [
+    "2018-06",
+    "2018-11",
+    "2019-06",
+    "2019-11"
+   ],
+   "rmax_gflops": 148600000.0,
+   "rpeak_gflops": 200790000.0,
+   "linpack_kind": "HPL Rmax (TOP500)",
+   "processors": 2414592,
+   "power_kw": 10096.0,
+   "cost": null,
+   "best_list": "2019-06",
+   "story": "Summit had 4,356 nodes, each with two POWER9 CPUs and six NVIDIA V100 GPUs. Early in the COVID-19 pandemic, Oak Ridge researchers used it to screen more than 8,000 compounds against the virus's spike protein. They found 77 candidates for lab testing.",
+   "sources": [
+    "https://www.top500.org/lists/top500/2019/06/",
+    "https://www.top500.org/system/179397",
+    "https://www.top500.org/resources/top-systems/summit-doescoak-ridge-national-laboratory",
+    "https://www.ornl.gov/news/early-research-existing-drug-compounds-supercomputing-could-combat-coronavirus"
+   ],
+   "uncertain": []
+  },
+  {
+   "id": "fugaku",
+   "kind": "top500",
+   "name": "Fugaku",
+   "system": "Supercomputer Fugaku - A64FX 48C 2.2GHz, Tofu interconnect D",
+   "vendor": "Fujitsu",
+   "site": "RIKEN Center for Computational Science, Kobe",
+   "country": "Japan",
+   "year": 2020,
+   "lists_at_1": [
+    "2020-06",
+    "2020-11",
+    "2021-06",
+    "2021-11"
+   ],
+   "rmax_gflops": 442010000.0,
+   "rpeak_gflops": 537210000.0,
+   "linpack_kind": "HPL Rmax (TOP500)",
+   "processors": 7630848,
+   "power_kw": 29899.0,
+   "cost": null,
+   "best_list": "2020-11",
+   "story": "Fugaku was the first #1 system built on Arm processors. During the COVID-19 pandemic RIKEN used it to simulate how droplets and aerosols spread indoors. The results supported wearing masks together with good ventilation.",
+   "sources": [
+    "https://www.top500.org/lists/top500/2020/11/",
+    "https://www.top500.org/system/179807",
+    "https://www.top500.org/resources/top-systems/supercomputer-fugaku-riken-center-for-computationa",
+    "https://www.riken.jp/en/news_pubs/news/2020/20210113_2/index.html",
+    "https://www.r-ccs.riken.jp/en/fugaku/research/covid-19/msg-en/"
+   ],
+   "uncertain": []
+  },
+  {
+   "id": "frontier",
+   "kind": "top500",
+   "name": "Frontier",
+   "system": "Frontier - HPE Cray EX235a, AMD EPYC 64C 2GHz, AMD Instinct MI250X, Slingshot-11",
+   "vendor": "HPE",
+   "site": "Oak Ridge National Laboratory",
+   "country": "United States",
+   "year": 2022,
+   "lists_at_1": [
+    "2022-06",
+    "2022-11",
+    "2023-06",
+    "2023-11",
+    "2024-06"
+   ],
+   "rmax_gflops": 1206000000.0,
+   "rpeak_gflops": 1714810000.0,
+   "linpack_kind": "HPL Rmax (TOP500)",
+   "processors": 8699904,
+   "power_kw": 22786.0,
+   "cost": null,
+   "best_list": "2024-06",
+   "story": "Frontier was the first system to pass 1 EFLOP/s on LINPACK. Early users simulated small modular nuclear reactors to cut design time and cost. The SCREAM cloud-resolving climate model, run on Frontier, won the 2023 Gordon Bell Prize for climate modeling.",
+   "sources": [
+    "https://www.top500.org/lists/top500/2024/06/",
+    "https://www.top500.org/system/180047",
+    "https://www.top500.org/resources/top-systems/frontier-doescoak-ridge-national-laboratory",
+    "https://www.olcf.ornl.gov/2023/05/22/early-frontier-users-seize-exascale-advantage-grapple-with-grand-scientific-challenges/",
+    "https://www.olcf.ornl.gov/2023/10/16/exascale-day-2023/"
+   ],
+   "uncertain": [
+    "year: TOP500 system page lists installation year 2021; first #1 was 06/2022 (2022 used)",
+    "story: reactor and SCREAM details taken from ORNL/OLCF coverage via search summaries, not read in full"
+   ]
+  },
+  {
+   "id": "el-capitan",
+   "kind": "top500",
+   "name": "El Capitan",
+   "system": "El Capitan - HPE Cray EX255a, AMD 4th Gen EPYC 24C 1.8GHz, AMD Instinct MI300A, Slingshot-11",
+   "vendor": "HPE",
+   "site": "Lawrence Livermore National Laboratory",
+   "country": "United States",
+   "year": 2024,
+   "lists_at_1": [
+    "2024-11",
+    "2025-06",
+    "2025-11"
+   ],
+   "rmax_gflops": 1809000000.0,
+   "rpeak_gflops": 2821100000.0,
+   "linpack_kind": "HPL Rmax (TOP500)",
+   "processors": 11340000,
+   "power_kw": 29685.0,
+   "cost": null,
+   "best_list": "2025-11",
+   "story": "El Capitan serves the NNSA's nuclear stockpile mission, mostly on classified work. It runs ensembles of high-resolution 3D multiphysics simulations to check the aging stockpile without nuclear tests. A sister system, Tuolumne, handles unclassified science.",
+   "sources": [
+    "https://www.top500.org/lists/top500/2025/11/",
+    "https://www.top500.org/system/180307",
+    "https://www.top500.org/resources/top-systems/el-capitan-doennsallnl",
+    "https://annual.llnl.gov/sites/annual/files/2026-02/llnlannual25-2-strategic-detterance.pdf",
+    "https://www.energy.gov/node/4847390"
+   ],
+   "uncertain": [
+    "story details taken from LLNL reports via search summaries, not read in full"
+   ]
+  },
+  {
+   "id": "lineshine",
+   "kind": "top500",
+   "name": "LineShine",
+   "system": "LineShine - LingKun, LX2 304C 1.55GHz, LingQi, Kylin OS",
+   "vendor": "Shenzhen Cloud Computing Center Co., Ltd.",
+   "site": "National Supercomputing Centre in Shenzhen (NSCS)",
+   "country": "China",
+   "year": 2026,
+   "lists_at_1": [
+    "2026-06",
+    "2026-11"
+   ],
+   "rmax_gflops": 2198400000.0,
+   "rpeak_gflops": 2735820000.0,
+   "linpack_kind": "HPL Rmax (TOP500)",
+   "processors": 13789440,
+   "power_kw": 42220.0,
+   "cost": null,
+   "best_list": "2026-06",
+   "story": "LineShine is the first TOP500 system to pass 2 EFLOP/s using CPUs only, with 304-core LX2 processors and no GPUs. A team at Sun Yat-sen University designed it. It has supported work in atmospheric and ocean science, engineering simulation, materials science and drug discovery.",
+   "sources": [
+    "https://www.top500.org/lists/top500/2026/06/",
+    "https://www.top500.org/system/180490",
+    "https://top500.org/news/lineshine-debuts-no-1-top500-enters-new-global-exascale-era/",
+    "https://www.sysu.edu.cn/sysuen/info/1023/59661.htm"
+   ],
+   "uncertain": [
+    "year: TOP500 system page lists installation year 2025; first #1 was 06/2026 (2026 used)",
+    "story: applications are as stated by Shenzhen/SYSU sources; no independent verification",
+    "no TOP500 'top systems' history page exists for it yet"
+   ]
+  }
+ ],
+ "about": {
+  "top500": "https://www.top500.org/",
+  "linpack_report": "https://www.netlib.org/benchmark/performance.pdf",
+  "method": "HPL Rmax for TOP500 systems; Dongarra's LINPACK report for earlier machines."
+ }
+}

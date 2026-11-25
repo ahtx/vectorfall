@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VectorFall</title>
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="stylesheet" href="vendor/fonts/fonts.css">
+<link rel="stylesheet" href="vendor/codemirror-5.65.16/codemirror.min.css">
+<link rel="stylesheet" href="css/vf.css">
+<link rel="stylesheet" href="css/system.css?v=rc5">
+<link rel="stylesheet" href="css/app-text.css">
+<link rel="stylesheet" href="css/app-vlm.css?v=1015k">
+<link rel="stylesheet" href="css/app-sound.css?v=1016s">
+<link rel="stylesheet" href="css/app-photo.css?v=rc2q">
+<link rel="stylesheet" href="css/app-data.css">
+<link rel="stylesheet" href="css/app-life.css">
+<link rel="stylesheet" href="css/app-misc.css">
+<link rel="stylesheet" href="css/app-reservoir.css">
+<link rel="stylesheet" href="css/app-particles.css?v=1016t">
+<link rel="stylesheet" href="css/app-forces.css?v=1016r">
+<link rel="stylesheet" href="css/app-sim.css">
+<link rel="stylesheet" href="css/app-plan.css">
+<link rel="stylesheet" href="css/app-models.css">
+<link rel="stylesheet" href="css/app-lineage.css">
+<link rel="stylesheet" href="css/os.css?v=1016f">
+</head>
+<body>
+<nav class="rail">
+  <a class="mark" href="#home"><img src="logo.svg" alt="VectorFall"></a>
+  <div id="rail-apps"></div>
+  <div class="foot" id="rail-foot" title="VectorFall 0.1">VectorFall<br>0.1</div>
+</nav>
+<header class="top">
+  <div class="title"><b id="ttl">VectorFall</b><span id="sub">Supercomputing Platform</span></div>
+  <div class="spacer"></div>
+  <div class="jobpill idle" id="jobpill" title="What the GPU is doing"><span class="dot"></span><span class="t" id="jp-t">GPU idle</span><span class="el" id="jp-el"></span><span class="more" id="jp-more"></span><div class="p"><i id="jp-p"></i></div><b class="u" id="jp-u"></b></div>
+  <button class="resetbtn" id="gpu-reset" title="Reset card: terminate everything on the GPU and restart the GPU service (about 20 s)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3v8"/><path d="M6.4 6.4a8 8 0 1 0 11.2 0"/></svg><span>Reset card</span></button>
+  <div class="strip">
+    <div class="corestrip" id="corestrip"></div>
+    <div class="cell"><span class="k">GFLOP/s</span><b id="s-gf">—</b></div>
+    <div class="cell"><span class="k">Memory</span><b id="s-mem">—</b><div class="vbar"><i id="s-vbar"></i></div></div>
+    <div class="cell"><span class="k">Temp</span><b id="s-temp">—</b></div>
+    <div class="hoststrip" id="hoststrip" title="Host CPU and memory — VectorFall's share shown separately">
+      <div class="hcores" id="h-cores"></div>
+      <div class="cell"><span class="k">Host CPU</span><b id="h-cpu">—</b></div>
+      <div class="cell"><span class="k">Host RAM</span><b id="h-mem">—</b></div>
+    </div>
+  </div>
+</header>
+<main id="main"></main>
+<script src="vendor/codemirror-5.65.16/codemirror.min.js"></script>
+<script src="vendor/codemirror-5.65.16/mode/python/python.min.js"></script>
+<script src="vendor/codemirror-5.65.16/addon/runmode/runmode.min.js"></script>
+<script type="module" src="js/app.js?v=rc6"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+China's New Space Station, Tiangong, Will Run High-Energy Beam Experiments
+Amir Husain, Forbes, 2023-04-18
+
+China has completed the remarkable feat of building and deploying its third space station, Tiangong, in a mere two years. Translated, Tiangong means "Palace in the Sky," and this new space station aims to test various technologies that could eventually be used on a larger scale, with both civilian and military applications. In addition to its scientific applications, Tiangong will be used as a testbed for China's future manned spaceflight program.
+
+The space station comes equipped with a vast array of onboard instruments. For example, it features omnidirectional particle detectors to study the radiation environment and to develop better space-based weather prediction models. The data collected by these detectors will help scientists more fully understand the risks posed by radiation and develop new methods to protect astronauts and robots.
+
+Tiangong is also equipped with an intriguing new microwave beam technology that can transmit power to ground stations around the clock. When most of us think of microwaves, we think of using these frequencies for communications or perhaps to heat food in an oven. But microwaves can be far more potent, and their potential applications include beaming energy from space. If significant progress is made in developing this technology, it could lead to more efficient solar energy available even at night. China's eventual aim is to create a one-kilometer-wide structure in space that could beam gigawatt-power beams back to earth.
+
+This wireless energy mechanism could also be used to power military equipment or remote outposts and even be used as a weapon. Of course, there are still many challenges to overcome before this technology can be fully developed, but the potential certainly seems significant.
+
+Additional capabilities and instruments will be added in the future, including an optical module that will house a Hubble-like space telescope. If the current schedule holds, this optical system should be completed by 2024.
+
+Tiangong can accommodate between three and six people and comprises three modules and two docked ships; one for cargo and the other for crew ferrying operations. The space station is expected to stay in orbit for a decade, during which time it will conduct extensive experiments.
+
+One of the most notable physical features of Tiangong is that each module comes with its own independent solar array, providing power for module core functions and hosting experiments.
+
+The rate of China's progress in developing space technologies is impressive, and it recently became the leading country in terms of the highest number of rocket launches to orbit. China is also collaborating with many nations in space ventures and has significantly advanced its manned and unmanned space programs in recent years. Russia and China have already unveiled a roadmap for a research outpost on the moon, including several lunar landers and multiple orbiters. Ultimately, the goal will be to permanently have a crew reside on this outpost.
+
+While these developments should not automatically cause alarm, they warrant close monitoring if for no reason other than to understand the economic and military implications of China's space technologies. At its present trajectory, China could become a leading power in space exploration. Of course, we hope that all such advances will be used for peaceful purposes, but only with vigilance can we remain prepared for the competitive future of space exploration.

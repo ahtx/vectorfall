@@ -1,0 +1,34 @@
+Generative AI Is Coming To Mobile Devices
+Amir Husain, Forbes, 2023-08-28
+
+Qualcomm is the first mobile silicon developer to take a significant step forward in allowing powerful Generative AI models to run locally on phones. Its new Snapdragon chips aim to transition generative AI capabilities, such as those found in ChatGPT and Midjourney, from desktops to mobile devices. Since the launch of the Snapdragon 8 Gen 2, introduced in 2022, Qualcomm's aspiration is clear: transform mobile devices into AI powerhouses, offering many benefits that promise to alter the mobile experience entirely. The full scope of this vision will be detailed at the upcoming Qualcomm Summit this October.
+
+The advantages of on-device AI are extensive. At the very least, this approach promises:
+
+1. Enhanced Personalization: Tailoring experiences using data like driving patterns, photos, and restaurant searches.
+
+2. Augmented Privacy: User data stays on the device, reducing risks of external breaches.
+
+3. Rapid Response: No reliance on cloud-based systems, ensuring instantaneous AI-generated responses by cutting out network latency.
+
+4. Optimized Battery Life: Reducing the need to communicate with remote servers, thus extending battery life.
+
+5. Improved Network Efficiency: Local processing limits data transfer, easing network congestion and ensuring a better experience for all cell phone network users.
+
+6. Economic Benefits: Maintaining large servers for complex machine learning models is tremendously costly. By contrast, ondevice AI could be more cost-effective because the computation will be decentralized and distributed.
+
+7. Offline Capabilities: Devices can function efficiently without constant internet connectivity, including on aircraft, in locations with spotty or slow coverage.
+
+8. Adaptability: Learning from users in real-time to evolve and refine recommendations. Phones will be able to maintain local databases of user responses and actions that will be leveraged by local AI and optimize the user experience.
+
+9. Seamless Integration: Unifying various apps and functions for a cohesive user experience.
+
+At the Mobile World Congress in February, attendees witnessed the potential of Qualcomm's on-device generative AI. Demonstrations ranged from real-time image modifications to multi-model interactions, indicating an impending sea-change in mobile device capabilities.
+
+And these on-device ambitions aren't confined to phones. Applications in personal computers and vehicles are also on the horizon. With local AI, tasks like auto-generating call notes, creating augmented reality environments, assisting visually impaired users with real-time feedback, or adjusting teaching methods based on students' reactions will all become possible and, very quickly, expected.
+
+While Qualcomm leads the charge for now, this is an area likely to become rapidly commoditized. Huawei has had aspirations to develop AI-focused mobile chips, and even from the broader market, competition is fierce. Apple, Google, and Microsoft are all running their respective AI projects and trying to push the boundaries of on-device AI. The landscape likely to emerge suggests smartphones will soon be the most used platform for advanced AI applications.
+
+I’ll have my eyes on Qualcomm's upcoming Snapdragon Summit. The event promises deeper insights into the company's direction and broader industry on-device AI trends. The advancements in mobile AI will signify a pivotal moment in how we use our devices, making them an even more deeply integrated part of our brains. I wouldn’t hesitate to say that AI models on phones, learning from the thousands of micro-interactions we have with our devices, will begin to act as an extension of our cerebral cortex. This isn’t just note keeping and phones acting as digital-diary-like information stores. This technology will open the door to highly personalized human decision-making aided constantly by silicon and neural networks.
+
+Here comes the future.

@@ -1,0 +1,92 @@
+/* Particle Lab — "Learn from history" (js/particles.js). Reuses the .pl-* map, groups and body styles of app-particles.css. */
+.fxv { display: flex; flex-direction: column; gap: var(--gap); height: 100%; min-height: 0; }
+.fxv > .ws { flex: 1 1 0; height: auto; min-height: 0; }
+.fxv [hidden] { display: none !important; }
+.fx-hand { flex: 1 1 0; min-height: 0; }
+.fx-hand > .ws { height: 100%; }
+.ws.fx { --side: 340px; --insp: 340px; }
+.fx .col > .grow { flex: 1 1 0; }
+
+/* the strip at the top: mode, the four stages, the world */
+.fx-top { display: flex; align-items: center; gap: 14px; flex: none; padding: 6px 10px; border-radius: var(--cr); background: var(--panel); box-shadow: inset 0 0 0 1px var(--line); }
+.fx-mode, .fx-world { flex: none; }
+.fx-steps { display: flex; align-items: center; gap: 4px; flex: 1 1 auto; min-width: 0; justify-content: center; }
+.fx-arrow { color: var(--dim); font-style: normal; font-size: 16px; }
+.fx-step { display: flex; align-items: center; gap: 9px; padding: 5px 14px 5px 6px; border: 0; border-radius: 8px; background: transparent; color: var(--ink-2); cursor: pointer; text-align: left; min-width: 0; }
+.fx-step:hover:not(:disabled) { background: rgba(255, 255, 255, .04); }
+.fx-step b { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; flex: none; font: 700 13px var(--mono); color: var(--muted); box-shadow: inset 0 0 0 1.5px var(--line-2); }
+.fx-step span { display: flex; flex-direction: column; min-width: 0; }
+.fx-step em { font: 700 12px var(--disp); letter-spacing: .14em; text-transform: uppercase; font-style: normal; }
+.fx-step small { font-size: 11px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.fx-step.done b { color: #0b0b0e; background: var(--good); box-shadow: none; }
+.fx-step.on { background: var(--rosso-soft); box-shadow: inset 0 0 0 1px var(--rosso-line); color: #fff; }
+.fx-step.on b { color: #fff; background: var(--rosso-hi); box-shadow: none; }
+.fx-step:disabled { opacity: .45; cursor: not-allowed; }
+
+/* the stage pane */
+.fx-lead { margin: 0 0 12px; color: var(--ink-2); font-size: 13px; line-height: 1.55; }
+.fx-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)); gap: 6px; margin-bottom: 14px; }
+.fx-facts div, .fx-score div { padding: 8px 10px; border-radius: var(--cr); background: #0c0c0f; box-shadow: inset 0 0 0 1px var(--line); }
+.fx-facts b, .fx-score b { display: block; font: 700 17px var(--mono); color: #fff; }
+.fx-facts span, .fx-score span { font-size: 11px; color: var(--muted); }
+.fx-score { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 12px 0 6px; }
+.fx-evs { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-bottom: 14px; }
+.fx-ev { display: flex; align-items: center; gap: 7px; padding: 5px 8px; border: 0; border-radius: 5px; background: #0c0c0f; color: var(--ink-2); font: 500 12px var(--font); cursor: pointer; box-shadow: inset 0 0 0 1px var(--line); text-align: left; }
+.fx-ev:hover { color: #fff; box-shadow: inset 0 0 0 1px var(--line-2); }
+.fx-ev i { font-style: normal; width: 14px; text-align: center; }
+.fx-ev span { flex: 1; } .fx-ev b { font: 600 12px var(--mono); color: #fff; }
+.fx-notes { margin: 4px 0 0; padding-left: 18px; font-size: 12px; color: var(--muted); line-height: 1.5; }
+.fx-notes li { margin: 4px 0; }
+.fx-terms { display: grid; gap: 6px; }
+.fx-term { padding: 7px 10px; border-radius: 5px; background: #0c0c0f; box-shadow: inset 0 0 0 1px var(--line); }
+.fx-term .nm { font-weight: 600; font-size: 12.5px; color: var(--ink); } .fx-term .sub { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
+.fx-tbl { width: 100%; font-size: 12px; border-collapse: collapse; margin-bottom: 4px; }
+.fx-tbl th, .fx-tbl td { padding: 5px 6px; border-bottom: 1px solid var(--line); text-align: left; }
+.fx-tbl th { font: 700 10px var(--disp); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.fx-tbl .r { text-align: right; } .fx-tbl td.mono { font-family: var(--mono); color: var(--ink-2); }
+.fx-tbl td.best { color: #fff; font-weight: 700; }
+.fx-card th:first-child { width: 34%; }
+.fx-ei { font-style: normal; display: inline-block; width: 16px; text-align: center; margin-right: 4px; }
+.fx-chip { display: inline-block; padding: 1px 7px; border-radius: 4px; font: 600 10.5px var(--font); background: #18181c; color: var(--muted); box-shadow: inset 0 0 0 1px var(--line-2); }
+.fx-chip.good { color: var(--good); box-shadow: inset 0 0 0 1px rgba(47, 211, 138, .45); background: rgba(47, 211, 138, .08); }
+.fx-chip.bad { color: #ffb3a8; box-shadow: inset 0 0 0 1px var(--rosso-line); background: var(--rosso-soft); }
+.fx-verd { margin: 0 0 12px; padding: 9px 12px; border-radius: var(--cr); font-size: 12.5px; line-height: 1.5; }
+.fx-verd.good { background: rgba(47, 211, 138, .08); box-shadow: inset 2px 0 0 var(--good); color: var(--ink); }
+.fx-verd.bad { background: rgba(255, 176, 32, .08); box-shadow: inset 2px 0 0 var(--warn); color: var(--ink); }
+.fx-prog { height: 4px; border-radius: 2px; background: #0b0b0e; overflow: hidden; margin-top: 6px; box-shadow: inset 0 0 0 1px var(--line); }
+.fx-prog i { display: block; height: 100%; width: 0; background: var(--rosso-hi); transition: width .4s var(--ease); }
+
+/* periods: training / tuning / test on one bar */
+.fx-per { margin: 6px 0 14px; }
+.fx-per .bar { position: relative; height: 14px; border-radius: 4px; background: #0c0c0f; box-shadow: inset 0 0 0 1px var(--line); overflow: hidden; }
+.fx-per .bar i { position: absolute; top: 2px; bottom: 2px; border-radius: 3px; }
+.fx-per .lab { display: flex; justify-content: space-between; font: 500 10.5px var(--mono); color: var(--dim); margin-top: 3px; }
+i.tr { background: #5b5b66; } i.tu { background: #ffb020; } i.te { background: var(--coolant); }
+.fx-per .pl-leg i { width: 12px; height: 8px; border-radius: 2px; display: inline-block; }
+
+/* scenarios */
+.fx-scl { display: grid; gap: 4px; margin-bottom: 8px; }
+.fx-sc { display: grid; grid-template-columns: 16px minmax(0, 1fr) auto; gap: 6px; align-items: center; font-size: 12px; padding: 4px 6px; border-radius: 5px; background: #0c0c0f; box-shadow: inset 0 0 0 1px var(--line); }
+.fx-sc i { font-style: normal; text-align: center; }
+.fx-add { padding: 8px; margin: 6px 0 12px; border-radius: var(--cr); box-shadow: inset 0 0 0 1px var(--line); }
+.fx-add .btn { margin-top: 6px; }
+
+/* the map's footer: the event track above the scrubber */
+.fx-time { gap: 10px; height: auto; padding-top: 4px; padding-bottom: 4px; }
+.fx-track { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+.fx-track canvas { width: 100%; height: 16px; display: block; cursor: pointer; }
+.fx-track input[type=range] { width: 100%; }
+.fx-time #fx-fr { flex: none; font-size: 11px; color: var(--ink-2); min-width: 150px; text-align: right; }
+.fx-msg { color: var(--ink-2); }
+#fx-map { position: absolute; inset: 0; touch-action: none; cursor: grab; outline: none; }
+#fx-gp > .pane-b { max-height: 206px; padding: 8px 12px; }
+#fx-side .pane-h .tabs { flex: none; }
+.fx-evf { flex-wrap: wrap; }
+.fx-evrow { grid-template-columns: auto minmax(0, 1fr) !important; gap: 8px; }
+.fx-elist { display: grid; gap: 3px; font-size: 11.5px; color: var(--ink-2); }
+.fx-elist i { font-style: normal; display: inline-block; width: 14px; }
+
+@container vf (max-width: 1404px) { .ws.fx { --side: 300px; --insp: 300px; } .fx-step small { display: none; } }
+@container vf (max-width: 1104px) { .fx-top { flex-wrap: wrap; } .fx-steps { order: 3; flex-basis: 100%; justify-content: flex-start; } }
+.fx-card td, .fx-card th { white-space: nowrap; }
+.fx-card td:first-child { white-space: nowrap; overflow-wrap: normal; word-break: normal; }   /* method names stay whole words */

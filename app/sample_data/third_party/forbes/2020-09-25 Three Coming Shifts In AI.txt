@@ -1,0 +1,58 @@
+Three Coming Shifts In AI
+Amir Husain, Forbes, 2020-09-25
+
+Nearly every new day brings exciting news in the field of artificial intelligence. But what larger directional trends do these news items drive? Beyond the announcements and the hype, is AI really evolving?
+
+In this article, I’d like to focus not on far-off, vague hopes and wishes about AI, but instead on a few concrete developments that lie in the not-so-distant future. The trends outlined below are already beginning to materialize in the form of real-world research and applications. These areas of work represent themes that I believe will be recorded as meaningful breakthroughs in a future timeline of key AI developments.
+
+1. The Cost of Training Machine Learning Systems Will Be Drastically Lowered
+
+The AI community has long understood that our most successful methods, such as deep learning, are mathematically and computationally complex. Using these methods with current techniques involves the consumption of significant amounts of processing resources and a high degree of cost. This, in turn, limits Privacy - Terms where and how liberally these techniques can be applied. But less expensive training techniques are coming to the rescue. It is important to understand that the cost savings and speed increases ordinarily driven by Moore's Law are entirely separate from the types of algorithmic efficiencies discussed below. While Moore's Law promises to double transistor counts—and hence processing power—every two to three years, algorithmic breakthroughs can often lead to instant efficiencies that are orders of magnitude more significant. What could some of these breakthroughs look like?
+
+One promising area is the development of lightweight neural networks, which are exactly what they sound like: smaller, quicker to train networks that can achieve almost the same accuracy as their much larger cousins, but at a fraction of the size and training cost. Research led by SparkCognition’s Chief Scientist, Dr. Bruce Porter, revealed that in cybersecurity applications, lightweight neural networks could match conventional deep networks despite using a mere tenth of the computational capacity required for those larger structures.
+
+Another emerging technique, sparse learning, holds the potential of speeding up the training of deep networks by 3.5 to 12 times. Separately, researchers at North Carolina State University have shown that by taking advantage of the similarities in sub-segments of images in a training dataset, they can potentially reduce the amount of time and compute power required for network training by more than 60%... all without sacrificing accuracy.
+
+This is by no means a complete list of the considerable volume of work dedicated to reducing the computational burden of training deep networks. But even this small glimpse shows that the near future will likely bring far more efficient methods that will allow us to rival the decision-making power of large, complex networks without expending the same computational resources or compromising accuracy.
+
+So, what are the implications of these coming advancements? Here are at least a few:
+
+1. With a significantly reduced computational burden, networks will become easier to deploy at the edge, in embedded systems and in environments where access to cloud resources is not possible. This will allow machine learning and AI to proliferate into (smaller and smaller) objects and "things" in the real world.
+
+2. Since AI running at the edge means that the in-field systems it enables can be self-sufficient in terms of their intelligence, such systems will also be capable of supporting disconnected operations. Think of naval ships operating in denied environments, aircraft operating in areas without satellite coverage, or underwater systems that cannot communicate using conventional high-data rate technologies.
+
+3. The environmental impact of AI will be lowered significantly; estimates today indicate that training a large AI model once represents the equivalent of the lifetime carbon footprint of five automobiles. If we want to proliferate billions of models into objects everywhere to lay the foundation for a smarter world, clearly this must change. And more efficient training techniques can get us there.
+
+2. Artificial Intelligence Will Be Increasingly Used to Augment Human Creativity And Help With Ideation
+
+In a growing number of fields, AI assistants will bring forth ideas and concepts that—while not perfect—are massive efficiency enhancers for human experts. "Writer's block," "coder's block" or "designer's block" should all become relics of the past, as many examples of machine creativity, including those demonstrated by OpenAI’s new GPT-3 system, have shown.
+
+One of my hobbies is poetry. I enjoy both reading and writing it. A few years ago, I started to develop a program that I trained on some of my favorite poems and then began using this program to suggest lines, couplets and verses. I trained this program not only with collections of poems from the poets I treasure most, but with my own poems too. So, in that sense, it carries a bit of me in it. I chose not just more contemporary poets, but also the Persian masters from a thousand years ago.
+
+Very seldom did the program get everything exactly right, but there was almost always so much latent potential in the "ideas" the program proposed that I would end up editing and rewriting bits of the generated verse into poems I liked. Sometimes, the generative AI would create lines that were perfectly formed… and deeply meaningful to me. Which suggests that adding another layer of learning to capture feedback will make this system even more powerful and efficient.
+
+To illustrate what my poet AI and I have been collaborating on, here is an example of a poem we wrote together:
+
+Sparrows
+
+Creator, I see your sparrows chase each other; they play Did you make them unaccustomed to hate?
+
+For their hearts seem shuttered To sentiments like that With every gentle gust that buoys them They forgive They move forward into new moments Where bygones are bygones But for me, morning comes and I still breathe sighs I hold on to what I should forget I despair when I should forgive I once envied the minds of your great sages But now I yearn for the heart of your tiny sparrow Truth finds itself in need of nothing But it wishes to encompass love From some vantage points, I still catch glimpses of the past But it is a time I cannot clearly remember For I too have tried to move on I imagine I live in the next century I imagine I can make out the skies of then But it is You, not I, who can see time I am a creature so compromised That I can only hope there is hope for me If, one day, I could lighten my heart Oh, how far I’d go!
+
+Then, like your playful sparrow I too might taste the freedom of belief But AI isn’t just good for coming up with ideas for poems and verse, and I’m hardly the only one experimenting with the creative power of artificial intelligence. Boeing, Airbus, Autodesk and many others are working in the areas of generative design, allowing algorithms to evolve structural forms from scratch.
+
+Artists like Refik Anadol, whose magical work was showcased at the Time Machine AI & Future Tech Summit in Austin, Texas, are using deep dream networks to create digital art. This art is then often enhanced and modified by humans, but the use of AI in this way accelerates the creative process manyfold. In fact, “The Portrait of Edmond Bellamy,” an AI generated piece of art, was auctioned by Christie’s for $432,500 in October, 2018. AI-produced art has the potential to net millions more in the years ahead.
+
+The time is fast approaching where AI-based prompting, ideation and concept proposals will be embedded in most productivity applications. In this era of human-AI fused creativity, the possibilities will be endless.
+
+3. Enterprises That Recognize AI’s Potential Will Upend Their Competition
+
+Businesspeople and decision-makers will begin to appreciate that the rapid use of AI in their respective industries will indeed offer them an incredible lead. McKinsey explained this phenomenon in their widely-cited report, "Skill Shift Automation and the Future of the Workforce," wherein they lay out how the use of AI will lead to “insurmountable advantage" across industries. By applying AI in thoughtful and effective ways, leaders have the ability to reshape their industries and upend competitors. The main thrust of the McKinsey report is that not only is such disruption possible, but that competitors who are disrupted by AI will be left behind in ways so profound that they will simply never be able to catch up.
+
+Where might such disruptions occur? In truth, almost everywhere. Even in industries and product lines that have been dominant for nearly two centuries. Take combustion engines, for example—a technology that has been around since the mid-1800s. While it has seen many enhancements, the reality is that the efficiency of modern internal combustion engines is still only 20 to 35%. In other words, up to 80% of the energy consumed to drive these engines is wasted as heat. Could AI be applied to transform the combustion engine? New work by Swedish hypercar company Koenigsegg seeks to explore this idea. Competitors that follow the traditional efficiency improvement curve may not be able to keep up.
+
+New Horizons
+
+Having worked with AI for decades now, and in a very personal, upclose way, I can see clearly that its time has arrived. Every process, every workflow and every task that can be infused with AI represents an enhancement… an inorganic evolution beyond its current, ordinary state. With each such supercharged, self-evolving, self-improving workflow we can piece together, we have the potential of creating autonomous, model-driven enterprises that deliver services and capabilities at costs and efficiencies never before possible. We can do this practically now because research is enabling low-cost training methods that can be embedded at the edge, in ever-smaller objects. AI-enhanced ideation brings about the potential of recursive self-improvement. And AI adoption is a competitive need to the point of being an evolutionary filter for business: adopt and evolve or deny and expire.
+
+With AI, we can rewire the world in ways that thrill and inspire. So, let’s begin…

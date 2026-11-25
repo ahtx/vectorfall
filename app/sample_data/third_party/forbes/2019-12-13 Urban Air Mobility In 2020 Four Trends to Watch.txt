@@ -1,0 +1,36 @@
+Urban Air Mobility In 2020: Four Trends to Watch
+Amir Husain, Forbes, 2019-12-13
+
+From autonomous aerial taxis to cargo vehicles, hardware advancements in the urban air mobility market are underway. Regulatory standards and software platforms are also beginning to take shape. In fact, the FAA estimates 545,000 commercial drones will be in use by the end of 2020. These drones will be performing real commercial tasks – they’ll deliver packages, transport people, conduct industrial inspections and provide emergency assistance.
+
+As more unmanned aircraft begin operating, there are four key technologies that will help ensure the safety and security of our airspace:
+
+Drone Security: Preventing Malicious Activity With A-Powered Cybersecurity
+
+In the near future, there will be a network of flying computers in the sky. Just like the computer servers we use today, these drones could be hacked if not secured properly, posing dangers when they’re flying above a crowd of people or a busy highway.
+
+And in this emerging environment, new security threats could also take the form of previously unseen, “zero-day” attacks. Traditional anti-malware software, dependent on signatures of known threats, won’t be adequate to detect this unknown malware.
+
+AI-powered cybersecurity will be the key to detecting malicious activity on the edge and preventing it from making its way on to a drone or executing on it. An AI-based approach can learn the DNA of what a malicious file might look like instead of merely relying on an existing threat database. This type of technology can function even when network connectivity is non-existent or impaired and can defend drones against zero-day threats. AI-powered cybersecurity will be key in ensuring public safety by providing an adaptable system that protects against never-before-seen attacks.
+
+Drone Data Integrity: Protecting Vehicle And Flight Data With Distributed Ledger Technologies (DLT)
+
+The use of distributed data storage technologies that implement consensus and trust will also be essential to the urban air mobility market. A distributed ledger of immutable transactions can ensure drone data and flight logs are stored securely and accurately.
+
+DLT, augmented with AI-powered “smart contracts”, which execute safely and under guarantees of performance, can create a verified data source airspace authorities can rely on when auditing drone operations or analyzing an incident. DLTs augmented into a future “Aviation OS” will allow flight logs to be stored securely and privately in real time. Since data can be offboarded from the aircraft rapidly and can’t be overwritten, authorities can determine a sequence of events with 100% certainty. Storing transactions on a shared digital ledger also eliminates the need for paper records and opens the opportunity for collaboration that hasn’t existed in the past. There are still many paper records and documents used in manned aviation that simply can’t be relied upon as we make the transition to a world with millions of autonomous aircraft in the sky.
+
+From an operator’s perspective, digital ledgers can also help ensure all safety standards are being met. For example, if a business wants all drones to receive a system check after 100 hours of flight, they can encode this as a rule implemented by a smart contract that must be resolved with a private key before the drone can fly again.
+
+For example, predictive models might determine that a specific drone’s battery, under specific weather and usage patterns, is likely to degrade after flying for 200 hours. When a drone is close to hitting 200 hours, AI can be used to automatically generate a maintenance request for a battery replacement and assign the request to a technician upon landing at a facility. DTL can also ensure the maintenance request is resolved and signed off by a technician’s private key before the drone can operate again.
+
+This approach to predictive maintenance can help alleviate the burden on humans and ensure drones are always safe to fly.
+
+Drone Deconfliction: Avoiding Inflight Hazards With Intelligent Deconfliction
+
+One of the biggest concerns when it comes to large-scale drone deployments is around how these drones will “sense and avoid” other aircraft and potential hazards in the airspace. Reliable “sense and avoid” is crucial to safely enable operations that go beyond visual line of sight. For example, another drone may suddenly enter a drone’s flight path, the wind may pick up unexpectedly or the FAA may issue a notice to airmen (NOTAM) that restricts the current route.
+
+Intelligent deconfliction technology can help solve this challenge by constantly updating a drone’s route to account for new hazards and changes in operating conditions. As with drone maintenance needs, humans alone cannot be relied upon to avoid unexpected obstacles in the airspace.
+
+Artificial intelligence will be necessary to safely sense and avoid new obstacles inflight, or completely reroute the drone if the new conditions are extreme. This technology must also account for other aircraft to ensure there are no conflicting routes.
+
+Ultimately, the possibilities enabled by urban air mobility will be transformative for industry and society in the not-too-distant future. But first, we must have the right technologies in place to ensure that every flight is a safe flight!

@@ -1,0 +1,24 @@
+Bitcoin And Resonant Ideas
+Amir Husain, Forbes, 2022-08-10
+
+I’m bullish on Bitcoin but my reasons are very different from what you might have heard elsewhere. My conviction has to do with what I’ve learned as a student of technology history and my discovery of a class of “resonant ideas” that are eventually guaranteed to succeed.
+
+You see, there are certain persistent desires & dreams we humans have; things we need technology to do for us. And we don’t give up until we get them, even across generations. Why? Perhaps, as a species we have some deep seated urges we can only achieve through technology?
+
+Some of these desires appear in legends or stories from millennia ago. Some, in more recent science fiction. They are then seeded into the consciousness of practitioners and engineers of every generation until the science and technology that can realize them, comes to be. If you find yourself dealing with one of these primal technological urges manifesting itself over and over, across time, you can be sure that as our knowledge matures and the underlying infrastructure is ready, it will one day exist.
+
+There are innumerable examples. Flying cars from Aladdin and Star Wars to today’s Wisk and SkyGrid. Mechanical brains (computers) from the mechanical Turk to the analytical engine to colossus and now $5 Raspberry Pi’s everywhere. Instant communications from mythological Hermès to pigeons to Morse to telephones and now FaceTime & Signal! VR, AI, Tablets, holograms, robots and autonomous cars. These are all examples of a historically “resonant idea” eventually coming to be. And Bitcoin is no different.
+
+Twenty six years ago, in 1996, the iconic BYTE Magazine which was in many ways the principal chronicle of the PC revolution, featured an intriguing cover story titled “Electric Money”. In this story, written by Udo Flohr and the BYTE editorial team, the authors went in depth to discuss a plethora of use cases that could be fulfilled with a safe, secure and private digital money suited for use on computer networks.
+
+The authors investigated “minting your own” money and the role cryptography would play in such an architecture. They discussed a simple mechanism by which “coupons” could be issued, signed with a key and redeemable securely. If this sounds similar to NFTs, it’s because it kind of is!
+
+They even covered the many uses of such money, which have expanded considerably over time spanning electronic cash, digital checks, virtual bank drafts and card-integrated payment mechanisms. With the benefit of hindsight, they could have added loans, derivatives, futures and much more.
+
+The BYTE team covering this topic stressed that there was a real need for anonymity because we needed “a way to buy and sell as we please without threatening our fundamental freedom of privacy”. After all, money had been reasonably anonymous throughout history, until we got to computers and credit cards.
+
+Of course, this particular “electric money” story wasn’t the only discussion of a crypto based, multi-purpose, anonymous, secure, instantly transmittable, divisible and distributed form of payment. There were many attempts at implementing digital money. For example, Millicent from Digital Equipment Corporation (DEC), NetBill from Carnegie Mellon University, David Chaum’s Digicash from 1989, Daniel Lynch’s 1994 CyberCoin, E-Gold from 1996 and many other attempts are well recorded and some, well known.
+
+The point is that the idea of a digital monetary network, a digital store of value, a private means of economic exchange is one of the “resonant ideas” in tech history.
+
+An idea like that, one that keeps coming back and replaying in our collective consciousness until it becomes real is unbeatable, unstoppable… inevitable. The only thing it needs to take permanent hold is the underlying technological infrastructure. With advanced encryption, better algorithms (blockchain, double spend avoidance), ubiquitous networks and mobile phones, we now have that infrastructure. In spades. With Bitcoin now a $500bn - $1T asset, we also have proof of adoption. In fact, Bitcoin may well be that ultimate, successful manifestation of “electric money”, resonant through decades of tech history. So, while recent price volatility has been the center of media attention, I think the real story here is that Bitcoin is a resonant idea. Its long term potential remains immeasurably large and there is quite likely, no going back.

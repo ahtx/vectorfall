@@ -1,0 +1,52 @@
+Lahore’s Tech Renaissance: From Astrolabes To AI
+Amir Husain, Forbes, 2023-03-29
+
+Zaib and I just concluded a fascinating visit to Lahore, Pakistan. We were joined on this trip by Prof. Bruce Porter, former Chairman of UT Austin Computer Science and Chief Science Officer of SparkCognition, along with colleagues from SparkCognition, SkyGrid, and Navigate.
+
+Lahore is an ancient and vibrant city, once one of the largest manufacturing centers of mechanical computers, called Astrolabes. Built by Muhammad Muqim and his family in the 16th century, these computers came hundreds of years before the Jacquard Loom or Charles Babbage’s Analytical Engine. The city is now busily reinventing itself as a modern hub for entrepreneurship and academia. Our journey unveiled numerous innovative startups, cutting-edge research projects, and the thriving connections between the city’s entrepreneurial and educational ecosystems.
+
+Lahore University of Management Sciences (LUMS)
+
+Our first public event was at the Lahore University of Management Sciences (LUMS), a prestigious institution renowned for its research and entrepreneurial spirit. Prof. Porter and I had the opportunity to deliver talks on entrepreneurship and artificial intelligence (AI) to an enthusiastic audience of students and faculty members.
+
+Prof. Porter's talk focused on the three generations of AI, tracing its development from search algorithms to expert systems and the Generative AI explosion. The lecture provided insights into AI's potential to transform industries and our daily lives.
+
+After the talks, we connected with professors and students, learning about their innovative startups and groundbreaking research projects. It was inspiring to see the passion and drive on display at LUMS.
+
+IoT, EVs, and Quantum, Oh My!
+
+We encountered three standout teams pushing the boundaries of technology and innovation. The first was the quantum computing group at LUMS which has developed and indigenously built an experimental quantum information processor. I was told by Dean Anwar of the Syed Babar Ali School of Science and Engineering (SBASSE) that this device has two entangled physical qubits based on single photons from a heralded source. This effort lands LUMS on a short list of global quantum computing research organizations. Applications of quantum computing may eventually revolutionize materials science and much more. It was quite impressive to see a cutting-edge effort like this underway at the school.
+
+you acknowledge our Privacy Statement. Forbes is protected by reCAPTCHA, and the Google Privacy Policy and Terms of Service apply.
+
+Another intriguing venture spun off from LUMS is a startup that develops affordable three-wheel electric vehicles (EVs). As the world increasingly turns to sustainable transport solutions, this company aims to cater to the growing demand for cost-effective EVs in Pakistan and beyond.
+
+The third group is running an agri-tech research initiative that combines AI and the Internet of Things (IoT) to control large-scale agricultural processes autonomously. The project seeks to optimize variables such as fertilizer, water, and pesticide, and monitor plant health, thereby increasing productivity in the farming sector.
+
+Technologies such as these can lift the local economy, increase global collaboration, and scale exports.
+
+Aitchison College
+
+Our next stop was my old alma mater, Aitchison College, a prestigious K-12 school founded in 1885. Boasting one of the world's most beautiful campuses on a sprawling 200 acres of land, the school has evolved from an elite institution to offering full-ride scholarships for applicants from diverse backgrounds.
+
+Michael Thomson, the Principal of Aitchison College, and his lovely wife, Elizabeth, gave us a tour of the school's museum, the impressive chemistry labs, and the nearly complete Artificial Intelligence, Robotics, and Biotech building. This new facility will be a massive asset for Aitchison and the student community, bringing research and entrepreneurship to the high school level.
+
+One of the most inspiring stories we heard was that of a young graduate from the tribal belt along the Afghan border in North Waziristan. Upon meeting this impressive young gentleman, we learned that after receiving a full scholarship at Aitchison, he is now heading to Dartmouth for higher studies – a transformative opportunity for him, his family, and his village.
+
+Entrepreneurs in Lahore
+
+During our trip, we interacted with numerous entrepreneurs who have contributed significantly to Lahore's entrepreneurial ecosystem. Among them was the legendary Syed Babar Ali, founder of LUMS and Chairman of Packages Ltd. Babar Ali is one of the most admired Pakistanis globally. In his long list of laurels is his dedication to environmental conservation and a term as the President of the World Wildlife Foundation (WWF), which he took over from Prince Philip, Duke of Edinburgh, in 1996. His contributions to industry and education are immeasurable. At the young age of 97, he continues to work from his office daily, maintaining a hectic and full schedule. His unwavering dedication and passion are truly inspiring.
+
+We also met Aezaz Hussain, the founder of Systems Ltd., Pakistan's oldest software company. Mr. Hussain has led his company with great poise for over forty years. He has now expanded his enterprise globally through a network of affiliated companies. The Systems Ltd. network encompasses businesses in the UAE, Australia, Saudi Arabia, India, Europe, and the US. With around 10,000 employees, Systems is experiencing rapid growth and solidifying Pakistan's position in the global software industry.
+
+Nabeel Ahmed, the founder of Core9, a new AI services company focused on industrial applications and a SparkCognition partner, took us on a tour of the Sundar Industrial Estate. Here, we learned about the nearly 650 manufacturing companies based in the park, spanning industries such as pharma, textiles, TVs, and chemicals. Meeting one of the newest SparkCognition clients, a multinational chemical manufacturer also located within the Sundar Industrial Estate, was exciting and inspiring.
+
+The Lahore-based team at FiveRivers Technologies has been a tremendous partner for SparkCognition. But FiveRivers also impressed us by showcasing a suite of their domestically built software products gaining traction in international markets. Their SmartWindows application is one such example. The application enhances productivity for power users by supercharging window and state management on PCs. It’s quickly gaining users worldwide.
+
+Later that night, at a wonderful ecosystem dinner organized by Usman Malik of power company, PITCO and Mahmud Hiraj of private equity firm, Baltoro Capital, we met many other members of the innovation ecosystem in Lahore. Usman heads the power plant design arm of PITCO, which traces its origins back to 1938. Mahmud is a founding partner at Baltoro Capital, a leading private equity firm in Pakistan. Mahmud moved back to Lahore after spending 15 years in the finance industry in North America. His fund, Baltoro, is Pakistan-focused and capitalizes on the country’s growing consumer market and rising export competitiveness.
+
+Export is a key area of focus for many Pakistani entrepreneurs, particularly those building high-tech products. One of the guests at the ecosystem dinner was Salem Rehman of EMCO Industries. EMCO is Pakistan's premier manufacturer of high-voltage products for the electric grid. His company has a long history of catering to the domestic and regional markets but has now also started exporting to the United States.
+
+Wrapping up Our trip to Lahore allowed us to witness firsthand the energy and drive of Lahore’s entrepreneurs. The city is full of innovative startups, research projects, and academies focused on scientific development. This varied and fast-growing ecosystem is a testament to Lahore's immense potential and creativity.
+
+As we continue our work in Austin, build new relationships in Munich, and explore partnerships in Lahore, we hope to contribute to the growth of entrepreneurial communities in all these innovation centers. By fostering connections between these vibrant cities, we can nurture AI and broader S&T collaborations that have the potential to change the world. The unyielding passion of the people we met makes us optimistic about the future of Lahore, of Pakistan, and indeed, of the world.

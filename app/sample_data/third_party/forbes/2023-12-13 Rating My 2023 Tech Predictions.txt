@@ -1,0 +1,48 @@
+Rating My 2023 Tech Predictions
+Amir Husain, Forbes, 2023-12-13
+
+I made a list of ten tech predictions for 2023 in a Forbes piece I wrote in December 2022. And here we are now in December 2023. So how did those predictions - spanning AI, space, hypersonics, and Quantum Computing - turn out?
+
+Let’s get to analyzing where we are with each of the projections.
+
+AI and LLMs 10X larger than GPT-3 going mainstream.
+
+Huawei's PanGu-Σ is roughly 10X larger than GPT-3. And interestingly it was trained on Huawei Ascend processors. GPT-4's size is unknown, but it is likely a mixture of experts (MoE) model made up of an unknown number of large models. So, we definitely have a 10X model, and we also have a mainstream model that using MoE could easily be 10X larger, even if individual models within the MoE ensemble are GPT-3 sized. An interesting paper outlines Huawei’s work which you can view here.
+
+Launch of IBM's Condor Quantum Computer with 1000 qubits.
+
+While IBM did make significant advancements in quantum computing in 2023, they did not release a 1000-qubit computer. Instead, they debuted the IBM Quantum System Two with three IBM Heron processors, which are highly performant quantum processors with significantly improved error rates. Each Heron processor provides 133 qubits. IBM's focus has shifted to error correction rather than just raw size.
+
+Growth of self-hosting and decentralized IT systems.
+
+This occurred in spades with the #homelab trend gathering significant steam and problems with mainstream social networks resulted in massive user growth on decentralized social networks. Additionally, close to the end of 2023, the decentralized blockchain ecosystem gathered steam again.
+
+Rise of other EV manufacturers alongside Tesla.
+
+Tesla maintained its lead as the world's largest EV maker, but Chinese manufacturer BYD is catching up rapidly, now just a few percentage points behind. This has happened and is a trend that will only gather further momentum in the months ahead. Tesla has decided to counter competition by engaging in a price war, but it remains to be seen who ultimately wins this war a few years down the road, with Chinese companies having an intrinsic advantage in low-cost manufacturing.
+
+The first tourist trip around the moon by SpaceX.
+
+SpaceX made tremendous progress all through this year, as did the rest of the Space 2.0 Industry. But the first tourist trip to the moon has not yet taken off! From all the public domain information I have access to, it definitely seems close but with no specific launch date announced, I would say this is a prediction that did not turn out to be accurate.
+
+Launch of China's first space telescope, the CSST.
+
+The Chinese space agency announced that Xuntian, the first Chinese space telescope will be launched sometime in 2025 from End of the Russia-Ukraine war.
+
+The war has not ended but has reduced in intensity and perhaps even ended in all but name. After the failed Ukrainian counteroffensive there is a clear deadlock, a reduction in global interest, and a move toward negotiations. Now, nearly half of Ukrainians appear open to compromise with Russia to end the war per a Ukrainian polling firm, Rating. You can read more about this here.
+
+Progress in the Metaverse vision.
+
+Away from the spotlight of 2022, real progress was made this year. Siemens invested 500M Euros in industrial metaverse efforts while top consumer firms like Adidas, Coach, and D&G were at the Metaverse Fashion Week earlier this year. Digital twins are moving full speed ahead, and Apple's Vision Pro launch was an important first step in Apple's commitment to making this vision a reality. The metaverse hasn’t had the best press since Facebook’s bungled launch, but it is an inevitable technology that will materialize for certain.
+
+Tests of the first hypersonic aircraft.
+
+US aerospace company Hermeus was awarded a DIU contract earlier this year and has now started testing the US-made Quarterhorse MK0 Hypersonic aircraft. This is an exciting development being closely matched in other parts of the world, in particular, China. You can read more about Hermeus’ Quarterhorse here.
+
+A return to the office post-COVID-19 pandemic.
+
+Amazon's CEO Andy Jassy captured the trend directly when he addressed workers who don't want to return to the office: ‘It’s probably not going to work out.’ Per Fortune Magazine, "work from home rates have dropped to a low of 26% .. as employers make returning to the office their north star." We are not in a future where most people will work from home. And the results from our last COVID-era attempt were clearly quite mixed.
+
+I’ll be publishing my predictions for 2024 soon. I hope you stick around to read and opine.
+
+Happy Holidays!

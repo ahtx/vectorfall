@@ -1,0 +1,127 @@
+{
+ "generated": "2026-11-23 11:54",
+ "machines": {
+  "asci-red": {
+   "module": "asci-red/asci-red.js",
+   "still": "asci-red/still.png"
+  },
+  "asci-white": {
+   "module": "asci-white/asci-white.js",
+   "still": "asci-white/still.png"
+  },
+  "bluegene-l": {
+   "module": "bluegene-l/bluegene-l.js",
+   "still": "bluegene-l/still.png"
+  },
+  "cm-5": {
+   "module": "cm-5/cm-5.js",
+   "still": "cm-5/still.png"
+  },
+  "cp-pacs": {
+   "module": "cp-pacs/cp-pacs.js",
+   "still": "cp-pacs/still.png"
+  },
+  "cray-1": {
+   "module": "cray-1/cray-1.js",
+   "still": "cray-1/still.png"
+  },
+  "cray-2": {
+   "module": "cray-2/cray-2.js",
+   "still": "cray-2/still.png"
+  },
+  "cray-c90": {
+   "module": "cray-c90/cray-c90.js",
+   "still": "cray-c90/still.png"
+  },
+  "cray-xmp": {
+   "module": "cray-xmp/cray-xmp.js",
+   "still": "cray-xmp/still.png"
+  },
+  "cray-y-mp": {
+   "module": "cray-y-mp/cray-y-mp.js",
+   "still": "cray-y-mp/still.png"
+  },
+  "earth-simulator": {
+   "module": "earth-simulator/earth-simulator.js",
+   "still": "earth-simulator/still.png"
+  },
+  "el-capitan": {
+   "module": "el-capitan/el-capitan.js",
+   "still": "el-capitan/still.png"
+  },
+  "frontier": {
+   "module": "frontier/frontier.js",
+   "still": "frontier/still.png"
+  },
+  "fugaku": {
+   "module": "fugaku/fugaku.js",
+   "still": "fugaku/still.png"
+  },
+  "jaguar": {
+   "module": "jaguar-titan/jaguar-titan.js",
+   "still": "jaguar-titan/still.png"
+  },
+  "titan": {
+   "module": "jaguar-titan/jaguar-titan.js",
+   "still": "jaguar-titan/still.png"
+  },
+  "k-computer": {
+   "module": "k-computer/k-computer.js",
+   "still": "k-computer/still.png"
+  },
+  "lineshine": {
+   "module": "lineshine/lineshine.js",
+   "still": "lineshine/still.png"
+  },
+  "nec-sx-3": {
+   "module": "nec-sx-3/nec-sx-3.js",
+   "still": "nec-sx-3/still.png"
+  },
+  "nwt": {
+   "module": "nwt/nwt.js",
+   "still": "nwt/still.png"
+  },
+  "paragon-xps140": {
+   "module": "paragon-xps140/paragon-xps140.js",
+   "still": "paragon-xps140/still.png"
+  },
+  "roadrunner": {
+   "module": "roadrunner/roadrunner.js",
+   "still": "roadrunner/still.png"
+  },
+  "sequoia": {
+   "module": "sequoia/sequoia.js",
+   "still": "sequoia/still.png"
+  },
+  "sr2201": {
+   "module": "sr2201/sr2201.js",
+   "still": "sr2201/still.png"
+  },
+  "summit": {
+   "module": "summit/summit.js",
+   "still": "summit/still.png"
+  },
+  "taihulight": {
+   "module": "taihulight/taihulight.js",
+   "still": "taihulight/still.png"
+  },
+  "tianhe-1a": {
+   "module": "tianhe-1a/tianhe-1a.js",
+   "still": "tianhe-1a/still.png"
+  },
+  "tianhe-2": {
+   "module": "tianhe-2/tianhe-2.js",
+   "still": "tianhe-2/still.png"
+  },
+  "touchstone-delta": {
+   "module": "touchstone-delta/touchstone-delta.js",
+   "still": "touchstone-delta/still.png"
+  }
+ },
+ "lib": [
+  "kit.js",
+  "viewer.js"
+ ],
+ "missing": [],
+ "unknown": []
+}

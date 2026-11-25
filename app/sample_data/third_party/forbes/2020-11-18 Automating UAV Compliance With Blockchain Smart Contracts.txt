@@ -1,0 +1,34 @@
+Automating UAV Compliance With Blockchain Smart Contracts
+Amir Husain, Forbes, 2020-11-18
+
+The volume of unmanned aerial vehicles (UAVs) in our airspace is growing at a rapid pace. Business Insider Intelligence predicts global drone shipments will reach 2.4 million by 2023, increasing at a 67% compound annual growth rate.
+
+These drones are delivering blood samples and test kits, monitoring crops and livestock, responding to natural disasters, and predicting volcanic eruptions. As a less expensive option to manned aircraft, drones can surveil hard-to-reach places without putting human resources at risk.
+
+However, the industry is up against some critical challenges that must be resolved before we can realize the full potential of UAVs. And in light of the FAA’s Drone Safety Awareness Week, what better time than the present to address these issues head on!
+
+Let’s start with the challenges faced by civil aviation authorities across the globe. They’ve been tasked with managing the growing Privacy - Terms volume of drones in their airspace and enforcing UAV rules. But they’re already overburdened by manned aircraft operations and have limited bandwidth to oversee hundreds of thousands to millions of drones taking flight.
+
+That means authorities are reliant on drone operators to follow the airspace rules and fly responsibly. But operators are also up against challenges.
+
+They’re expected to monitor an exceptional volume of data to safely plan, execute, and adapt their flights. This data includes location information, such as buildings, elevation, and roadway traffic; weather information, such as precipitation, visibility, and wind speed; and regulatory information, such as airspace classes and restrictions.
+
+This manual approach leaves a lot of room for error in the rapidly changing airspace. In fact, recent drone sightings near airports and stadiums have exposed how drones in an inadequately managed airspace can put lives at risk and cause major disruptions to operations.
+
+The bottom line is that it’s not feasible to manage and scale commercial drone operations with the technologies available today. A smarter system is required to protect the safety of our airspace in addition to people and property on the ground. This system must reduce the burden on drone operators and airspace authorities while minimizing potential for human error in the airspace.
+
+The key to enabling such a system is blockchain technology augmented with smart contracts.
+
+Blockchain is a distributed ledger of immutable records stored in a decentralized database. This technology can be encoded with smart contracts to set rules mutually agreed upon by network members. Smart contracts require an exact sequence of events to take place to trigger the term agreements. If the terms are met, the smart contracts will automatically record information onto the ledger and execute the terms without human intervention.
+
+How can this technology be applied to unmanned aviation?
+
+When augmented with smart contracts, blockchain can encode the national airspace rules into an airspace management system for unmanned aircraft. This allows authorities to mandate compliance before flight authorization and during flight as conditions change. Enterprises can also use this system to set additional safety parameters for their unmanned flights based on different types of missions, payloads, vehicles, and environmental conditions.
+
+For example, regulatory rules might include operating drones under 400 feet in altitude, flying during daylight hours, or maintaining a 5-mile radius around airports without explicit approval. Weather rules might include a requirement to fly under 15 mph winds with at least 5 miles of visibility. And a vehicle rule might include a requirement to fly with at least 20 percent battery life left in reserve.
+
+More specific rules could also be defined based on the type of drone or payload. For example, stringent parameters could be set for high-risk payloads, such as biohazardous materials and pharmaceuticals. These rules might include avoiding a 1-mile radius around stadiums, parks, and city centers.
+
+Encoded with smart contracts, a blockchain-backed system can automate compliance with the rules for all unmanned flights. This approach would minimize the burden on both drone operators and authorities. It also enables enterprises to scale their drone operations by ensuring all pilots associated with their organization are following the same rulebook.
+
+There’s no doubt unmanned aircraft will have a tremendous impact on business operations and advanced air mobility at large, but there are still critical challenges that must be addressed to protect the safety of our airspace. Smart contracts play an important role in solving these challenges.

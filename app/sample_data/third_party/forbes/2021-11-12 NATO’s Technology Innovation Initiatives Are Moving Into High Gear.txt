@@ -1,0 +1,24 @@
+NATO’s Technology Innovation Initiatives Are Moving Into High Gear
+Amir Husain, Forbes, 2021-11-12
+
+The NATO Maritime Unmanned Systems Innovation Advisory Board (IAB), of which I am honored to be a founding member, is an 18-member body comprised of serving military officers, senior executives, investors, scientists and entrepreneurs from allied nations. The purpose of the IAB is to harness the best, most innovative ideas from across a range of disciplines and areas of expertise, and apply these to solve the greatest challenges that will face the alliance, and the world, in the coming years and decades.
+
+The board just concluded its first in-person meeting since the beginning of the pandemic, at NATO headquarters in Brussels. The meeting was co-chaired by Sean Trevethan, NATO’s Maritime Portfolio Lead and former Fleet Robotics Officer of the Royal Navy, and Commodore Michael Brasseur of the United States Navy (USN). In addition to permanent IAB members, the meeting was also attended by Camille Grand, NATO Secretary General, Adjoint, NATO's Head of Innovation, Robert Murray, and US Navy officials including Michael Stewart, former Director Integrated Warfare and Privacy - Terms current Executive Director of the US Navy's Unmanned Task Force. The event was in many ways a culmination of the intense work the IAB has been engaged in over the past year and a half.
+
+The NATO IAB was assembled in 2019 by Commodore Michael Brasseur, commander of the newly formed Task Force 59 (TF59), a US Navy unit focused on AI and autonomy. Many of the ideas underpinning TF59 arose from discussions and conceptual development that occurred at the IAB. USN TF59 is now poised to apply artificial intelligence and autonomy in novel and unprecedented ways to address security challenges on the open ocean, in defense of the United States and its allies.
+
+As its first major undertaking, in early 2022, the Task Force will participate in the world's largest naval exercise, IMX, bringing together over 60 nations in the waters surrounding the Arabian Peninsula and the Indian Ocean.
+
+In addition to contributing to TF59, the NATO IAB has also been developing another critically important framework, called "Digital Ocean". This broad-based technology platform seeks to tie together a vast array of sensors infused with artificial intelligence and then analyze, model and project outcomes into the future to secure the planet against threats as diverse as climate change, piracy, illicit trafficking and economic crimes such as illegal fishing.
+
+In many ways, we are past the point of no return in our battle against man-made climate change. It is now beyond doubt that even with mitigation measures currently in place, the changing climate will cause significant societal and economic impact across the planet. The manifestations of this impact include mass migrations, a potential increase in criminal activity on the high seas and unsafe, unsanctioned transit of populations. It is impractical to monitor and respond to large numbers of such incidents by actively patrolling the vast ocean with manned vessels. Satellites help, but they are not ubiquitous, not capable of detecting all types of activity and can be impacted by weather.
+
+you acknowledge our Privacy Statement. Forbes is protected by reCAPTCHA, and the Google Privacy Policy and Terms of Service apply.
+
+Going far beyond what is available today, the Digital Ocean platform seeks to bring together visual, auditory, radio and many other types of sensor inputs, engaging neural networks to classify patterns of activity, then determining if action must be taken, and eventually, suggesting the most appropriate action. Once fully realized, it is, in many ways, an autonomous, ever-watchful guardian of the high seas.
+
+While the platform is still nascent, an array of partners are already coming together to assemble elements of this critically important network, and are developing a prototype, expected to undergo tests in early 2022.
+
+While impressive and novel as a technology, Digital Ocean is not only important due to its technological sophistication or operational capability. It is also valuable as a template for collaboration between large numbers of nations to drive the collective benefit of all. Further, it is an initiative that will amplify NATO's relevance as the security and geopolitical situation of the world continues to evolve rapidly.
+
+Immediately following these successful programs, the IAB is now expanding its focus to include innovating all-domain systems, from deep sea to deep space. With greater cooperation anticipated with new NATO initiatives such as DIANA (Defense Innovation Accelerator of the North Atlantic) the Innovation Advisory Board is set to accelerate its activities and create an even greater impact on global security and international partnership in the months and years ahead.

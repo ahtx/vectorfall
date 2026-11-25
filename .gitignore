@@ -1,0 +1,9 @@
+# local settings (copy .env.example to .env)
+.env
+.env.*
+!.env.example
+# runtime data and backups
+data/
+backups/
+__pycache__/
+*.pyc

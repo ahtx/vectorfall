@@ -1,0 +1,9 @@
+# Only VERSION, app/ and ui/ go into the image; everything else stays out of the build context.
+*
+!VERSION
+!app/
+!ui/
+**/__pycache__
+**/*.pyc
+**/*.pre-param-*
+**/*.bak-*

@@ -1,0 +1,60 @@
+VectorFall 0.1.0 - third-party notices
+
+VectorFall is Copyright (c) 2026 Amir Husain. It is free for non-commercial use under the PolyForm Noncommercial
+License 1.0.0 (see LICENSE). Commercial use requires a commercial license (see COMMERCIAL-LICENSE.md).
+
+1. Included in the source tree (ui/vendor/)
+
+CodeMirror 5.65.16                                  MIT License
+  Copyright (C) 2017 by Marijn Haverbeke and others. https://codemirror.net/5/
+  The license text is in ui/vendor/codemirror-5.65.16/LICENSE.
+
+Inter                                               SIL Open Font License 1.1
+  Copyright 2020 The Inter Project Authors. https://github.com/rsms/inter
+  ui/vendor/fonts/OFL-inter.txt
+
+Saira Condensed                                     SIL Open Font License 1.1
+  Copyright 2016 The Saira Project Authors, with reserved font name "Saira".
+  ui/vendor/fonts/OFL-sairacondensed.txt
+
+JetBrains Mono                                      SIL Open Font License 1.1
+  Copyright 2020 The JetBrains Mono Project Authors. https://github.com/JetBrains/JetBrainsMono
+  ui/vendor/fonts/OFL-jetbrainsmono.txt
+
+The font files are the WOFF2 files that Google Fonts serves. They are not changed.
+
+2. Installed in the Docker image when it is built (not in the source tree)
+
+NVIDIA CUDA Toolkit 10.2                            NVIDIA CUDA Toolkit End User License Agreement
+  Downloaded from NVIDIA when the image is built. https://docs.nvidia.com/cuda/eula/
+Ubuntu 18.04 base and packages                      Each package's own license (/usr/share/doc/*/copyright)
+FFmpeg (Ubuntu package)                             GNU LGPL 2.1 or later / GNU GPL 2 or later (Ubuntu build)
+Python 3.6 (Ubuntu package)                         Python Software Foundation License
+CuPy 9.6.0                                          MIT License (Preferred Networks, Inc. and Preferred Infrastructure)
+fastrlock 0.8.3                                     MIT License (Stefan Behnel)
+NumPy 1.19.5                                        BSD 3-Clause License (NumPy Developers)
+SciPy 1.5.4                                         BSD 3-Clause License (SciPy Developers)
+FastAPI 0.79.1                                      MIT License (Sebastian Ramirez)
+Starlette 0.19.1                                    BSD 3-Clause License (Encode OSS Ltd.)
+Uvicorn 0.16.0                                      BSD 3-Clause License (Encode OSS Ltd.)
+Pydantic 1.9.2                                      MIT License (Samuel Colvin and contributors)
+python-multipart 0.0.5                              Apache License 2.0 (Andrew Dunham)
+aiofiles 0.8.0                                      Apache License 2.0 (Tin Tvrtkovic)
+websockets 9.1                                      BSD 3-Clause License (Aymeric Augustin and contributors)
+Pillow 8.4.0                                        HPND License (Jeffrey A. Clark and contributors)
+PyMuPDF 1.18.14                                     GNU AGPL v3.0 or a commercial license (Artifex Software, Inc.)
+python-docx 0.8.11                                  MIT License (Steve Canny)
+python-pptx 0.6.21                                  MIT License (Steve Canny)
+openpyxl 3.0.10                                     MIT License (Eric Gazoni, Charlie Clark)
+XlsxWriter 3.2.2                                    BSD 2-Clause License (John McNamara)
+lxml                                                BSD 3-Clause License (lxml contributors)
+
+The packages above are installed from the Ubuntu archive and from PyPI. Their license files are in the image under
+/usr/share/doc and /usr/local/lib/python3.6/dist-packages/*.dist-info.
+
+3. Data
+
+VectorFall ships no third-party data sets. The built-in samples are made by code on your computer. Some features
+download public data when you ask for it (for example World Bank indicators, SEC EDGAR filings, UCDP conflict data,
+Wikipedia lists and market prices). That data goes to your data folder and stays under the terms of its source.
+Market prices from Yahoo are kept in memory only and are not stored.

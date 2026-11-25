@@ -1,0 +1,32 @@
+What Does The Future Hold For AI? Five Predictions
+Amir Husain, Forbes, 2019-08-29
+
+The last few years have seen a frenzy of developments in artificial intelligence, with many successes both in the way of research accomplishments and real-world deployments. But in spite—or perhaps because—of its rapid ascent, AI is still a source of uncertainty for many. Will the current AI trends hold? What changes can we expect to see, and how soon? As an AI entrepreneur with a lifelong dedication to the field, here’s my shortlist of predictions on what the near future holds for artificial intelligence.
+
+1. AI Will Move Beyond Deep Learning
+
+Deep learning has been immensely successful in solving perception problems, particularly when there are large supervised (that is to say, labeled) data sets available. This is the technique that has given us amazing image and handwriting recognition, language translation and much more. However, the need for massive amounts of labeled data can be a problem in the real world. For example, AI can work with industrial systems. In order to protect companies, AI can predict when a large industrial asset such as a turbine might fail in the real world. The problem is, there isn't a supervised data set available documenting tens of thousands of failures of such critical, multi-hundred million dollar assets. Why? Because thankfully, there haven’t been that many failures for these mission-critical pieces of equipment. Instead, data scientists must make do with incredibly small amounts of data and still make algorithms work. In the next few years, problems of this nature will inevitably lead to many more applications that make use of techniques other than deep learning, and venture into unsupervised and semi-supervised territory to solve hard problems.
+
+What are some areas to look into beyond deep learning? Clearly, reinforcement learning is one; it already has been used extensively to develop better-than-human game players. Another is transfer learning, a technique that learns from data relevant to one type of industrial system and then generalizes this knowledge and applies it to a different context, even when there is no training data available for this new situation. Genetic or evolutionary algorithms are another very promising area. The employment of sophisticated, custom genetic algorithms that are capable of building deep networks is a powerful and spectacularly meta approach to solving hard AI problems. Professionals across industries can soon expect to see genetic algorithms in action all over the place.
+
+2. Intelligence Will Be Pushed Out To The Edge
+
+As AI systems become more widely deployed, they run into countless scenarios where network connectivity back to the cloud cannot be assumed. AI will also be used in problems requiring the analysis of increasing amounts of data, and problems that necessitate instantaneous decision-making. In both these cases, the latency and delays associated with network communications may not be practical. Then there are military environments, where communication might be denied, or space environments where lags extend into many minutes. Clearly, cloud-based AI isn't a panacea. That's where intelligence at the edge comes in. There is a multitude of scenarios where AI at the edge is key, which is why AI products must be capable of being deployed in hybrid scenarios, and researchers at the cutting edge of the field are already heads-down on this precise problem.
+
+3. Algorithms Will Learn To Reason Causally
+
+When human beings think about a problem, they certainly draw upon our past experiences, but they are also able to create mental situations and think in terms of cause and effect, not mere correlation. For now, most AI systems essentially learn from observed correlations. Granted, these correlations uncover far more than what a human would be able to find, since they apply to massive numbers of variables—or high dimensional inputs—but as everyone knows, correlation does not equal causation.
+
+Very soon, commercial AI systems that employ causal reasoning will begin to emerge. The challenge, and perhaps even the holy grail, is to not fall back on manually constructed rules but to use modern AI techniques and extract the "rules" or laws that govern a particular domain, and then, using these rules, reason causally. This is a multi-year problem, but will allow AI to take great leaps forward. Do not expect the automated causal reasoning problem to be "solved" in twelve months. The challenge for AI companies will be to deliver the state of the art in terms of capabilities such as causal reasoning, and then connect them to real-world use cases.
+
+4. Explainability Will Become A Hard Requirement
+
+For many critical applications, particularly those that deal with automating consequential actions in the physical world, explainability will be an absolute requirement. Utility companies don't want to turn off a $100M turbine just because a black box neural network says so. AI systems have to provide explanations and background data that justify decisions.
+
+Products that aren't explainable—with the exception of those that solve trivial, inconsequential problems—will not go very far.
+
+5. AI Will Progress From Perception To Action
+
+Another trend that is going to make itself known in the very near future is that of applications moving beyond making mere recommendations to actually automating actions as well. Of course, this will not be possible without explainability, but to the extent that end users are satisfied with explanations being supplied by AI, they will begin to trust some level of automated response. The types of actions that are most exciting are those that occur in the physical world. Self-driving cars are one example, but there are many, many more where that came from, including autonomous power plants, AI-powered safety and route management capabilities for unmanned aerial vehicles (UAVs) and even defensive military systems.
+
+With the incredibly fast pace of AI developments in recent years, it’s natural that many view it as a strange, unpredictable new element. But for those who have been watching AI for a long time, its current primacy isn’t all that surprising. Similarly, there is a method in the seeming quick-moving madness of AI, and it doesn’t take a crystal ball to forecast AI’s future trajectory. What’s certain is that while there yet remain many questions to be answered in the field of AI, the coming years will be full of exciting new innovations.

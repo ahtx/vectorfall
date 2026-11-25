@@ -1,0 +1,56 @@
+The Model-Driven Enterprise
+Amir Husain, Forbes, 2020-02-07
+
+How will artificial intelligence (AI) go beyond rhetoric and toy projects to real, enterprise deployments that yield significant business benefits across a large number of different industries? What are the key considerations to keep in mind when attempting such transformations? And how can understanding the fundamental economics of AI help propel implementations forward?
+
+At SparkCognition's 2019 AI and future tech conference, Time Machine, I tackled these questions during my keynote. Since then, I've received considerable interest from clients, partners and colleagues to elaborate on that talk and provide a bit more background. This essay is an attempt at addressing some of these requests.
+
+Perception, Decision And Action
+
+The first thing to understand about AI-enabled automation is that there are three distinct elements of a chain of autonomy: perceiving some pattern from underlying data, deciding how to act based on this perception and prior knowledge and finally, acting on the decision made. Each of these elements can be powered by artificial intelligence/machine learning "models" or algorithmically trained components that are exposed to example data so that they can abstract these examples into real-world conclusions. Machine learning can draw these conclusions even when the real-world data is unseen, new and has never been fed to the model during training.
+
+All along, with each of these tasks, learning is usually incorporated so that the automated "agent" or process can become smarter over time. For example, did it turn out that the system perceived the data correctly? Did it make the right decision? Did it carry out the action properly? If it did, then the behaviors it exhibited in arriving at that conclusion are reinforced. But if it didn't, they are deemphasized so that more optimal outcomes can be created in the future.
+
+How might these basic elements manifest in chains of autonomy in business processes employed in a typical corporation?
+
+At a bank processing a car loan application, an AI system could perceive images, such as faces and fingerprints to biometrically confirm identities. It could recognize handwriting on a filled-out application form and process an image of a car being purchased to identify its make, model, type and condition.
+
+It could further decide whether to approve a loan, based on the identity of the person and what is known about that person. It could automatically determine whether the form has been filled out properly and if the information it contains supports a positive decision. Based on past experience, the system could also predict whether the car identified is of a type that the person can comfortably afford and pay off.
+
+Once these determinations are made, the AI system could then act by generating a response to the application filled out using natural language generation or a pre-populated form, kicking off other automated processes that create a new account for the applicant if necessary, and reflecting the loan approval on internal systems, including initiating fund transfers.
+
+Thinking About Process
+
+Processes like these are already being automated in many banks and insurance agencies. Sometimes such automation is possible with rules-based systems, but where AI shines is by enabling such sophisticated perception, decision and action capabilities that a much larger number of business processes can be made autonomous. AI enables not only speed, but also scale. It delivers the ability to retain best-practice knowledge in the digital systems of an enterprise. The advantages are limitless.
+
+Clearly, the rate at which increasing AI sophistication will subsume business workflows depends on the industry and application. For example, the Department of Defense might require perception of targets in underlying data, decisions on whether to engage these targets and then constant guidance to deliver munitions to selected targets. The cost of failure is incredibly high and the complexity of clear perception is also much greater. Some processes map to current generation AI capabilities quite well, while for others we will have to wait a while.
+
+But, even if not everything is ready to be cast as an AI model, you can start thinking about almost everything that happens in your enterprise in this context: PERCEPTION>DECISION> ACTION.
+
+So which processes do you start with?
+
+Which processes map to this model? Which processes are most relevant to the success and profitability of your business? Which processes cause your employees the greatest degree of difficulty and dissatisfaction? Which processes are at the core of your competitiveness vis-à-vis other vendors?
+
+Answering these questions is the first step in developing a roadmap to a transformation that ends with an AI-powered, model-driven enterprise.
+
+Scaling At The Speed Of Light
+
+Once core business processes have been implemented as Perception>Decision>Action chains of autonomy, theoretically a business can choose to apply greater computational resources and scale these up, while also accelerating them (i.e. completing them faster). But practically, this can only be done to a certain degree until another non-digital, non-autonomous process gets in the way of the acceleration.
+
+For example, in our loan approval use case, the autonomous chain responsible for evaluating and approving an application can only process these requests at the rate at which they are made. To increase scale, the business would have to grow larger so that the number of applications available to process increases. In cutting down latencies of core processes down to near-zero, the remaining bottlenecks in a business are exposed in this way and become future candidates for implementation as a model driven process.
+
+Continuing the same example, the next process to automate might be the digital advertising and campaign management so that a greater number of leads can be sourced.
+
+One by one, a model driven enterprise identifies and removes latency from its operations wherever possible. In physical industries where some latencies are driven by the laws of physics and nature—such as the growth rate of a crop—some delays will remain, but these are the only delays that should be tolerated.
+
+The Economics Of A Model-Driven Enterprise
+
+Once you start thinking about your business as a set of parallel workflows running to yield value to your clients, complying with regulation or providing a service to an employee, you can then associate costs with the development, execution and maintenance of each of these workflows. Since each workflow is powered by many perception, decision and action models, the key to running a winning model-driven enterprise is to lower the cost per model.
+
+How do we go about doing that?
+
+Model costs are not limited just to developing a system and training it up-front. In the real world, systems age, underlying patterns change and there is a consequent need to regularly update AI systems. Sometimes, it is not enough just to retrain the existing system on new data. It is also necessary to switch techniques and algorithms to achieve acceptable results. This can be a complex and time-consuming process that only highly qualified, expensive subject matter experts can execute. If we require an extremely high level of talent to build and run these processes, we cannot achieve the true benefits of automation.
+
+This is where a new technique called automated model building (AMB) comes into play. In essence, these algorithms use artificial intelligence to build AI, thus automating the up-front construction of models and also their maintenance over time. Unlike systems that simply optimize a few parameters of models automatically, or automate the retraining of an existing model, cutting-edge AMB technology evolves entire neural network structures from scratch, while also adapting these structures as real-world data shifts and morphs underneath.
+
+Applying automated model building lies at the heart of the most competitive model-driven enterprises of the future: companies that have mastered the art and science of applying artificial intelligence to maximize customer happiness and business profitability. When you find one of these companies, you have found a winner. For the others, it will quickly become a fight for mere survival.

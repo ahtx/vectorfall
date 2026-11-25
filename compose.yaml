@@ -1,0 +1,36 @@
+# VectorFall with Docker Compose v2 and the NVIDIA Container Toolkit. install.sh and vfctl do the same with
+# `docker run`; use this file if you prefer compose. Settings come from .env beside this file (see .env.example).
+#
+#   cp .env.example .env          # set VF_GPU to a UUID from `nvidia-smi -L`
+#   docker compose up -d          # add --build to build the image from this folder
+#
+# Podman: use compose.podman.yaml (CDI devices).
+name: vectorfall
+services:
+  vectorfall:
+    image: ${VF_IMAGE:-ghcr.io/ahtx/vectorfall:0.1.0}
+    build: .
+    container_name: ${VF_NAME:-vectorfall}
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ["${VF_GPU:-0}"]
+              capabilities: [gpu, compute, utility]
+    environment:
+      NVIDIA_DRIVER_CAPABILITIES: compute,utility
+      # site values come from .env (see .env.example); these defaults are generic
+      VF_TLS_HOSTS: ${VF_TLS_HOSTS:-localhost,127.0.0.1}
+      VF_TRUSTED_NETS: ${VF_TRUSTED_NETS:-}
+      VF_GPU_LEASE_URL: ${VF_GPU_LEASE_URL:-}
+      VF_SEC_CONTACT: ${VF_SEC_CONTACT:-}
+      VF_GPU_LEASE_TOKEN_FILE: /srv/data/gpu-lease-token
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ${VF_DATA:-./data}:/srv/data
+    ports:
+      - "${VF_BIND:-127.0.0.1}:${VF_PORT:-8092}:8092"
+      - "${VF_BIND:-127.0.0.1}:${VF_TLS_PORT:-8493}:8493"

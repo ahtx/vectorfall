@@ -1,0 +1,28 @@
+Drones Vs. Covid-19: Ensuring Airspace Safety And Security With AI
+Amir Husain, Forbes, 2020-06-10
+
+The Covid-19 pandemic has demonstrated that drastic measures are required to lower the rate of transmission and avoid overwhelming our healthcare systems. Some of the most innovative measures include using 3D printers to produce face shields and ventilators, and deploying hospital robots to transport equipment and protect doctors and nurses from the virus.
+
+Across the globe, drones are also playing an important role in the fight against Covid-19. In India, the Karnataka Government is using drones to sanitize public spaces in areas with confirmed cases, such as hospitals and metro areas. They are deploying 300 drones across the state to spray a disinfectant solution approved by the World Health Organization. Authorities in France, Italy and Spain are also using drones to monitor social distancing and enforce coronavirus restrictions with loudspeakers.
+
+In Ghana, a logistics company is using drones to deliver Covid-19 test kits, shaving hours and even days off the time it takes to get Privacy - Terms tests to rural residents and transport them to urban laboratories. With nearly 70,000 tests conducted so far, Ghana has one of the highest testing rates in Africa.
+
+It’s evident that drone delivery, sanitization and enforcement measures can enable a quicker response to the pandemic and help save lives. So why aren’t we seeing similar widespread measures in the United States? The challenge many businesses, nonprofits and local authorities face is regulatory approval.
+
+Today, the Federal Aviation Administration’s Part 107 rules for unmanned aerial systems include flying below 400 feet in altitude within visual line of sight during daylight hours. The FAA enables near real-time airspace authorization for flights that comply with these rules, but a Part 107 waiver is required to operate drones at night, over people or beyond visual line of sight. These advanced operations are often core to missions that can help fight Covid-19.
+
+Nearly 4,000 waivers have been granted for advanced drone operations since the Part 107 rules were implemented in 2016, but less than 200 have been permitted for flights over people or beyond visual line of sight. Why? Regulators need more assurances regarding the safety and security of our airspace. Understandably, commercial drone operators must prove they are equipped to minimize risks in the airspace and manage unforeseen circumstances before receiving a waiver. But that’s easier said than done.
+
+Air traffic services aren’t provided in low altitude airspace, so operators must be equipped to plan, execute and adapt their flights as changes occur in the airspace. This requires operators to consistently monitor regulatory dynamics (e.g., temporary flight restrictions) and local conditions, such as weather shifts, ground risks and temporary objects (e.g., construction cranes).
+
+Drone operators are also required to monitor airspace traffic to maintain separation from other aircraft, including drones, helicopters and planes. They’re also expected to protect their drones from hardware malfunction or cyberthreats that could put public safety in danger. This requires operators to regularly monitor their vehicle health and detect any malicious activity.
+
+The long list of responsibilities for drone operators can feel daunting. It simply isn’t feasible to safely execute advanced drone missions at scale without some level of autonomy, and that requires artificial intelligence.
+
+AI is the key to analyzing crucial data, such as weather forecasts, ground risks and vehicle performance; selecting the right drones for each mission; generating the safest flight paths; and autonomously adapting flights as conditions change. Trained to recognize hazardous objects, AI is also critical to detecting and avoiding other aircraft and obstacles that can pose a danger to unmanned flights.
+
+When it comes to aircraft safety, AI technology can analyze sensor data across a drone fleet and predict maintenance needs before a failure occurs. And from a security standpoint, AI can protect drones from previously unseen zero-day attacks that traditional anti-malware isn’t equipped to detect.
+
+Ultimately, artificial intelligence can help fill the gaps in today’s airspace systems by minimizing the burden on drone operators. An AI-based approach can also help provide the safety and security assurances regulators need when considering waivers for advanced Covid-19 drone missions.
+
+We still have a long road ahead of us, and it’s important to consider every option that can help fight this global crisis, especially in a country known for its technological innovation and entrepreneurship.

@@ -1,0 +1,62 @@
+[
+ {
+  "file": "voltaic.mp3",
+  "name": "Voltaic - Kevin MacLeod",
+  "title": "Voltaic",
+  "author": "Kevin MacLeod (incompetech.com)",
+  "licence": "CC BY 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1600056",
+  "category": "Music: electronic, 120 BPM, driving",
+  "attribution": "\"Voltaic\" Kevin MacLeod (incompetech.com). Licensed under Creative Commons: By Attribution 4.0 License. http://creativecommons.org/licenses/by/4.0/",
+  "changes": "re-encoded to 160 kbit/s MP3; tags removed"
+ },
+ {
+  "file": "ouroboros.mp3",
+  "name": "Ouroboros - Kevin MacLeod",
+  "title": "Ouroboros",
+  "author": "Kevin MacLeod (incompetech.com)",
+  "licence": "CC BY 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1400007",
+  "category": "Music: electronic, 130 BPM, aggressive",
+  "attribution": "\"Ouroboros\" Kevin MacLeod (incompetech.com). Licensed under Creative Commons: By Attribution 4.0 License. http://creativecommons.org/licenses/by/4.0/",
+  "changes": "re-encoded to 160 kbit/s MP3; tags removed"
+ },
+ {
+  "file": "raving-energy.mp3",
+  "name": "Raving Energy - Kevin MacLeod",
+  "title": "Raving Energy",
+  "author": "Kevin MacLeod (incompetech.com)",
+  "licence": "CC BY 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1900013",
+  "category": "Music: techno / EDM, 122 BPM",
+  "attribution": "\"Raving Energy\" Kevin MacLeod (incompetech.com). Licensed under Creative Commons: By Attribution 4.0 License. http://creativecommons.org/licenses/by/4.0/",
+  "changes": "re-encoded to 160 kbit/s MP3; tags removed"
+ },
+ {
+  "file": "cut-trance.mp3",
+  "name": "Cut Trance - Kevin MacLeod",
+  "title": "Cut Trance",
+  "author": "Kevin MacLeod (incompetech.com)",
+  "licence": "CC BY 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100273",
+  "category": "Music: semi-trance, semi-techno, 110 BPM",
+  "attribution": "\"Cut Trance\" Kevin MacLeod (incompetech.com). Licensed under Creative Commons: By Attribution 4.0 License. http://creativecommons.org/licenses/by/4.0/",
+  "changes": "re-encoded to 160 kbit/s MP3; tags removed"
+ },
+ {
+  "file": "digital-lemonade.mp3",
+  "name": "Digital Lemonade - Kevin MacLeod",
+  "title": "Digital Lemonade",
+  "author": "Kevin MacLeod (incompetech.com)",
+  "licence": "CC BY 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1700010",
+  "category": "Music: electronic, analog synths, 120 BPM",
+  "attribution": "\"Digital Lemonade\" Kevin MacLeod (incompetech.com). Licensed under Creative Commons: By Attribution 4.0 License. http://creativecommons.org/licenses/by/4.0/",
+  "changes": "re-encoded to 160 kbit/s MP3; tags removed"
+ }
+]

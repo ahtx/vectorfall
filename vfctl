@@ -1,0 +1,768 @@
+#!/usr/bin/env python3
+"""vfctl: run and look after a VectorFall server on this computer (Docker or Podman, one NVIDIA card).
+
+  vfctl start | stop | restart        start the server (it makes the container when needed), stop it, restart it
+  vfctl status                        container, card, version, URL, uptime and running jobs
+  vfctl logs [-f] [-n N]              the server log (-f follows it)
+  vfctl doctor [--quick]              check the driver, the GPU access, the server, the ports, the disk, the
+                                      certificate and the card; PASS / WARN / FAIL with a fix for each problem
+  vfctl gpu                           list the NVIDIA cards and show the card that VectorFall uses
+  vfctl gpu select [N|UUID]           choose the card (asks when no card is given)
+  vfctl url                           the addresses of the web interface and the API
+  vfctl update [--build DIR]          get the new image (or build it from a source folder) and restart
+  vfctl backup [FILE]                 save the data folder to a .tar.gz file
+  vfctl restore FILE                  put back a backup (the current data folder is kept beside it)
+  vfctl uninstall [--purge]           remove the container (and, with --purge, the image and the data)
+  vfctl version                       the vfctl version and the server version
+
+Settings are in the .env file of the VectorFall folder ($VF_HOME, default ~/vectorfall; install.sh writes it).
+Python 3.6 or later, standard library only. Copyright (c) 2026 Amir Husain. SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0.
+"""
+import hashlib
+import json
+import os
+import re
+import shutil
+import socket
+import ssl
+import subprocess
+import sys
+import time
+import urllib.error
+import urllib.request
+
+VFCTL_VERSION = "0.1.0"
+DEFAULTS = {
+    "VF_ENGINE": "",                      # docker | podman (empty: the one that works)
+    "VF_IMAGE": "ghcr.io/ahtx/vectorfall:" + VFCTL_VERSION,
+    "VF_NAME": "vectorfall",
+    "VF_GPU": "",                         # a GPU UUID from nvidia-smi -L (or an index)
+    "VF_BIND": "127.0.0.1",               # 0.0.0.0 = the local network too
+    "VF_PORT": "8092",
+    "VF_TLS_PORT": "8493",
+    "VF_DATA": "./data",
+    "VF_TLS_HOSTS": "localhost,127.0.0.1",
+}
+# keys that only vfctl and compose read; every other VF_* key in .env goes into the container
+LOCAL_KEYS = set(DEFAULTS) - {"VF_TLS_HOSTS"} | {"VF_HOME", "VF_URL", "VECTORFALL_URL", "VF_SOURCE"}
+TTY = sys.stdout.isatty()
+
+
+def color(s, c):
+    return "\033[{}m{}\033[0m".format(c, s) if TTY else s
+
+
+def say(msg=""):
+    print(msg)
+    sys.stdout.flush()
+
+
+def die(msg, code=1):
+    sys.stderr.write(color("vfctl: ", "31") + msg + "\n")
+    sys.exit(code)
+
+
+def sh(args, check=False, timeout=None, capture=True, inp=None):
+    """Run a command; return (code, stdout+stderr text)."""
+    try:
+        p = subprocess.run(args, stdout=subprocess.PIPE if capture else None, stderr=subprocess.STDOUT if capture else None,
+                           universal_newlines=True, timeout=timeout, input=inp)
+    except FileNotFoundError:
+        if check:
+            die("{} is not installed".format(args[0]))
+        return 127, "{}: not found".format(args[0])
+    except subprocess.TimeoutExpired:
+        return 124, "timed out after {} s".format(timeout)
+    out = (p.stdout or "") if capture else ""
+    if check and p.returncode:
+        die("{} failed ({}):\n{}".format(" ".join(args[:3]), p.returncode, out.strip()[-2000:]))
+    return p.returncode, out
+
+
+# ---------------------------------------------------------------- settings
+def home():
+    for h in (os.environ.get("VF_HOME"), os.path.dirname(os.path.realpath(__file__))):
+        if h and os.path.isfile(os.path.join(h, ".env")):
+            return os.path.abspath(h)
+    return os.path.abspath(os.environ.get("VF_HOME") or os.path.expanduser("~/vectorfall"))
+
+
+HOME = home()
+ENV_FILE = os.path.join(HOME, ".env")
+
+
+def read_env(path=ENV_FILE):
+    out = {}
+    if os.path.isfile(path):
+        with open(path) as f:
+            for line in f:
+                line = line.strip()
+                if not line or line.startswith("#") or "=" not in line:
+                    continue
+                k, v = line.split("=", 1)
+                v = v.strip()
+                if len(v) >= 2 and v[0] == v[-1] and v[0] in "\"'":
+                    v = v[1:-1]
+                out[k.strip()] = v
+    return out
+
+
+def write_env_key(key, value, path=ENV_FILE):
+    """Set one key in .env and keep every other line (and the comments) as it is."""
+    lines, done = [], False
+    if os.path.isfile(path):
+        with open(path) as f:
+            lines = f.read().splitlines()
+    for i, line in enumerate(lines):
+        if re.match(r"\s*{}\s*=".format(re.escape(key)), line):
+            lines[i] = "{}={}".format(key, value)
+            done = True
+    if not done:
+        lines.append("{}={}".format(key, value))
+    with open(path, "w", newline="\n") as f:
+        f.write("\n".join(lines) + "\n")
+
+
+def cfg():
+    c = dict(DEFAULTS)
+    c.update({k: v for k, v in read_env().items() if v != "" or k not in DEFAULTS})
+    for k in DEFAULTS:                                     # the real environment wins, as with docker compose
+        if os.environ.get(k):
+            c[k] = os.environ[k]
+    if not c["VF_ENGINE"]:
+        c["VF_ENGINE"] = detect_engine() or "docker"
+    d = c["VF_DATA"]
+    c["VF_DATA"] = os.path.abspath(os.path.join(HOME, d)) if not os.path.isabs(d) else d
+    return c
+
+
+def detect_engine():
+    for e in ("docker", "podman"):
+        if shutil.which(e) and sh([e, "info"], timeout=20)[0] == 0:
+            return e
+    return None
+
+
+def url(c, host=None):
+    h = host or ("127.0.0.1" if c["VF_BIND"] in ("0.0.0.0", "::", "") else c["VF_BIND"])
+    return "http://{}:{}".format(h, c["VF_PORT"])
+
+
+def lan_ip():
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.connect(("192.0.2.1", 9))                     # no packet is sent; this only picks the outgoing address
+        ip = s.getsockname()[0]
+        s.close()
+        return ip
+    except OSError:
+        return None
+
+
+def get(c, path, timeout=5, host=None):
+    try:
+        with urllib.request.urlopen(url(c, host) + path, timeout=timeout) as r:
+            return json.loads(r.read().decode("utf-8"))
+    except (OSError, ValueError, urllib.error.URLError):
+        return None
+
+
+# ---------------------------------------------------------------- the GPUs on the host
+def gpus():
+    """[{index, uuid, name, mem_mb, used_mb, driver, busy}] from nvidia-smi; [] when the driver does not answer."""
+    code, out = sh(["nvidia-smi", "--query-gpu=index,uuid,name,memory.total,memory.used,driver_version",
+                    "--format=csv,noheader,nounits"], timeout=20)
+    if code:
+        return []
+    busy = set()
+    c2, apps = sh(["nvidia-smi", "--query-compute-apps=gpu_uuid", "--format=csv,noheader"], timeout=20)
+    if not c2:
+        busy = {a.strip() for a in apps.splitlines() if a.strip()}
+    res = []
+    for line in out.strip().splitlines():
+        p = [x.strip() for x in line.split(",")]
+        if len(p) < 6:
+            continue
+        num = lambda v: int(float(v)) if re.match(r"^[\d.]+$", v) else 0  # noqa: E731
+        res.append({"index": p[0], "uuid": p[1], "name": p[2], "mem_mb": num(p[3]), "used_mb": num(p[4]),
+                    "driver": p[5], "busy": p[1] in busy})
+    return res
+
+
+def default_gpu(gs):
+    """The only card; else the smallest idle card (bigger cards stay free for other work); else the most free memory."""
+    if not gs:
+        return None
+    if len(gs) == 1:
+        return gs[0]
+    idle = [g for g in gs if not g["busy"] and g["used_mb"] < 0.1 * max(g["mem_mb"], 1)]
+    if idle:
+        return min(idle, key=lambda g: (g["mem_mb"], int(g["index"])))
+    return max(gs, key=lambda g: g["mem_mb"] - g["used_mb"])
+
+
+def find_gpu(gs, want):
+    for g in gs:
+        if want in (g["uuid"], g["index"]):
+            return g
+    return None
+
+
+def print_gpus(gs, chosen=None):
+    for g in gs:
+        mark = "*" if chosen and g["uuid"] == chosen else " "
+        say(" {} {:>2}  {:<28} {:>6} MB  {:>6} MB used{}  {}".format(
+            mark, g["index"], g["name"][:28], g["mem_mb"], g["used_mb"], "  (in use)" if g["busy"] else "", g["uuid"]))
+
+
+# ---------------------------------------------------------------- the container
+def engine(c):
+    return c["VF_ENGINE"]
+
+
+def inspect(c):
+    code, out = sh([engine(c), "inspect", c["VF_NAME"]], timeout=30)
+    if code:
+        return None
+    try:
+        return json.loads(out)[0]
+    except (ValueError, IndexError):
+        return None
+
+
+def container_env(c):
+    env = {"VF_TLS_HOSTS": c["VF_TLS_HOSTS"], "NVIDIA_DRIVER_CAPABILITIES": "compute,utility",
+           "VF_GPU_LEASE_TOKEN_FILE": "/srv/data/gpu-lease-token"}
+    for k, v in sorted(c.items()):
+        if k.startswith("VF_") and k not in LOCAL_KEYS and v != "":
+            env[k] = v
+    return env
+
+
+def run_args(c):
+    """The engine run command for this configuration (compose.yaml and compose.podman.yaml say the same)."""
+    e, gpu = engine(c), c["VF_GPU"]
+    if not gpu:
+        die("no card is chosen. Run: vfctl gpu select")
+    a = [e, "run", "-d", "--name", c["VF_NAME"], "--restart", "unless-stopped",
+         "-p", "{}:{}:8092".format(c["VF_BIND"], c["VF_PORT"]),
+         "-p", "{}:{}:8493".format(c["VF_BIND"], c["VF_TLS_PORT"]),
+         "-v", "{}:/srv/data".format(c["VF_DATA"])]
+    if e == "podman":
+        # CDI: `nvidia-ctk cdi generate` names every card nvidia.com/gpu=<index> and =<UUID>
+        a += ["--device", "nvidia.com/gpu={}".format(gpu), "--security-opt", "label=disable"]
+    else:
+        a += ["--gpus", "device={}".format(gpu), "--add-host", "host.docker.internal:host-gateway"]
+    for k, v in container_env(c).items():
+        a += ["-e", "{}={}".format(k, v)]
+    a += ["--label", "org.vectorfall.home={}".format(HOME), "--label", "org.vectorfall.config={}".format(config_hash(c))]
+    return a + [c["VF_IMAGE"]]
+
+
+def labels(st):
+    return ((st or {}).get("Config") or {}).get("Labels") or {}
+
+
+def config_hash(c):
+    keys = sorted(k for k in c if k.startswith("VF_") or k.startswith("VLM_"))
+    return hashlib.sha256(json.dumps([(k, c[k]) for k in keys]).encode()).hexdigest()[:16]
+
+
+def have_image(c):
+    return sh([engine(c), "image", "inspect", c["VF_IMAGE"]], timeout=30)[0] == 0
+
+
+def pull(c):
+    say("Getting the image {} ...".format(c["VF_IMAGE"]))
+    code, _ = sh([engine(c), "pull", c["VF_IMAGE"]], capture=False)
+    if code:
+        die("could not get {}. Check the network, or build it from the source: vfctl update --build <source folder>"
+            .format(c["VF_IMAGE"]))
+
+
+def create(c):
+    os.makedirs(c["VF_DATA"], exist_ok=True)
+    if not have_image(c):
+        pull(c)
+    code, out = sh(run_args(c), timeout=300)
+    if code:
+        hint = ""
+        if "could not select device driver" in out or "nvidia-container" in out:
+            hint = ("\nDocker cannot give the card to the container. Install the NVIDIA Container Toolkit and run:\n"
+                    "  sudo nvidia-ctk runtime configure --runtime=docker && sudo systemctl restart docker")
+        elif "nvidia.com/gpu" in out:
+            hint = ("\nPodman does not know the card. Make the CDI spec:\n"
+                    "  sudo nvidia-ctk cdi generate --output=/etc/cdi/nvidia.yaml")
+        elif "address already in use" in out or "port is already allocated" in out:
+            hint = "\nA port is in use. Set VF_PORT / VF_TLS_PORT in {} to free ports.".format(ENV_FILE)
+        die("the container did not start:\n" + out.strip()[-1500:] + hint)
+
+
+def wait_ready(c, timeout=240):
+    t0 = time.time()
+    while time.time() - t0 < timeout:
+        v = get(c, "/api/version", timeout=4)
+        if v:
+            return v
+        st = inspect(c)
+        if st and st["State"]["Status"] in ("exited", "dead"):
+            say(sh([engine(c), "logs", "--tail", "30", c["VF_NAME"]])[1])
+            die("the server stopped while it started (the log is above). Run: vfctl doctor")
+        time.sleep(2)
+    die("the server did not answer on {} in {} s. Run: vfctl logs  and  vfctl doctor".format(url(c), timeout))
+
+
+def cmd_start(c, wait=True, quiet=False):
+    st = inspect(c)
+    if st and labels(st).get("org.vectorfall.config") not in (None, config_hash(c)):   # None: made by compose; keep it
+        say("The settings changed: making the container again (the data stays).")
+        sh([engine(c), "rm", "-f", c["VF_NAME"]], timeout=120)
+        st = None
+    elif st and have_image(c) and sh([engine(c), "image", "inspect", "--format", "{{.Id}}", c["VF_IMAGE"]],
+                                    timeout=30)[1].strip() not in (st.get("Image"), ""):
+        say("The image is new: making the container again (the data stays).")
+        sh([engine(c), "rm", "-f", c["VF_NAME"]], timeout=120)
+        st = None
+    if st is None:
+        say("Starting VectorFall (card {}) ...".format(c["VF_GPU"]))
+        create(c)
+    elif st["State"]["Status"] != "running":
+        sh([engine(c), "start", c["VF_NAME"]], check=True, timeout=120)
+    if wait:
+        v = wait_ready(c)
+        if not quiet:
+            say("VectorFall {} is running on {}.".format(v.get("version"), (v.get("card") or {}).get("name")))
+            cmd_url(c)
+
+
+def cmd_stop(c):
+    if inspect(c) is None:
+        say("No container named {}.".format(c["VF_NAME"]))
+        return
+    sh([engine(c), "stop", "-t", "20", c["VF_NAME"]], check=True, timeout=120)
+    say("Stopped.")
+
+
+def cmd_restart(c):
+    st = inspect(c)
+    if st and st["State"]["Status"] == "running" and labels(st).get("org.vectorfall.config") in (None, config_hash(c)):
+        sh([engine(c), "restart", "-t", "20", c["VF_NAME"]], check=True, timeout=180)
+        cmd_start(c)
+    else:
+        cmd_start(c)
+
+
+def uptime(st):
+    try:
+        from datetime import datetime, timezone
+        s = st["State"]["StartedAt"][:19]
+        t = datetime.strptime(s, "%Y-%m-%dT%H:%M:%S").replace(tzinfo=timezone.utc)
+        sec = int((datetime.now(timezone.utc) - t).total_seconds())
+        return "{}d {}h {}m".format(sec // 86400, sec % 86400 // 3600, sec % 3600 // 60) if sec >= 86400 else \
+            "{}h {}m".format(sec // 3600, sec % 3600 // 60)
+    except (KeyError, ValueError):
+        return "?"
+
+
+def cmd_status(c):
+    st = inspect(c)
+    gs = gpus()
+    g = find_gpu(gs, c["VF_GPU"]) if c["VF_GPU"] else None
+    say("Folder     {}".format(HOME))
+    say("Engine     {}".format(engine(c)))
+    say("Image      {}".format(c["VF_IMAGE"]))
+    say("Card       {}".format("{} ({}, {} MB)".format(g["name"], g["uuid"], g["mem_mb"]) if g else (c["VF_GPU"] or "not chosen")))
+    if st is None:
+        say("Container  " + color("not created", "33") + " (vfctl start)")
+        return 1
+    state = st["State"]["Status"]
+    say("Container  {} {}".format(c["VF_NAME"], color(state, "32" if state == "running" else "31")) +
+        ("  (up {})".format(uptime(st)) if state == "running" else ""))
+    v = get(c, "/api/version") if state == "running" else None
+    if v:
+        card = v.get("card") or {}
+        say("Version    {} (API {}, revision {})".format(v.get("version"), v.get("api"), v.get("revision")))
+        say("Detected   {} {} {}".format(card.get("name"), card.get("arch") or "", card.get("cc") or ""))
+        say("Jobs       {} running".format(v.get("jobs", 0)))
+        say("URL        {}".format(url(c, lan_ip() if c["VF_BIND"] == "0.0.0.0" else None)))
+        return 0
+    if state == "running":
+        say("Server     " + color("not answering yet", "33") + " (vfctl logs)")
+    return 1
+
+
+def cmd_logs(c, args):
+    a = [engine(c), "logs"]
+    if "-f" in args:
+        a.append("-f")
+    n = args[args.index("-n") + 1] if "-n" in args and args.index("-n") + 1 < len(args) else "200"
+    a += ["--tail", n, c["VF_NAME"]]
+    try:
+        os.execvp(a[0], a)
+    except OSError as e:
+        die(str(e))
+
+
+def cmd_url(c):
+    say("  Web interface  {}".format(url(c)))
+    ip = lan_ip() if c["VF_BIND"] == "0.0.0.0" else None
+    if ip:
+        say("  On the LAN     http://{}:{}".format(ip, c["VF_PORT"]))
+    tls_host = ip or ("127.0.0.1" if c["VF_BIND"] in ("0.0.0.0", "") else c["VF_BIND"])
+    say("  HTTPS (mic and camera)  https://{}:{}  (self-signed certificate)".format(tls_host, c["VF_TLS_PORT"]))
+    say("  API  {0}/v1   MCP  {0}/mcp   CLI  {0}/v1/cli".format(url(c)))
+
+
+# ---------------------------------------------------------------- doctor
+class Report:
+    def __init__(self):
+        self.rows = []
+
+    def add(self, level, what, detail="", fix=""):
+        self.rows.append((level, what, detail, fix))
+        c = {"PASS": "32", "WARN": "33", "FAIL": "31", "INFO": "36"}[level]
+        say("{}  {}{}".format(color("{:<4}".format(level), c), what, ("  " + detail) if detail else ""))
+        if fix:
+            for line in fix.splitlines():
+                say("      fix: " + line if line == fix.splitlines()[0] else "           " + line)
+
+    def summary(self):
+        n = {k: sum(1 for r in self.rows if r[0] == k) for k in ("PASS", "WARN", "FAIL")}
+        say("\n{} pass, {} warn, {} fail".format(n["PASS"], n["WARN"], n["FAIL"]))
+        return 1 if n["FAIL"] else 0
+
+
+def cdi_names():
+    code, out = sh(["nvidia-ctk", "cdi", "list"], timeout=20)
+    names = set(re.findall(r"nvidia\.com/gpu=(\S+)", out)) if code == 0 else set()
+    if not names:
+        for d in ("/etc/cdi", "/var/run/cdi"):
+            try:
+                for f in os.listdir(d):
+                    with open(os.path.join(d, f)) as fh:
+                        names |= set(re.findall(r"name:\s*\"?([\w.-]+)\"?", fh.read()))
+            except OSError:
+                pass
+    return names
+
+
+def lspci_nvidia():
+    code, out = sh(["lspci", "-nn"], timeout=10)
+    if code:
+        return None
+    return [l for l in out.splitlines() if "10de:" in l and re.search(r"VGA|3D controller|Display", l)]
+
+
+def cmd_doctor(c, quick=False):
+    r = Report()
+    e = engine(c)
+    say("VectorFall doctor  (folder {}, engine {})\n".format(HOME, e))
+    # 1. the container engine
+    code, out = sh([e, "info"], timeout=30)
+    if code == 0:
+        r.add("PASS", "{} answers".format(e))
+    elif "permission denied" in out.lower():
+        r.add("FAIL", "{} refuses this user".format(e), "", "sudo usermod -aG docker $USER   (then log out and in)")
+    else:
+        r.add("FAIL", "{} does not answer".format(e), out.strip().splitlines()[-1][:120] if out.strip() else "",
+              "Install Docker (https://docs.docker.com/engine/install/) or Podman, and start it")
+    # 2. the NVIDIA driver
+    gs = gpus()
+    if gs:
+        r.add("PASS", "NVIDIA driver {}".format(gs[0]["driver"]), "{} card(s)".format(len(gs)))
+    else:
+        r.add("FAIL", "the NVIDIA driver does not answer (nvidia-smi)", "",
+              "Install the NVIDIA driver: 470 for Kepler cards (GTX 600/700, Quadro K), a current driver for later cards")
+    pci = lspci_nvidia()
+    if pci is not None and gs and len(pci) > len(gs):
+        r.add("WARN", "{} NVIDIA card(s) on the bus, {} driven".format(len(pci), len(gs)),
+              "", "Drivers after 470 do not support Kepler cards. A Kepler card needs driver 470.")
+    # 3. GPU access for containers
+    if e == "podman":
+        names = cdi_names()
+        if c["VF_GPU"] and c["VF_GPU"] in names:
+            r.add("PASS", "CDI spec lists nvidia.com/gpu={}".format(c["VF_GPU"]))
+        elif names:
+            r.add("FAIL", "the CDI spec does not list the card {}".format(c["VF_GPU"]), "",
+                  "sudo nvidia-ctk cdi generate --output=/etc/cdi/nvidia.yaml   (again, after a driver change)")
+        else:
+            r.add("FAIL", "no NVIDIA CDI spec", "",
+                  "Install the NVIDIA Container Toolkit, then: sudo nvidia-ctk cdi generate --output=/etc/cdi/nvidia.yaml")
+    else:
+        if shutil.which("nvidia-container-cli") or shutil.which("nvidia-ctk") or shutil.which("nvidia-container-runtime-hook"):
+            r.add("PASS", "NVIDIA Container Toolkit installed")
+        else:
+            r.add("FAIL", "NVIDIA Container Toolkit not found", "",
+                  "Install it (https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html)\n"
+                  "then: sudo nvidia-ctk runtime configure --runtime=docker && sudo systemctl restart docker")
+    # 4. the chosen card
+    g = find_gpu(gs, c["VF_GPU"]) if c["VF_GPU"] else None
+    if g:
+        r.add("PASS", "card {}: {}".format(g["index"], g["name"]), "{} MB, {} MB used{}".format(
+            g["mem_mb"], g["used_mb"], ", in use" if g["busy"] else ""))
+    elif not c["VF_GPU"]:
+        r.add("FAIL", "no card is chosen", "", "vfctl gpu select")
+    else:
+        r.add("FAIL", "the card {} is not on this computer".format(c["VF_GPU"]), "", "vfctl gpu select")
+    # 5. disk
+    try:
+        os.makedirs(c["VF_DATA"], exist_ok=True)
+        free = shutil.disk_usage(c["VF_DATA"]).free / 2 ** 30
+        lvl = "PASS" if free >= 5 else "WARN" if free >= 1 else "FAIL"
+        r.add(lvl, "free disk for the data folder", "{:.1f} GB ({})".format(free, c["VF_DATA"]),
+              "" if lvl == "PASS" else "Free some space, or set VF_DATA to a larger disk")
+    except OSError as ex:
+        r.add("FAIL", "data folder", str(ex), "Check VF_DATA in " + ENV_FILE)
+    # 6. the container and the server
+    st = inspect(c)
+    running = bool(st and st["State"]["Status"] == "running")
+    if not st:
+        r.add("WARN", "no container {}".format(c["VF_NAME"]), "", "vfctl start")
+        for p in (c["VF_PORT"], c["VF_TLS_PORT"]):
+            s = socket.socket()
+            try:
+                s.bind((c["VF_BIND"] if c["VF_BIND"] != "0.0.0.0" else "", int(p)))
+                r.add("PASS", "port {} is free".format(p))
+            except OSError:
+                r.add("FAIL", "port {} is in use".format(p), "", "Set another port in {} (VF_PORT, VF_TLS_PORT)".format(ENV_FILE))
+            finally:
+                s.close()
+    elif not running:
+        r.add("FAIL", "container {} is {}".format(c["VF_NAME"], st["State"]["Status"]),
+              "exit code {}".format(st["State"].get("ExitCode")), "vfctl logs; then vfctl start")
+    else:
+        r.add("PASS", "container {} runs".format(c["VF_NAME"]), "up " + uptime(st))
+        if labels(st).get("org.vectorfall.config") not in (None, config_hash(c)):
+            r.add("WARN", "the container uses older settings than .env", "", "vfctl restart")
+        code, out = sh([e, "exec", c["VF_NAME"], "nvidia-smi", "-L"], timeout=30)
+        if code == 0 and (not g or g["uuid"] in out):
+            r.add("PASS", "the card is visible in the container", out.strip().splitlines()[0][:80] if out.strip() else "")
+        else:
+            r.add("FAIL", "the card is not visible in the container", out.strip()[:120],
+                  "Check the toolkit (docker) or the CDI spec (podman), then vfctl restart")
+        v = get(c, "/api/version", timeout=8)
+        if v:
+            r.add("PASS", "server answers on {}".format(url(c)), "version {}".format(v.get("version")))
+        else:
+            r.add("FAIL", "no answer on {}".format(url(c)), "", "vfctl logs")
+        m = get(c, "/api/machine", timeout=15)
+        card = (m or {}).get("card") or {}
+        if card.get("cores"):
+            r.add("PASS", "card detection", "{} {} {}, {} cores, {} MB".format(card.get("name"), card.get("arch"),
+                                                                                card.get("cc"), card.get("cores"), card.get("mem_mb")))
+        elif m:
+            r.add("FAIL", "the server finds no GPU", card.get("error", "")[:120],
+                  "Driver too new for the card (Kepler needs 470), or no GPU access: vfctl logs")
+        # TLS
+        try:
+            ctx = ssl.create_default_context()
+            ctx.check_hostname = False
+            ctx.verify_mode = ssl.CERT_NONE
+            host = "127.0.0.1" if c["VF_BIND"] in ("0.0.0.0", "") else c["VF_BIND"]
+            with socket.create_connection((host, int(c["VF_TLS_PORT"])), timeout=5) as s:
+                with ctx.wrap_socket(s, server_hostname=host):
+                    pass
+            code, out = sh([e, "exec", c["VF_NAME"], "openssl", "x509", "-noout", "-enddate", "-ext", "subjectAltName",
+                            "-in", "/srv/data/run/tls/vectorfall.crt"], timeout=20)
+            if code:   # openssl 1.1.0 (Ubuntu 18.04) has no -ext
+                code, out = sh([e, "exec", c["VF_NAME"], "openssl", "x509", "-noout", "-enddate",
+                                "-in", "/srv/data/run/tls/vectorfall.crt"], timeout=20)
+            end = re.search(r"notAfter=(.*)", out)
+            r.add("PASS", "HTTPS on port {}".format(c["VF_TLS_PORT"]), "certificate valid to {}".format(end.group(1).strip()) if end else "")
+            missing = [h for h in c["VF_TLS_HOSTS"].split(",") if h.strip() and "DNS" in out and h.strip() not in out]
+            if missing:
+                r.add("WARN", "the certificate does not cover " + ",".join(missing), "",
+                      "Delete {}/run/tls/vectorfall.* and run vfctl restart".format(c["VF_DATA"]))
+        except (OSError, ssl.SSLError) as ex:
+            r.add("WARN", "HTTPS on port {} does not answer".format(c["VF_TLS_PORT"]), str(ex)[:80],
+                  "Microphone and camera need HTTPS. Check the log: vfctl logs")
+        # GPU self-test: a small matrix product on the card, checked against the CPU
+        test = ("import time,numpy as np,cupy as cp\n"
+                "a=np.random.RandomState(1).rand(512,512).astype(np.float32)\n"
+                "g=cp.asarray(a); cp.cuda.Device().synchronize(); t=time.time(); r=g@g; cp.cuda.Device().synchronize()\n"
+                "d=float(abs(cp.asnumpy(r)-a@a).max()); print('maxdiff %.2e ms %.1f'%(d,(time.time()-t)*1000))\n")
+        code, out = sh([e, "exec", c["VF_NAME"], "python3", "-c", test], timeout=180)
+        mm = re.search(r"maxdiff (\S+) ms (\S+)", out)
+        if code == 0 and mm and float(mm.group(1)) < 1e-2:
+            r.add("PASS", "GPU self-test (512x512 matrix product)", "max error {}, {} ms".format(mm.group(1), mm.group(2)))
+        else:
+            r.add("FAIL", "GPU self-test", out.strip().splitlines()[-1][:140] if out.strip() else "no output",
+                  "Look at the log (vfctl logs). On Kepler, use driver 470.")
+        if not quick and v:
+            say("      (running every model with its example inputs: vf test; --quick skips this)")
+            code, out = sh([e, "exec", c["VF_NAME"], "vf", "test"], timeout=1800)
+            last = [l for l in out.strip().splitlines() if "ok," in l]
+            fail_lines = [l for l in out.splitlines() if " FAIL " in l]
+            # an optional part that is not installed (a model file, a research module) is a warning, not a fault
+            missing = [l.split()[0] for l in fail_lines if re.search(r"ModuleNotFoundError|No such file or directory", l)]
+            real = [l.split()[0] for l in fail_lines if l.split()[0] not in missing]
+            if not last:
+                r.add("FAIL", "vf test did not finish", out.strip()[-140:])
+            elif real:
+                r.add("FAIL", "vf test", last[-1].strip(),
+                      "Failed models: {}. Send the log (docker exec {} vf test) with a bug report.".format(" ".join(real[:12]), c["VF_NAME"]))
+            elif missing:
+                r.add("WARN", "vf test", last[-1].strip(),
+                      "Optional parts are not installed for: {}. The other models work.".format(" ".join(missing[:12])))
+            else:
+                r.add("PASS", "vf test", last[-1].strip())
+    return r.summary()
+
+
+# ---------------------------------------------------------------- gpu, update, backup, restore, uninstall
+def cmd_gpu(c, args):
+    gs = gpus()
+    if not gs:
+        die("nvidia-smi does not answer. Install the NVIDIA driver (470 for Kepler cards).")
+    if not args or args[0] != "select":
+        print_gpus(gs, c["VF_GPU"])
+        g = find_gpu(gs, c["VF_GPU"]) if c["VF_GPU"] else None
+        say("\nVectorFall uses: {}".format("{} {} ({})".format(g["index"], g["name"], g["uuid"]) if g else "no card yet (vfctl gpu select)"))
+        return
+    want = args[1] if len(args) > 1 else None
+    if want is None:
+        d = default_gpu(gs)
+        if len(gs) == 1 or not sys.stdin.isatty() or "--yes" in args:
+            g = d
+        else:
+            print_gpus(gs, c["VF_GPU"])
+            ans = input("Card for VectorFall (number or UUID) [{}]: ".format(d["index"])).strip()
+            g = find_gpu(gs, ans) if ans else d
+    else:
+        g = find_gpu(gs, want)
+    if not g:
+        die("no such card: {}".format(want))
+    write_env_key("VF_GPU", g["uuid"])
+    say("VectorFall uses card {}: {} ({}).".format(g["index"], g["name"], g["uuid"]))
+    st = inspect(c)
+    if st and st["State"]["Status"] == "running" and g["uuid"] != c["VF_GPU"]:
+        cmd_start(cfg())
+
+
+def cmd_update(c, args):
+    if "--build" in args:
+        i = args.index("--build")
+        src = args[i + 1] if i + 1 < len(args) else c.get("VF_SOURCE") or "."
+        if not os.path.isfile(os.path.join(src, "Dockerfile")):
+            die("no Dockerfile in {}".format(src))
+        ver = open(os.path.join(src, "VERSION")).read().strip() if os.path.isfile(os.path.join(src, "VERSION")) else "dev"
+        say("Building {} from {} (this takes a while the first time) ...".format(c["VF_IMAGE"], src))
+        code, _ = sh([engine(c), "build", "-t", c["VF_IMAGE"], "--build-arg", "VF_VERSION=" + ver, src], capture=False)
+        if code:
+            die("the build failed")
+    else:
+        pull(c)
+    sh([engine(c), "rm", "-f", c["VF_NAME"]], timeout=120)
+    cmd_start(c)
+
+
+def helper(c, args, mounts):
+    """Run a short command in a throw-away container of the VectorFall image (the data files belong to root)."""
+    a = [engine(c), "run", "--rm"]
+    for m in mounts:
+        a += ["-v", m]
+    return sh(a + ["--entrypoint", args[0], c["VF_IMAGE"]] + args[1:], timeout=3600)
+
+
+def cmd_backup(c, args):
+    if not os.path.isdir(c["VF_DATA"]):
+        die("no data folder at {}".format(c["VF_DATA"]))
+    out = os.path.abspath(args[0]) if args else os.path.join(HOME, "backups", "vectorfall-data-{}.tar.gz".format(time.strftime("%Y%m%d-%H%M%S")))
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    st = inspect(c)
+    was = bool(st and st["State"]["Status"] == "running")
+    if was and "--live" not in args:
+        say("Stopping the server for a consistent copy (--live skips this) ...")
+        cmd_stop(c)
+    try:
+        code, msg = helper(c, ["sh", "-c", "tar czf /out/{} -C /data . && chown {}:{} /out/{}".format(
+            os.path.basename(out), os.getuid(), os.getgid(), os.path.basename(out))],
+            ["{}:/data:ro".format(c["VF_DATA"]), "{}:/out".format(os.path.dirname(out))])
+    finally:
+        if was and "--live" not in args:
+            cmd_start(c, quiet=True)
+    if code:
+        die("backup failed: " + msg.strip()[-500:])
+    say("Saved {} ({:.1f} MB).".format(out, os.path.getsize(out) / 2 ** 20))
+
+
+def cmd_restore(c, args):
+    if not args or not os.path.isfile(args[0]):
+        die("usage: vfctl restore FILE.tar.gz")
+    src = os.path.abspath(args[0])
+    st = inspect(c)
+    was = bool(st and st["State"]["Status"] == "running")
+    if was:
+        cmd_stop(c)
+    keep = None
+    if os.path.isdir(c["VF_DATA"]):
+        keep = "{}.before-restore-{}".format(c["VF_DATA"].rstrip("/"), time.strftime("%Y%m%d-%H%M%S"))
+        os.rename(c["VF_DATA"], keep)
+    os.makedirs(c["VF_DATA"])
+    code, msg = helper(c, ["tar", "xzf", "/in/" + os.path.basename(src), "-C", "/data"],
+                       ["{}:/in:ro".format(os.path.dirname(src)), "{}:/data".format(c["VF_DATA"])])
+    if code:
+        shutil.rmtree(c["VF_DATA"], ignore_errors=True)
+        if keep:
+            os.rename(keep, c["VF_DATA"])
+        die("restore failed (the old data is back): " + msg.strip()[-500:])
+    say("Restored {}.{}".format(src, " The old data folder is at {}.".format(keep) if keep else ""))
+    if was:
+        cmd_start(c)
+
+
+def cmd_uninstall(c, args):
+    purge = "--purge" in args
+    yes = "--yes" in args or "-y" in args
+    if not yes and sys.stdin.isatty():
+        what = "the container, the image and the data folder {}".format(c["VF_DATA"]) if purge else "the container"
+        if input("Remove {}? [y/N] ".format(what)).strip().lower() not in ("y", "yes"):
+            die("nothing changed", 0)
+    sh([engine(c), "rm", "-f", c["VF_NAME"]], timeout=120)
+    say("Removed the container {}.".format(c["VF_NAME"]))
+    if purge:
+        import glob
+        # the data folder and the copies that restore kept; their files belong to the container's root user
+        for d in [c["VF_DATA"]] + sorted(glob.glob(c["VF_DATA"].rstrip("/") + ".before-restore-*")):
+            if os.path.isdir(d):
+                helper(c, ["sh", "-c", "rm -rf /data/* /data/.[!.]* 2>/dev/null; true"], ["{}:/data".format(d)])
+                shutil.rmtree(d, ignore_errors=True)
+                say("Removed the data folder {}.".format(d))
+        sh([engine(c), "rmi", c["VF_IMAGE"]], timeout=300)
+        say("Removed the image {}.".format(c["VF_IMAGE"]))
+    else:
+        say("The data folder {} and the image stay. vfctl uninstall --purge removes them.".format(c["VF_DATA"]))
+
+
+def cmd_version(c):
+    say("vfctl {}".format(VFCTL_VERSION))
+    v = get(c, "/api/version")
+    say("server {}".format("{} (revision {}) on {}".format(v.get("version"), v.get("revision"), (v.get("card") or {}).get("name")) if v else "not running"))
+
+
+def main(argv):
+    if not argv or argv[0] in ("-h", "--help", "help"):
+        say(__doc__.strip())
+        return 0
+    cmd, args = argv[0], argv[1:]
+    c = cfg()
+    if cmd not in ("gpu", "version", "url") and not os.path.isfile(ENV_FILE):
+        die("no settings at {}. Run install.sh, or set VF_HOME to the VectorFall folder.".format(ENV_FILE))
+    table = {
+        "start": lambda: cmd_start(c, wait="--no-wait" not in args),
+        "stop": lambda: cmd_stop(c), "restart": lambda: cmd_restart(c), "status": lambda: cmd_status(c),
+        "logs": lambda: cmd_logs(c, args), "doctor": lambda: cmd_doctor(c, quick="--quick" in args),
+        "gpu": lambda: cmd_gpu(c, args), "url": lambda: cmd_url(c), "update": lambda: cmd_update(c, args),
+        "backup": lambda: cmd_backup(c, args), "restore": lambda: cmd_restore(c, args),
+        "uninstall": lambda: cmd_uninstall(c, args), "version": lambda: cmd_version(c),
+    }
+    if cmd not in table:
+        die("unknown command: {} (vfctl help)".format(cmd))
+    return table[cmd]() or 0
+
+
+if __name__ == "__main__":
+    try:
+        sys.exit(main(sys.argv[1:]))
+    except KeyboardInterrupt:
+        sys.exit(130)

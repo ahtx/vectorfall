@@ -1,0 +1,34 @@
+Lessons From The Storm
+Amir Husain, Forbes, 2021-03-04
+
+The February winter storm brought ice, snow, freezing temperatures and a lot of hardship for the residents of Texas. As a long-time Austinite, I experienced firsthand the power and water failures. Many of our fellow Texans, sadly, fared much worse than my family did. Though things are starting to revert to “normal” for some of us, it is time now to investigate what happened so that we can address shortcomings and improve our preparedness in future crises.
+
+As temperatures dropped across Texas in what was a rare - but not entirely unprecedented event - Texas energy infrastructure completely broke down. Rolling blackouts commenced, cutting electric supply to millions. Some went without power and water for days. Others had power only for a few hours a day. The toll this crisis took on the homeless, on families and individuals of all backgrounds was tremendous.
+
+The energy mix in Texas is nearly 20% wind, and about 80% nuclear, coal and gas. Only a negligible amount of power is generated via solar and other alternate means, such as geo-thermal. Even though wind and solar deliver a very small percentage of Privacy - Terms Texas’ electricity, fingers were pointed immediately at alternate energy as the reason for these failures. Texas Governor Greg Abbott, speaking on the Sean Hannity show, said, “This shows how the Green New Deal would be a deadly deal for the United States of America. Our wind and our solar got shut down...” The reality was that everything broke down in Texas, including nuclear. To point the finger at only clean energy was baffling to many Texans who wondered if this criticism was intended more to push a particular agenda than address the underlying problem.
+
+No matter what someone’s political persuasion, the reality is that a blame game will not help Texas. The fact that just such a game was afoot in a time of crisis only suggests an utter lack of leadership. To make matters worse, amidst a dire situation in the state, media reported that a Texas senator was enjoying a vacation on the beach with his family. Politicians were blaming the Energy Reliability Council of Texas, the state’s grid operator, while ERCOT officials were claiming that they had in fact prevented what would have been a much bigger disaster.
+
+Amidst this sad and factitious disorder what became clear was that political agendas were once again trumping facts. The insinuation that wind turbines cannot work in cold weather has no grounding in reality. Wind turbines work in Siberia and across Scandinavian countries that experience winters far harsher than Texas ever has.
+
+As politicians bickered we also saw agenda-driven toxicity and the manipulation of news on social networks. One viral post showed pictures of inoperative wind turbines being “de-iced”. In fact, the picture was from Sweden and was taken back in 2014!
+
+Despite the blame being heaped on alternatives, the reason for the failure of Texas’ energy infrastructure was a lack of preparation. The equipment at gas, nuclear and yes, indeed, wind facilities had not been made weather proof. As temperatures dropped, pumps failed, fuel supply was impeded and all forms of power production ground to a halt.
+
+Was such a scenario foreseeable? In truth, yes. Texas experienced snowstorms in 2011 that caused issues for power producers, but as the Austin American-Statesman said plainly, “Texas failed to learn from the 2011 snowstorm”. As every article on how Austin is one of the nation’s fastest growing cities states, Texas is expanding. No one is more familiar with this than the regulators and operators of Texas infrastructure, and our politicians. Why was ERCOT’s peak projected consumption level as low as it was? In summer months, we have produced to a greater peak demand than over this past week. So, the capacity existed. It simply couldn’t be used.
+
+A couple of weeks have passed since this horrendous breakdown. It is now time for soul searching and for Texas to take responsibility for improving its power and distribution infrastructure so that such tragedies can be prevented in future. A few critical questions that cannot be ignored:
+
+Is the current level of demand prediction capability at ERCOT sufficient? Is the organization making use of the latest AI modeling software, factoring in black swans, projecting future climate events and learning from cities that fall within the “weather similarity cluster” for Texas’ major metro areas?
+
+That the storm was on its way was known 10 days in advance of its arrival. What was done to lessen impact? Winterization of equipment? Why not? Are there emergency procurement systems in place to support near term needs? Given the changes climatechange will bring our way and the increased frequency of intense weather events, should winterization of power infrastructure in Texas become a regulatory requirement?
+
+Substantial production capacity was offline prior to the storm. Energy infrastructure in Texas needs to be upgraded. And at the heart of it, should include AI demand prediction, scenario planning, grid monitoring and modeling, predictive maintenance and other modern technologies designed to optimize equipment and improve uptime.
+
+There will be other unforeseen events in the future. One of the top threats is a future cyber strike on our grid and power. It has already happened in the Ukraine, multiple times. It is only a matter of time before such an attack plays out in the US. And if the current crisis is anything to go by, when such a strike occurs, politicians will start pointing fingers at each other once more, claiming that the attack was a “Black Swan”. It won’t be. It is a likely threat that we must deal with now by putting into place advanced industrial cyber protection.
+
+Contrary to claims, alternatives need to be added to Texas energy mix post haste; wind works in the Arctic and throughout Scandinavia. It can certainly work in Texas.
+
+Governments all over are discovering that across a range of areas weather, disease, energy - the unthinkable now happens often. We are not yet out of a pandemic and now into a climate driven event. Approach to planning and risk mitigation needs to be rethought. Sophisticated AI based simulations can play a role here as the fabric of society and the systems it uses both become more complex.
+
+If there is one lesson our regulators, operators and politicians in Texas take to heart, it should be this: “Start planning for what you’ve traditionally considered outlier events. And leverage the best technology to protect the state and its people. Now.” There is no excuse to remain a deer in the headlights in the age of artificial intelligence.

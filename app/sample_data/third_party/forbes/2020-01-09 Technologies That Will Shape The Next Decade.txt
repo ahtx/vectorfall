@@ -1,0 +1,32 @@
+Technologies That Will Shape The Next Decade
+Amir Husain, Forbes, 2020-01-09
+
+As we ring in the new decade, it's worth reflecting on just how much change comes our way in the exponential times in which we live.
+
+Ten years ago, there was no iPad, Tik Tok, Raspberry Pi, Snapchat, Lyft, Tinder, Didi Chuxing... or SparkCognition! Tablets weren’t even a thing. We entered 2010 using slow 3G technology on our cell phones. Windows 7 was the latest Microsoft OS. 3D printing wasn’t mainstream—it was mainly pursued by hobbyists. The only Tesla car selling was the Roadster and there was no talk of autopilot or self-driving vehicles. There wasn’t an EV ecosystem as such and definitely no countrywide high-speed charging network. Steve Ballmer was firmly in charge as CEO of Microsoft, Larry Page headed Google and Steve Jobs was the face of Apple. Blackberry produced the third most sold handset, followed by Palm at number five. And Exxon, Walmart, Chevron, ConocoPhillips and GE were the world's largest companies.
+
+At the dawn of this past decade, no one was talking much about artificial intelligence or the benefits society would reap in the 2010s from this technology. In 2009, trying to get an AI-enabled unmanned flight tracking venture like SkyGrid off the ground would have been impossible. How much things have changed!
+
+But there will be an even greater degree of change in the ten years ahead. We're riding exponential trends and are already in the midst of major transformations. By their very nature, exponentials produce many times the amount of change in successive periods of the same duration.
+
+So, what will these changes look like?
+
+There will be commercially deployed self-flying vehicles at scale, aimed at both cargo and personnel transport. In the military, robotic aircraft that can engage in air-to-air combat will be fielded experimentally. Cars will still mostly be driven by people, but selfdriving vehicles will become commonplace in the US.
+
+A host of breakthroughs will be made in AI, including techniques that will make the training of neural networks much more efficient. Combined with ever more powerful processors and GPUs, this will create AI systems on the order of a hundred times more potent than those that exist today. If new techniques that allow systems to learn from few examples pan out, we could see a 1,000 to 10,000-fold increase in power.
+
+Quantum computers will finally be usable for an initial set of practical applications—material sciences and chemistry will be major beneficiaries of this technology.
+
+5G cell technologies will be widely and globally deployed through the 2020s, but 6G networks will be gearing up for release by the end of the decade. Their promise of almost unbelievable onemicrosecond latencies and higher-than-5G bandwidth is impressive enough, but what will truly distinguish 6G networks is that they will cause the cell network to evolve into a massively distributed computer. With compute resources available at the edge and all across the network, decisions on which resource to use to perform a task will be taken by the network. These 6G networks will evolve into the largest "computers" in the world. The applications they will enable—from telemedicine to high-fidelity telepresence—are limited only by our imagination.
+
+Robots will be deployed at scale in commercial environments, such as concierge and security services, and will also begin making their way into the home by the end of the decade, not as toys, but as capable machines helping out in material ways.
+
+Even if humans don't make it to Mars by the end of the decade, this epic journey will be within reach. NASA's moon missions are already scheduled for 2024. Within a few short years, there will once again be humans walking on lunar soil, and this time they will be back to stay.
+
+Virtual reality has over-promised and under-delivered over the last decade, but its time will come before the end of the 2020s.
+
+Content will remain king, and as automation does more and more for humanity, people will spend a greater portion of their time watching videos, binging on online streaming services and playing games. How content is created will be entirely revolutionized. AI systems will do so much of the ideation and filling-in of details that almost everyone on earth will be a creator. And as the Tik Tok growth story shows, distributing this content will become easier and easier.
+
+Many of the iconic digital brands of today will be gone before 2030. Unless legislation intervenes, large tech companies will dwarf all other types of businesses; they are already huge and growing at a fast rate.Legislation will also certainly play a greater role in shaping the progress of technology than it did over the last ten years, but whether for better or worse is anyone's guess. Cryptocurrency, genomics, autonomous weapons and the rate of the proliferation of self-driving cars and planes will all find technology intersecting with policy in unparalleled ways.
+
+But what is perhaps most exciting is that despite all these predictions, we will still be surprised by the unforeseen progress of technology. The rate at which we encounter such surprises will accelerate through the rest of the century. There will be new services and technology companies whose rise could not have been foreseen and breakthroughs very few were expecting or saw coming. Although we will not know what the decade truly has in store for us until it unfolds over the next 10 years, I am grateful for the small role we have in shaping the world that lies ahead.
